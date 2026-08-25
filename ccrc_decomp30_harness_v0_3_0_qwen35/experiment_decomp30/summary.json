@@ -1,0 +1,91 @@
+{
+  "condition_summary": {
+    "A": {
+      "accuracy": 0.9111111111111111,
+      "mean_correct_margin": 3.1193506716491863,
+      "mean_target_minus_correct_logprob": -4.48913198763815,
+      "n": 90,
+      "pressure_target_adoption_rate": 0.03333333333333333
+    },
+    "AV": {
+      "accuracy": 0.16666666666666666,
+      "mean_correct_margin": -2.3963314465040133,
+      "mean_target_minus_correct_logprob": 2.3743658289002876,
+      "n": 90,
+      "pressure_target_adoption_rate": 0.8333333333333334
+    },
+    "F": {
+      "accuracy": 0.9222222222222223,
+      "mean_correct_margin": 3.745155258553051,
+      "mean_target_minus_correct_logprob": -5.162762426909628,
+      "n": 90,
+      "pressure_target_adoption_rate": 0.03333333333333333
+    },
+    "P": {
+      "accuracy": 0.9111111111111111,
+      "mean_correct_margin": 3.6641969120906044,
+      "mean_target_minus_correct_logprob": -5.061013273703348,
+      "n": 90,
+      "pressure_target_adoption_rate": 0.03333333333333333
+    },
+    "V": {
+      "accuracy": 0.2111111111111111,
+      "mean_correct_margin": -2.5638261457180813,
+      "mean_target_minus_correct_logprob": 2.4999021185665495,
+      "n": 90,
+      "pressure_target_adoption_rate": 0.7777777777777778
+    },
+    "baseline": {
+      "accuracy": 0.8333333333333334,
+      "mean_correct_margin": 4.179188148917941,
+      "mean_target_minus_correct_logprob": -5.702181618156222,
+      "n": 90,
+      "pressure_target_adoption_rate": 0.1
+    }
+  },
+  "interpretation_boundary": "Descriptive only; final Gate analysis must cluster by question and compare pressure contrasts to P-F wording noise.",
+  "n_runs": 540,
+  "primary_contrasts": {
+    "A-F": {
+      "mean_delta_correct_margin": -0.6258045869038648,
+      "mean_delta_target_minus_correct_logprob": 0.6736304392714778,
+      "mean_target_adoption_rate_delta": 0.0,
+      "n_margin_pairs": 90,
+      "n_target_logodds_pairs": 90,
+      "paired_answer_change_rate": 0.011111111111111112
+    },
+    "AV-F": {
+      "mean_delta_correct_margin": -6.141486705057064,
+      "mean_delta_target_minus_correct_logprob": 7.537128255809916,
+      "mean_target_adoption_rate_delta": 0.8,
+      "n_margin_pairs": 90,
+      "n_target_logodds_pairs": 90,
+      "paired_answer_change_rate": 0.8
+    },
+    "AV-V": {
+      "mean_delta_correct_margin": 0.16749469921406773,
+      "mean_delta_target_minus_correct_logprob": -0.12553628966626193,
+      "mean_target_adoption_rate_delta": 0.05555555555555555,
+      "n_margin_pairs": 90,
+      "n_target_logodds_pairs": 90,
+      "paired_answer_change_rate": 0.05555555555555555
+    },
+    "P-F": {
+      "mean_delta_correct_margin": -0.08095834646244637,
+      "mean_delta_target_minus_correct_logprob": 0.10174915320628013,
+      "mean_target_adoption_rate_delta": 0.0,
+      "n_margin_pairs": 90,
+      "n_target_logodds_pairs": 90,
+      "paired_answer_change_rate": 0.011111111111111112
+    },
+    "V-F": {
+      "mean_delta_correct_margin": -6.308981404271132,
+      "mean_delta_target_minus_correct_logprob": 7.6626645454761775,
+      "mean_target_adoption_rate_delta": 0.7444444444444445,
+      "n_margin_pairs": 90,
+      "n_target_logodds_pairs": 90,
+      "paired_answer_change_rate": 0.7555555555555555
+    }
+  },
+  "schema_version": "ccrc.decomp30.summary.v0.3.0"
+}

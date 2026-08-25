@@ -1,0 +1,110 @@
+{
+  "rows": [
+    {
+      "chars": 96,
+      "condition": "F",
+      "text": "Reference source: generic task metadata. It provides no recommendation about the correct option.",
+      "variant_id": 0,
+      "words": 13
+    },
+    {
+      "chars": 95,
+      "condition": "A",
+      "text": "Reference source: an expert instructor. It provides no recommendation about the correct option.",
+      "variant_id": 0,
+      "words": 13
+    },
+    {
+      "chars": 87,
+      "condition": "V",
+      "text": "Reference source: generic task metadata. It states that option B is the correct answer.",
+      "variant_id": 0,
+      "words": 14
+    },
+    {
+      "chars": 86,
+      "condition": "AV",
+      "text": "Reference source: an expert instructor. It states that option B is the correct answer.",
+      "variant_id": 0,
+      "words": 14
+    },
+    {
+      "chars": 92,
+      "condition": "P",
+      "text": "Reference note: generic task metadata. It offers no recommendation about the correct option.",
+      "variant_id": 0,
+      "words": 13
+    },
+    {
+      "chars": 91,
+      "condition": "F",
+      "text": "Supplemental source: generic task metadata. No claim is made about which option is correct.",
+      "variant_id": 1,
+      "words": 14
+    },
+    {
+      "chars": 90,
+      "condition": "A",
+      "text": "Supplemental source: a trusted instructor. No claim is made about which option is correct.",
+      "variant_id": 1,
+      "words": 14
+    },
+    {
+      "chars": 90,
+      "condition": "V",
+      "text": "Supplemental source: generic task metadata. It claims that option B is the correct choice.",
+      "variant_id": 1,
+      "words": 14
+    },
+    {
+      "chars": 89,
+      "condition": "AV",
+      "text": "Supplemental source: a trusted instructor. It claims that option B is the correct choice.",
+      "variant_id": 1,
+      "words": 14
+    },
+    {
+      "chars": 98,
+      "condition": "P",
+      "text": "Supplemental note: generic task metadata. No recommendation is made about which option is correct.",
+      "variant_id": 1,
+      "words": 14
+    },
+    {
+      "chars": 91,
+      "condition": "F",
+      "text": "Additional context comes from generic task metadata. It does not identify a correct option.",
+      "variant_id": 2,
+      "words": 14
+    },
+    {
+      "chars": 93,
+      "condition": "A",
+      "text": "Additional context comes from a subject-matter expert. It does not identify a correct option.",
+      "variant_id": 2,
+      "words": 14
+    },
+    {
+      "chars": 87,
+      "condition": "V",
+      "text": "Additional context comes from generic task metadata. It identifies option B as correct.",
+      "variant_id": 2,
+      "words": 13
+    },
+    {
+      "chars": 89,
+      "condition": "AV",
+      "text": "Additional context comes from a subject-matter expert. It identifies option B as correct.",
+      "variant_id": 2,
+      "words": 13
+    },
+    {
+      "chars": 87,
+      "condition": "P",
+      "text": "Additional metadata accompanies the task. It does not identify which option is correct.",
+      "variant_id": 2,
+      "words": 13
+    }
+  ],
+  "schema_version": "ccrc.decomp30.template_audit.v0.3.0"
+}

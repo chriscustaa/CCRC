@@ -1,0 +1,546 @@
+{
+  "authentication": {
+    "lm_api_token_present": true,
+    "token_value_recorded": false
+  },
+  "base_url": "http://localhost:1234",
+  "chat_responses_text_agree": true,
+  "checks": {
+    "chat": {
+      "meta": {
+        "finish_reason": "stop",
+        "id": "chatcmpl-2s60lxqw6q3fywd4bo8wda",
+        "model": "qwen2.5-7b-instruct",
+        "system_fingerprint": "qwen2.5-7b-instruct"
+      },
+      "ok": true,
+      "request_meta": {
+        "endpoint": "/v1/chat/completions",
+        "logit_bias_used": false,
+        "seed_requested": 20260823,
+        "seed_sent": true,
+        "stateful_continuation_used": false
+      },
+      "text": "B",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 76,
+        "total_tokens": 78
+      }
+    },
+    "native_models_v0": {
+      "data": {
+        "data": [
+          {
+            "arch": "qwen2",
+            "capabilities": [
+              "tool_use"
+            ],
+            "compatibility_type": "gguf",
+            "id": "qwen2.5-7b-instruct",
+            "loaded_context_length": 32768,
+            "max_context_length": 32768,
+            "object": "model",
+            "publisher": "lmstudio-community",
+            "quantization": "Q4_K_M",
+            "state": "loaded",
+            "type": "llm"
+          },
+          {
+            "arch": "qwen35",
+            "capabilities": [
+              "tool_use"
+            ],
+            "compatibility_type": "gguf",
+            "id": "prism-ml/bonsai-27b",
+            "max_context_length": 262144,
+            "object": "model",
+            "publisher": "prism-ml",
+            "quantization": "Q1_0",
+            "state": "not-loaded",
+            "type": "vlm"
+          },
+          {
+            "arch": "gemma4",
+            "capabilities": [
+              "tool_use"
+            ],
+            "compatibility_type": "gguf",
+            "id": "google/gemma-4-e4b",
+            "max_context_length": 131072,
+            "object": "model",
+            "publisher": "google",
+            "quantization": "Q4_K_M",
+            "state": "not-loaded",
+            "type": "vlm"
+          },
+          {
+            "arch": "nomic-bert",
+            "compatibility_type": "gguf",
+            "id": "text-embedding-nomic-embed-text-v1.5",
+            "max_context_length": 2048,
+            "object": "model",
+            "publisher": "nomic-ai",
+            "quantization": "Q4_K_M",
+            "state": "not-loaded",
+            "type": "embeddings"
+          }
+        ],
+        "object": "list"
+      },
+      "ok": true
+    },
+    "native_models_v1": {
+      "data": {
+        "models": [
+          {
+            "architecture": "qwen2",
+            "capabilities": {
+              "trained_for_tool_use": true,
+              "vision": false
+            },
+            "description": null,
+            "display_name": "Qwen2.5 7B Instruct",
+            "format": "gguf",
+            "key": "qwen2.5-7b-instruct",
+            "loaded_instances": [
+              {
+                "config": {
+                  "context_checkpoints": 32,
+                  "context_length": 32768,
+                  "eval_batch_size": 2048,
+                  "flash_attention": true,
+                  "offload_kv_cache_to_gpu": true,
+                  "parallel": 4,
+                  "physical_batch_size": 512,
+                  "reasoning_budget_message": "",
+                  "speculative_draft_max_tokens": 16,
+                  "speculative_draft_min_continue_probability": 0.75,
+                  "speculative_draft_min_tokens": 0,
+                  "speculative_draft_model": "",
+                  "speculative_draft_mtp": false,
+                  "speculative_draft_simple": false
+                },
+                "id": "qwen2.5-7b-instruct"
+              }
+            ],
+            "max_context_length": 32768,
+            "params_string": "7B",
+            "publisher": "lmstudio-community",
+            "quantization": {
+              "bits_per_weight": 4,
+              "name": "Q4_K_M"
+            },
+            "size_bytes": 4683073952,
+            "type": "llm"
+          },
+          {
+            "architecture": "qwen35",
+            "capabilities": {
+              "reasoning": {
+                "allowed_options": [
+                  "off",
+                  "on"
+                ],
+                "default": "on"
+              },
+              "trained_for_tool_use": true,
+              "vision": true
+            },
+            "description": null,
+            "display_name": "Bonsai 27B",
+            "format": "gguf",
+            "key": "prism-ml/bonsai-27b",
+            "loaded_instances": [],
+            "max_context_length": 262144,
+            "params_string": "27B",
+            "publisher": "prism-ml",
+            "quantization": {
+              "bits_per_weight": 1,
+              "name": "Q1_0"
+            },
+            "selected_variant": "prism-ml/bonsai-27b@q1_0",
+            "size_bytes": 4734614604,
+            "type": "llm",
+            "variants": [
+              "prism-ml/bonsai-27b@q1_0"
+            ]
+          },
+          {
+            "architecture": "gemma4",
+            "capabilities": {
+              "reasoning": {
+                "allowed_options": [
+                  "off",
+                  "on"
+                ],
+                "default": "on"
+              },
+              "trained_for_tool_use": true,
+              "vision": true
+            },
+            "description": null,
+            "display_name": "Gemma 4 E4B",
+            "format": "gguf",
+            "key": "google/gemma-4-e4b",
+            "loaded_instances": [],
+            "max_context_length": 131072,
+            "params_string": "7.5B",
+            "publisher": "google",
+            "quantization": {
+              "bits_per_weight": 4,
+              "name": "Q4_K_M"
+            },
+            "selected_variant": "google/gemma-4-e4b@q4_k_m",
+            "size_bytes": 6326936720,
+            "type": "llm",
+            "variants": [
+              "google/gemma-4-e4b@q4_k_m"
+            ]
+          },
+          {
+            "display_name": "Nomic Embed Text v1.5",
+            "format": "gguf",
+            "key": "text-embedding-nomic-embed-text-v1.5",
+            "loaded_instances": [],
+            "max_context_length": 2048,
+            "params_string": null,
+            "publisher": "nomic-ai",
+            "quantization": {
+              "bits_per_weight": 4,
+              "name": "Q4_K_M"
+            },
+            "size_bytes": 84106624,
+            "type": "embedding"
+          }
+        ]
+      },
+      "ok": true
+    },
+    "openai_models": {
+      "data": {
+        "data": [
+          {
+            "id": "qwen2.5-7b-instruct",
+            "object": "model",
+            "owned_by": "organization_owner"
+          },
+          {
+            "id": "prism-ml/bonsai-27b",
+            "object": "model",
+            "owned_by": "organization_owner"
+          },
+          {
+            "id": "google/gemma-4-e4b",
+            "object": "model",
+            "owned_by": "organization_owner"
+          },
+          {
+            "id": "text-embedding-nomic-embed-text-v1.5",
+            "object": "model",
+            "owned_by": "organization_owner"
+          }
+        ],
+        "object": "list"
+      },
+      "ok": true
+    },
+    "responses": {
+      "has_logprobs": true,
+      "meta": {
+        "id": "resp_92831c879312fbb817aeb11f3f6f778544563334429c158f",
+        "model": "qwen2.5-7b-instruct",
+        "status": "completed"
+      },
+      "ok": true,
+      "request_meta": {
+        "endpoint": "/v1/responses",
+        "logit_bias_used": false,
+        "logprobs_requested": true,
+        "previous_response_id": null,
+        "seed_rejected": false,
+        "seed_requested": 20260823,
+        "seed_sent": true,
+        "stateful_continuation_used": false,
+        "top_logprobs_requested": 20
+      },
+      "text": "B",
+      "token_logprobs": [
+        {
+          "bytes": [
+            66
+          ],
+          "logprob": 0,
+          "token": "B",
+          "top_logprobs": [
+            {
+              "bytes": [
+                66
+              ],
+              "logprob": 0,
+              "token": "B"
+            },
+            {
+              "bytes": [
+                68
+              ],
+              "logprob": -24.267112731933594,
+              "token": "D"
+            },
+            {
+              "bytes": [
+                65
+              ],
+              "logprob": -25.32960319519043,
+              "token": "A"
+            },
+            {
+              "bytes": [
+                67
+              ],
+              "logprob": -26.918720245361328,
+              "token": "C"
+            },
+            {
+              "bytes": [
+                208,
+                145
+              ],
+              "logprob": -28.443180084228516,
+              "token": "Б"
+            },
+            {
+              "bytes": [
+                95,
+                66
+              ],
+              "logprob": -28.474014282226562,
+              "token": "_B"
+            },
+            {
+              "bytes": [
+                42,
+                66
+              ],
+              "logprob": -28.82398796081543,
+              "token": "*B"
+            },
+            {
+              "bytes": [
+                239,
+                188,
+                162
+              ],
+              "logprob": -30.088340759277344,
+              "token": "Ｂ"
+            },
+            {
+              "bytes": [
+                9,
+                66
+              ],
+              "logprob": -30.153919219970703,
+              "token": "\tB"
+            },
+            {
+              "bytes": [
+                69
+              ],
+              "logprob": -31.2015323638916,
+              "token": "E"
+            },
+            {
+              "bytes": [
+                39,
+                66
+              ],
+              "logprob": -31.286792755126953,
+              "token": "'B"
+            },
+            {
+              "bytes": [
+                32,
+                66
+              ],
+              "logprob": -31.32544708251953,
+              "token": " B"
+            },
+            {
+              "bytes": [
+                46,
+                66
+              ],
+              "logprob": -31.339073181152344,
+              "token": ".B"
+            },
+            {
+              "bytes": [
+                58,
+                66
+              ],
+              "logprob": -31.87847137451172,
+              "token": ":B"
+            },
+            {
+              "bytes": [
+                34,
+                66
+              ],
+              "logprob": -31.946697235107422,
+              "token": "\"B"
+            },
+            {
+              "bytes": [
+                206,
+                146
+              ],
+              "logprob": -31.980344772338867,
+              "token": "Β"
+            },
+            {
+              "bytes": [
+                62,
+                66
+              ],
+              "logprob": -32.29539489746094,
+              "token": ">B"
+            },
+            {
+              "bytes": [
+                226,
+                128,
+                153,
+                66
+              ],
+              "logprob": -32.36833190917969,
+              "token": "’B"
+            },
+            {
+              "bytes": [
+                72
+              ],
+              "logprob": -32.94162368774414,
+              "token": "H"
+            },
+            {
+              "bytes": [
+                45,
+                66
+              ],
+              "logprob": -33.234344482421875,
+              "token": "-B"
+            }
+          ]
+        }
+      ],
+      "usage": {
+        "input_tokens": 76,
+        "input_tokens_details": {
+          "cached_tokens": 75
+        },
+        "output_tokens": 1,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 77
+      }
+    }
+  },
+  "configured_model_id": "qwen2.5-7b-instruct",
+  "created_at_utc": "2026-08-24T11:10:48.882344+00:00",
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.9 (tags/v3.13.9:8183fa5, Oct 14 2025, 14:09:13) [MSC v.1944 64 bit (AMD64)]",
+    "requests_version": "2.34.2"
+  },
+  "full_run_preflight": {
+    "action_if_not_ready": null,
+    "chat_available": true,
+    "chat_response_model": "qwen2.5-7b-instruct",
+    "ready_for_primary_transport": true,
+    "responses_available": true,
+    "responses_logprobs_available": true,
+    "responses_response_model": "qwen2.5-7b-instruct",
+    "route_identity_ok": true
+  },
+  "harness_version": "0.1.3",
+  "model_identity": {
+    "blocking_reasons": [],
+    "configured_model_id": "qwen2.5-7b-instruct",
+    "expected_model": {
+      "architecture": "qwen2",
+      "display_name_contains": [
+        "Qwen2.5",
+        "7B",
+        "Instruct"
+      ],
+      "display_name_forbids": [
+        "VL",
+        "Coder",
+        "Math"
+      ],
+      "format": "gguf",
+      "params_string": "7B",
+      "quantization": "Q4_K_M",
+      "require_exactly_one_loaded_instance": true,
+      "vision": false
+    },
+    "matching_loaded_candidates": [
+      {
+        "architecture": "qwen2",
+        "display_name": "Qwen2.5 7B Instruct",
+        "key": "qwen2.5-7b-instruct",
+        "params_string": "7B",
+        "quantization": "Q4_K_M",
+        "selected_variant": null
+      }
+    ],
+    "model_snapshot": {
+      "architecture": "qwen2",
+      "capabilities": {
+        "trained_for_tool_use": true,
+        "vision": false
+      },
+      "display_name": "Qwen2.5 7B Instruct",
+      "format": "gguf",
+      "key": "qwen2.5-7b-instruct",
+      "loaded_instance_config": {
+        "context_checkpoints": 32,
+        "context_length": 32768,
+        "eval_batch_size": 2048,
+        "flash_attention": true,
+        "offload_kv_cache_to_gpu": true,
+        "parallel": 4,
+        "physical_batch_size": 512,
+        "reasoning_budget_message": "",
+        "speculative_draft_max_tokens": 16,
+        "speculative_draft_min_continue_probability": 0.75,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_model": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false
+      },
+      "loaded_instance_count": 1,
+      "max_context_length": 32768,
+      "params_string": "7B",
+      "quantization": {
+        "bits_per_weight": 4,
+        "name": "Q4_K_M"
+      },
+      "selected_variant": null,
+      "size_bytes": 4683073952
+    },
+    "model_snapshot_sha256": "c7f1611cdbb7d8754610eed45c82691d62eb8bce3aeaef410a99afdde3edb431",
+    "native_exact_key_present": true,
+    "openai_exact_id_present": true,
+    "profile_mismatches": [],
+    "status": "PASS"
+  },
+  "recommended_transport": "responses",
+  "resolved_model_id": "qwen2.5-7b-instruct",
+  "schema_version": "ccrc.syco30.doctor.v0.1.3",
+  "status": "PASS"
+}

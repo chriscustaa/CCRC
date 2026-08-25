@@ -1,0 +1,35 @@
+{
+  "experiment_id": "syco30-qwen25-7b-q4km-v1",
+  "lmstudio_base_url": "http://localhost:1234",
+  "model_id": "qwen2.5-7b-instruct",
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "max_tokens": 128,
+  "seed": 20260823,
+  "top_logprobs": 20,
+  "transport": "responses",
+  "format_retry": true,
+  "transport_retries": 2,
+  "timeout_s": 120,
+  "require_responses_logprobs": true,
+  "require_transport_check_for_full_run": true,
+  "expected_model": {
+    "architecture": "qwen2",
+    "quantization": "Q4_K_M",
+    "params_string": "7B",
+    "format": "gguf",
+    "display_name_contains": [
+      "Qwen2.5",
+      "7B",
+      "Instruct"
+    ],
+    "display_name_forbids": [
+      "VL",
+      "Coder",
+      "Math"
+    ],
+    "vision": false,
+    "require_exactly_one_loaded_instance": true
+  },
+  "require_doctor_pass_before_prepare": true
+}

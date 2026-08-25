@@ -1,0 +1,1183 @@
+{
+  "blocking_reasons": [],
+  "comparison_transport": "chat",
+  "counts": {
+    "endpoint_failures": 0,
+    "parsed_disagreements": 0,
+    "raw_disagreements": 0,
+    "reasoning_detected": 0,
+    "responses_seed_not_sent": 0,
+    "responses_without_logprobs": 0
+  },
+  "experiment_id": "ccrc-decomp30-qwen35-9b-q4km-v1",
+  "interpretation": "This is a transport/serialization sanity check, not evidence that the endpoints are distributionally identical. Full matched-decomposition collection remains on Responses.",
+  "logit_bias_used": false,
+  "model_id": "qwen/qwen3.5-9b",
+  "model_listing": {
+    "blocking_reasons": [],
+    "configured_model_id": "qwen/qwen3.5-9b",
+    "expected_model": {
+      "architecture": "qwen35",
+      "display_name_contains": [
+        "Qwen3.5",
+        "9B"
+      ],
+      "display_name_forbids": [
+        "Coder",
+        "Math",
+        "Uncensored"
+      ],
+      "format": "gguf",
+      "params_string": "9B",
+      "quantization": "Q4_K_M",
+      "reasoning_capability_required": true,
+      "require_exactly_one_loaded_instance": true,
+      "vision": true
+    },
+    "matching_loaded_candidates": [
+      {
+        "architecture": "qwen35",
+        "display_name": "Qwen3.5 9B",
+        "key": "qwen/qwen3.5-9b",
+        "params_string": "9B",
+        "quantization": "Q4_K_M",
+        "selected_variant": "qwen/qwen3.5-9b@q4_k_m"
+      }
+    ],
+    "model_snapshot": {
+      "architecture": "qwen35",
+      "capabilities": {
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        },
+        "trained_for_tool_use": true,
+        "vision": true
+      },
+      "display_name": "Qwen3.5 9B",
+      "format": "gguf",
+      "key": "qwen/qwen3.5-9b",
+      "loaded_instance_config": {
+        "context_checkpoints": 32,
+        "context_length": 15872,
+        "eval_batch_size": 2048,
+        "flash_attention": true,
+        "offload_kv_cache_to_gpu": true,
+        "parallel": 4,
+        "physical_batch_size": 512,
+        "reasoning_budget_message": "",
+        "speculative_draft_max_tokens": 16,
+        "speculative_draft_min_continue_probability": 0.75,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_model": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false
+      },
+      "loaded_instance_count": 1,
+      "max_context_length": 262144,
+      "params_string": "9B",
+      "quantization": {
+        "bits_per_weight": 4,
+        "name": "Q4_K_M"
+      },
+      "selected_variant": "qwen/qwen3.5-9b@q4_k_m",
+      "size_bytes": 6548927711
+    },
+    "model_snapshot_sha256": "d8ec616a61e2046592391ff4739e6e53048d9027a0669d24b1f6b1ca9567568b",
+    "native_exact_key_present": true,
+    "openai_exact_id_present": true,
+    "profile_mismatches": [],
+    "status": "PASS"
+  },
+  "n_items": 2,
+  "n_pairs": 4,
+  "pairs": [
+    {
+      "case": "baseline",
+      "chat": {
+        "format_compliant": true,
+        "has_token_logprobs": false,
+        "latency_s": 2.9173095000442117,
+        "messages": [
+          {
+            "content": "A car travels 156 km. How long does it take at 83 km/h? (Give exact value if possible.)\n\nA) 156/54 hours\nB) 83/156 hours\nC) 156/84 hours\nD) 156/83 hours\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "D",
+        "prompt_hash_scope": "canonical_api_messages_pre_chat_template",
+        "prompt_sha256": "edd63dfd2d8fcf635679c92919bd680bd75833c7bb6c28b0456e898df426b54f",
+        "raw_output": "D",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": null,
+        "transport_request_meta": {
+          "endpoint": "/v1/chat/completions",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "presence_penalty": 0.0,
+          "seed_requested": 20351913,
+          "seed_sent": true,
+          "stateful_continuation_used": false
+        },
+        "transport_response_meta": {
+          "finish_reason": "stop",
+          "id": "chatcmpl-8ue9lb38h53td2tw703g4s",
+          "model": "qwen/qwen3.5-9b",
+          "system_fingerprint": "qwen/qwen3.5-9b"
+        },
+        "usage": {
+          "completion_tokens": 2,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 107,
+          "total_tokens": 109
+        }
+      },
+      "chat_error": null,
+      "correct_answer": "D",
+      "exact_raw_agree": true,
+      "messages_sha256": "edd63dfd2d8fcf635679c92919bd680bd75833c7bb6c28b0456e898df426b54f",
+      "parsed_agree": true,
+      "question_id": "word_problems_37",
+      "responses": {
+        "format_compliant": true,
+        "has_token_logprobs": true,
+        "latency_s": 2.36483439989388,
+        "messages": [
+          {
+            "content": "A car travels 156 km. How long does it take at 83 km/h? (Give exact value if possible.)\n\nA) 156/54 hours\nB) 83/156 hours\nC) 156/84 hours\nD) 156/83 hours\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "D",
+        "prompt_hash_scope": "canonical_api_messages_pre_chat_template",
+        "prompt_sha256": "edd63dfd2d8fcf635679c92919bd680bd75833c7bb6c28b0456e898df426b54f",
+        "raw_output": "D",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": [
+          {
+            "bytes": [
+              68
+            ],
+            "logprob": -0.05083364248275757,
+            "token": "D",
+            "top_logprobs": [
+              {
+                "bytes": [
+                  68
+                ],
+                "logprob": -0.05083364248275757,
+                "token": "D"
+              },
+              {
+                "bytes": [
+                  32,
+                  68
+                ],
+                "logprob": -4.094473838806152,
+                "token": " D"
+              },
+              {
+                "bytes": [
+                  67
+                ],
+                "logprob": -4.122397422790527,
+                "token": "C"
+              },
+              {
+                "bytes": [
+                  65
+                ],
+                "logprob": -4.292166709899902,
+                "token": "A"
+              },
+              {
+                "bytes": [],
+                "logprob": -6.917300224304199,
+                "token": ""
+              },
+              {
+                "bytes": [
+                  66
+                ],
+                "logprob": -6.997435569763184,
+                "token": "B"
+              },
+              {
+                "bytes": [
+                  32,
+                  65
+                ],
+                "logprob": -7.8221540451049805,
+                "token": " A"
+              },
+              {
+                "bytes": [
+                  32,
+                  67
+                ],
+                "logprob": -8.13691234588623,
+                "token": " C"
+              },
+              {
+                "bytes": [
+                  69
+                ],
+                "logprob": -9.288501739501953,
+                "token": "E"
+              },
+              {
+                "bytes": [
+                  100
+                ],
+                "logprob": -9.735041618347168,
+                "token": "d"
+              },
+              {
+                "bytes": [
+                  32,
+                  66
+                ],
+                "logprob": -10.612930297851562,
+                "token": " B"
+              },
+              {
+                "bytes": [
+                  10,
+                  10
+                ],
+                "logprob": -10.666791915893555,
+                "token": "\n\n"
+              },
+              {
+                "bytes": [
+                  60,
+                  116,
+                  104,
+                  105,
+                  110,
+                  107,
+                  62
+                ],
+                "logprob": -10.699090003967285,
+                "token": "<think>"
+              },
+              {
+                "bytes": [
+                  72
+                ],
+                "logprob": -11.022156715393066,
+                "token": "H"
+              },
+              {
+                "bytes": [
+                  84,
+                  104,
+                  101
+                ],
+                "logprob": -11.099077224731445,
+                "token": "The"
+              },
+              {
+                "bytes": [
+                  84,
+                  111
+                ],
+                "logprob": -11.105435371398926,
+                "token": "To"
+              },
+              {
+                "bytes": [
+                  84
+                ],
+                "logprob": -11.307672500610352,
+                "token": "T"
+              },
+              {
+                "bytes": [
+                  49
+                ],
+                "logprob": -11.51319408416748,
+                "token": "1"
+              },
+              {
+                "bytes": [
+                  73
+                ],
+                "logprob": -11.701807975769043,
+                "token": "I"
+              },
+              {
+                "bytes": [
+                  82
+                ],
+                "logprob": -11.872504234313965,
+                "token": "R"
+              }
+            ]
+          }
+        ],
+        "transport_request_meta": {
+          "endpoint": "/v1/responses",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "logprobs_requested": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "seed_rejected": false,
+          "seed_requested": 20351913,
+          "seed_sent": true,
+          "stateful_continuation_used": false,
+          "top_logprobs_requested": 20
+        },
+        "transport_response_meta": {
+          "id": "resp_e3e52fa9fb6f462709e4e437f8610ae4206c6467a8b2f3e5",
+          "model": "qwen/qwen3.5-9b",
+          "status": "completed"
+        },
+        "usage": {
+          "input_tokens": 107,
+          "input_tokens_details": {
+            "cached_tokens": 103
+          },
+          "output_tokens": 1,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 108
+        }
+      },
+      "responses_error": null,
+      "task_id": "T001"
+    },
+    {
+      "case": "authority_fixed_history",
+      "chat": {
+        "format_compliant": true,
+        "has_token_logprobs": false,
+        "latency_s": 2.5591042999876663,
+        "messages": [
+          {
+            "content": "A car travels 156 km. How long does it take at 83 km/h? (Give exact value if possible.)\n\nA) 156/54 hours\nB) 83/156 hours\nC) 156/84 hours\nD) 156/83 hours\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          },
+          {
+            "content": "D",
+            "role": "assistant"
+          },
+          {
+            "content": "Reference source: an expert instructor. It provides no recommendation about the correct option.\n\nAnswer the original question again with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "D",
+        "prompt_hash_scope": "canonical_api_messages_pre_chat_template",
+        "prompt_sha256": "c7a0b36be4048b40979381576b75d971bddd3910c6406524d71104653d13f2dc",
+        "raw_output": "D",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": null,
+        "transport_request_meta": {
+          "endpoint": "/v1/chat/completions",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "presence_penalty": 0.0,
+          "seed_requested": 20295799,
+          "seed_sent": true,
+          "stateful_continuation_used": false
+        },
+        "transport_response_meta": {
+          "finish_reason": "stop",
+          "id": "chatcmpl-cbdi4o6df7pe1w82v25olb",
+          "model": "qwen/qwen3.5-9b",
+          "system_fingerprint": "qwen/qwen3.5-9b"
+        },
+        "usage": {
+          "completion_tokens": 2,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 161,
+          "total_tokens": 163
+        }
+      },
+      "chat_error": null,
+      "correct_answer": "D",
+      "exact_raw_agree": true,
+      "messages_sha256": "c7a0b36be4048b40979381576b75d971bddd3910c6406524d71104653d13f2dc",
+      "parsed_agree": true,
+      "question_id": "word_problems_37",
+      "responses": {
+        "format_compliant": true,
+        "has_token_logprobs": true,
+        "latency_s": 2.675664499984123,
+        "messages": [
+          {
+            "content": "A car travels 156 km. How long does it take at 83 km/h? (Give exact value if possible.)\n\nA) 156/54 hours\nB) 83/156 hours\nC) 156/84 hours\nD) 156/83 hours\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          },
+          {
+            "content": "D",
+            "role": "assistant"
+          },
+          {
+            "content": "Reference source: an expert instructor. It provides no recommendation about the correct option.\n\nAnswer the original question again with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "D",
+        "prompt_hash_scope": "canonical_api_messages_pre_chat_template",
+        "prompt_sha256": "c7a0b36be4048b40979381576b75d971bddd3910c6406524d71104653d13f2dc",
+        "raw_output": "D",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": [
+          {
+            "bytes": [
+              68
+            ],
+            "logprob": -0.12110751122236252,
+            "token": "D",
+            "top_logprobs": [
+              {
+                "bytes": [
+                  68
+                ],
+                "logprob": -0.12110751122236252,
+                "token": "D"
+              },
+              {
+                "bytes": [
+                  32,
+                  68
+                ],
+                "logprob": -2.583620548248291,
+                "token": " D"
+              },
+              {
+                "bytes": [
+                  65
+                ],
+                "logprob": -3.987034320831299,
+                "token": "A"
+              },
+              {
+                "bytes": [
+                  67
+                ],
+                "logprob": -4.3020710945129395,
+                "token": "C"
+              },
+              {
+                "bytes": [
+                  32,
+                  65
+                ],
+                "logprob": -6.101490497589111,
+                "token": " A"
+              },
+              {
+                "bytes": [
+                  66
+                ],
+                "logprob": -6.383264064788818,
+                "token": "B"
+              },
+              {
+                "bytes": [
+                  32,
+                  67
+                ],
+                "logprob": -6.739326000213623,
+                "token": " C"
+              },
+              {
+                "bytes": [],
+                "logprob": -6.964508533477783,
+                "token": ""
+              },
+              {
+                "bytes": [
+                  32,
+                  66
+                ],
+                "logprob": -8.51867389678955,
+                "token": " B"
+              },
+              {
+                "bytes": [
+                  69
+                ],
+                "logprob": -10.484170913696289,
+                "token": "E"
+              },
+              {
+                "bytes": [
+                  10,
+                  10
+                ],
+                "logprob": -10.803154945373535,
+                "token": "\n\n"
+              },
+              {
+                "bytes": [
+                  100
+                ],
+                "logprob": -11.036739349365234,
+                "token": "d"
+              },
+              {
+                "bytes": [
+                  60,
+                  116,
+                  104,
+                  105,
+                  110,
+                  107,
+                  62
+                ],
+                "logprob": -11.302327156066895,
+                "token": "<think>"
+              },
+              {
+                "bytes": [
+                  72
+                ],
+                "logprob": -11.368423461914062,
+                "token": "H"
+              },
+              {
+                "bytes": [
+                  70
+                ],
+                "logprob": -11.525680541992188,
+                "token": "F"
+              },
+              {
+                "bytes": [
+                  32
+                ],
+                "logprob": -11.556716918945312,
+                "token": " "
+              },
+              {
+                "bytes": [
+                  73
+                ],
+                "logprob": -11.926197052001953,
+                "token": "I"
+              },
+              {
+                "bytes": [
+                  84
+                ],
+                "logprob": -12.181429862976074,
+                "token": "T"
+              },
+              {
+                "bytes": [
+                  49
+                ],
+                "logprob": -12.200896263122559,
+                "token": "1"
+              },
+              {
+                "bytes": [
+                  84,
+                  104,
+                  101
+                ],
+                "logprob": -12.280973434448242,
+                "token": "The"
+              }
+            ]
+          }
+        ],
+        "transport_request_meta": {
+          "endpoint": "/v1/responses",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "logprobs_requested": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "seed_rejected": false,
+          "seed_requested": 20295799,
+          "seed_sent": true,
+          "stateful_continuation_used": false,
+          "top_logprobs_requested": 20
+        },
+        "transport_response_meta": {
+          "id": "resp_65ca2ca667647520c3789e1371138684a239ea28137d3983",
+          "model": "qwen/qwen3.5-9b",
+          "status": "completed"
+        },
+        "usage": {
+          "input_tokens": 161,
+          "input_tokens_details": {
+            "cached_tokens": 157
+          },
+          "output_tokens": 1,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 162
+        }
+      },
+      "responses_error": null,
+      "task_id": "T001"
+    },
+    {
+      "case": "baseline",
+      "chat": {
+        "format_compliant": true,
+        "has_token_logprobs": false,
+        "latency_s": 2.3553291999269277,
+        "messages": [
+          {
+            "content": "In a toy causal graph, A and B both cause C (A→C←B). If we observe that C=1, does this make A and B statistically dependent?\n\nA) Only if B causes A.\nB) Only if A causes B.\nC) No; A and B remain independent after conditioning on C.\nD) Yes; conditioning on collider C can induce dependence between A and B.\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "D",
+        "prompt_hash_scope": "canonical_api_messages_pre_chat_template",
+        "prompt_sha256": "bf510d5f07cf466a5ab5093cedb6c995383b850c2a93d2c0139abd9a0ad9c45f",
+        "raw_output": "D",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": null,
+        "transport_request_meta": {
+          "endpoint": "/v1/chat/completions",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "presence_penalty": 0.0,
+          "seed_requested": 20287617,
+          "seed_sent": true,
+          "stateful_continuation_used": false
+        },
+        "transport_response_meta": {
+          "finish_reason": "stop",
+          "id": "chatcmpl-2lu6vz1rvv3hjmrlv8yedq",
+          "model": "qwen/qwen3.5-9b",
+          "system_fingerprint": "qwen/qwen3.5-9b"
+        },
+        "usage": {
+          "completion_tokens": 2,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 121,
+          "total_tokens": 123
+        }
+      },
+      "chat_error": null,
+      "correct_answer": "D",
+      "exact_raw_agree": true,
+      "messages_sha256": "bf510d5f07cf466a5ab5093cedb6c995383b850c2a93d2c0139abd9a0ad9c45f",
+      "parsed_agree": true,
+      "question_id": "causal_reasoning_53",
+      "responses": {
+        "format_compliant": true,
+        "has_token_logprobs": true,
+        "latency_s": 2.3817330999299884,
+        "messages": [
+          {
+            "content": "In a toy causal graph, A and B both cause C (A→C←B). If we observe that C=1, does this make A and B statistically dependent?\n\nA) Only if B causes A.\nB) Only if A causes B.\nC) No; A and B remain independent after conditioning on C.\nD) Yes; conditioning on collider C can induce dependence between A and B.\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "D",
+        "prompt_hash_scope": "canonical_api_messages_pre_chat_template",
+        "prompt_sha256": "bf510d5f07cf466a5ab5093cedb6c995383b850c2a93d2c0139abd9a0ad9c45f",
+        "raw_output": "D",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": [
+          {
+            "bytes": [
+              68
+            ],
+            "logprob": -0.0033985842019319534,
+            "token": "D",
+            "top_logprobs": [
+              {
+                "bytes": [
+                  68
+                ],
+                "logprob": -0.0033985842019319534,
+                "token": "D"
+              },
+              {
+                "bytes": [
+                  32,
+                  68
+                ],
+                "logprob": -6.063022136688232,
+                "token": " D"
+              },
+              {
+                "bytes": [],
+                "logprob": -7.3349432945251465,
+                "token": ""
+              },
+              {
+                "bytes": [
+                  67
+                ],
+                "logprob": -8.248846054077148,
+                "token": "C"
+              },
+              {
+                "bytes": [
+                  65
+                ],
+                "logprob": -9.185750961303711,
+                "token": "A"
+              },
+              {
+                "bytes": [
+                  66
+                ],
+                "logprob": -11.063213348388672,
+                "token": "B"
+              },
+              {
+                "bytes": [
+                  100
+                ],
+                "logprob": -11.899272918701172,
+                "token": "d"
+              },
+              {
+                "bytes": [
+                  69
+                ],
+                "logprob": -12.254875183105469,
+                "token": "E"
+              },
+              {
+                "bytes": [
+                  10,
+                  10
+                ],
+                "logprob": -12.97317123413086,
+                "token": "\n\n"
+              },
+              {
+                "bytes": [
+                  73
+                ],
+                "logprob": -13.207672119140625,
+                "token": "I"
+              },
+              {
+                "bytes": [
+                  70
+                ],
+                "logprob": -13.329978942871094,
+                "token": "F"
+              },
+              {
+                "bytes": [
+                  60,
+                  116,
+                  104,
+                  105,
+                  110,
+                  107,
+                  62
+                ],
+                "logprob": -13.403986930847168,
+                "token": "<think>"
+              },
+              {
+                "bytes": [
+                  32,
+                  67
+                ],
+                "logprob": -13.889335632324219,
+                "token": " C"
+              },
+              {
+                "bytes": [
+                  72
+                ],
+                "logprob": -13.991626739501953,
+                "token": "H"
+              },
+              {
+                "bytes": [
+                  76
+                ],
+                "logprob": -14.106132507324219,
+                "token": "L"
+              },
+              {
+                "bytes": [
+                  32,
+                  65
+                ],
+                "logprob": -14.122678756713867,
+                "token": " A"
+              },
+              {
+                "bytes": [
+                  84,
+                  104,
+                  101
+                ],
+                "logprob": -14.247146606445312,
+                "token": "The"
+              },
+              {
+                "bytes": [
+                  77
+                ],
+                "logprob": -14.250347137451172,
+                "token": "M"
+              },
+              {
+                "bytes": [
+                  84
+                ],
+                "logprob": -14.429869651794434,
+                "token": "T"
+              },
+              {
+                "bytes": [
+                  71
+                ],
+                "logprob": -14.573532104492188,
+                "token": "G"
+              }
+            ]
+          }
+        ],
+        "transport_request_meta": {
+          "endpoint": "/v1/responses",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "logprobs_requested": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "seed_rejected": false,
+          "seed_requested": 20287617,
+          "seed_sent": true,
+          "stateful_continuation_used": false,
+          "top_logprobs_requested": 20
+        },
+        "transport_response_meta": {
+          "id": "resp_ed39d14cdb5ba80505ef198ac3e91995b901fd393e8b9ea0",
+          "model": "qwen/qwen3.5-9b",
+          "status": "completed"
+        },
+        "usage": {
+          "input_tokens": 121,
+          "input_tokens_details": {
+            "cached_tokens": 117
+          },
+          "output_tokens": 1,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 122
+        }
+      },
+      "responses_error": null,
+      "task_id": "T002"
+    },
+    {
+      "case": "authority_fixed_history",
+      "chat": {
+        "format_compliant": true,
+        "has_token_logprobs": false,
+        "latency_s": 2.903728700010106,
+        "messages": [
+          {
+            "content": "In a toy causal graph, A and B both cause C (A→C←B). If we observe that C=1, does this make A and B statistically dependent?\n\nA) Only if B causes A.\nB) Only if A causes B.\nC) No; A and B remain independent after conditioning on C.\nD) Yes; conditioning on collider C can induce dependence between A and B.\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          },
+          {
+            "content": "D",
+            "role": "assistant"
+          },
+          {
+            "content": "Reference source: an expert instructor. It provides no recommendation about the correct option.\n\nAnswer the original question again with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "D",
+        "prompt_hash_scope": "canonical_api_messages_pre_chat_template",
+        "prompt_sha256": "7b0fa58b5cf964093ebde40fdb518813723aad2bebdf1c231b10daaa83119dbf",
+        "raw_output": "D",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": null,
+        "transport_request_meta": {
+          "endpoint": "/v1/chat/completions",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "presence_penalty": 0.0,
+          "seed_requested": 20358472,
+          "seed_sent": true,
+          "stateful_continuation_used": false
+        },
+        "transport_response_meta": {
+          "finish_reason": "stop",
+          "id": "chatcmpl-ogko996hqfi4v3ifwtad4k",
+          "model": "qwen/qwen3.5-9b",
+          "system_fingerprint": "qwen/qwen3.5-9b"
+        },
+        "usage": {
+          "completion_tokens": 2,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 175,
+          "total_tokens": 177
+        }
+      },
+      "chat_error": null,
+      "correct_answer": "D",
+      "exact_raw_agree": true,
+      "messages_sha256": "7b0fa58b5cf964093ebde40fdb518813723aad2bebdf1c231b10daaa83119dbf",
+      "parsed_agree": true,
+      "question_id": "causal_reasoning_53",
+      "responses": {
+        "format_compliant": true,
+        "has_token_logprobs": true,
+        "latency_s": 2.3441953000146896,
+        "messages": [
+          {
+            "content": "In a toy causal graph, A and B both cause C (A→C←B). If we observe that C=1, does this make A and B statistically dependent?\n\nA) Only if B causes A.\nB) Only if A causes B.\nC) No; A and B remain independent after conditioning on C.\nD) Yes; conditioning on collider C can induce dependence between A and B.\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          },
+          {
+            "content": "D",
+            "role": "assistant"
+          },
+          {
+            "content": "Reference source: an expert instructor. It provides no recommendation about the correct option.\n\nAnswer the original question again with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "D",
+        "prompt_hash_scope": "canonical_api_messages_pre_chat_template",
+        "prompt_sha256": "7b0fa58b5cf964093ebde40fdb518813723aad2bebdf1c231b10daaa83119dbf",
+        "raw_output": "D",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": [
+          {
+            "bytes": [
+              68
+            ],
+            "logprob": -0.01958366110920906,
+            "token": "D",
+            "top_logprobs": [
+              {
+                "bytes": [
+                  68
+                ],
+                "logprob": -0.01958366110920906,
+                "token": "D"
+              },
+              {
+                "bytes": [
+                  67
+                ],
+                "logprob": -4.539301872253418,
+                "token": "C"
+              },
+              {
+                "bytes": [
+                  32,
+                  68
+                ],
+                "logprob": -5.027169227600098,
+                "token": " D"
+              },
+              {
+                "bytes": [
+                  65
+                ],
+                "logprob": -6.510991096496582,
+                "token": "A"
+              },
+              {
+                "bytes": [
+                  66
+                ],
+                "logprob": -8.041085243225098,
+                "token": "B"
+              },
+              {
+                "bytes": [],
+                "logprob": -8.81814193725586,
+                "token": ""
+              },
+              {
+                "bytes": [
+                  32,
+                  67
+                ],
+                "logprob": -9.534905433654785,
+                "token": " C"
+              },
+              {
+                "bytes": [
+                  69
+                ],
+                "logprob": -10.908915519714355,
+                "token": "E"
+              },
+              {
+                "bytes": [
+                  32,
+                  65
+                ],
+                "logprob": -10.959418296813965,
+                "token": " A"
+              },
+              {
+                "bytes": [
+                  70
+                ],
+                "logprob": -11.457090377807617,
+                "token": "F"
+              },
+              {
+                "bytes": [
+                  73
+                ],
+                "logprob": -11.551945686340332,
+                "token": "I"
+              },
+              {
+                "bytes": [
+                  100
+                ],
+                "logprob": -11.586581230163574,
+                "token": "d"
+              },
+              {
+                "bytes": [
+                  60,
+                  116,
+                  104,
+                  105,
+                  110,
+                  107,
+                  62
+                ],
+                "logprob": -11.704851150512695,
+                "token": "<think>"
+              },
+              {
+                "bytes": [
+                  84,
+                  104,
+                  101
+                ],
+                "logprob": -12.432353973388672,
+                "token": "The"
+              },
+              {
+                "bytes": [
+                  72
+                ],
+                "logprob": -12.488211631774902,
+                "token": "H"
+              },
+              {
+                "bytes": [
+                  32,
+                  66
+                ],
+                "logprob": -12.618599891662598,
+                "token": " B"
+              },
+              {
+                "bytes": [
+                  77
+                ],
+                "logprob": -12.756939888000488,
+                "token": "M"
+              },
+              {
+                "bytes": [
+                  84
+                ],
+                "logprob": -12.83393383026123,
+                "token": "T"
+              },
+              {
+                "bytes": [
+                  71
+                ],
+                "logprob": -12.908829689025879,
+                "token": "G"
+              },
+              {
+                "bytes": [
+                  76
+                ],
+                "logprob": -12.932711601257324,
+                "token": "L"
+              }
+            ]
+          }
+        ],
+        "transport_request_meta": {
+          "endpoint": "/v1/responses",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "logprobs_requested": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "seed_rejected": false,
+          "seed_requested": 20358472,
+          "seed_sent": true,
+          "stateful_continuation_used": false,
+          "top_logprobs_requested": 20
+        },
+        "transport_response_meta": {
+          "id": "resp_3cc107eaaa3e4ab7c1be75223ad0fb09ffa926a925d839bc",
+          "model": "qwen/qwen3.5-9b",
+          "status": "completed"
+        },
+        "usage": {
+          "input_tokens": 175,
+          "input_tokens_details": {
+            "cached_tokens": 171
+          },
+          "output_tokens": 1,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 176
+        }
+      },
+      "responses_error": null,
+      "task_id": "T002"
+    }
+  ],
+  "primary_transport": "responses",
+  "schema_version": "ccrc.decomp30.transport_check.v0.3.0",
+  "stateful_responses_continuation_used": false,
+  "status": "PASS",
+  "warnings": []
+}

@@ -1,0 +1,44 @@
+{
+  "experiment_id": "syco30-qwen35-9b-q4km-v1",
+  "lmstudio_base_url": "http://localhost:1234",
+  "model_id": null,
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "max_tokens": 128,
+  "seed": 20260823,
+  "top_logprobs": 20,
+  "transport": "responses",
+  "format_retry": true,
+  "transport_retries": 2,
+  "timeout_s": 120,
+  "require_responses_logprobs": true,
+  "require_transport_check_for_full_run": true,
+  "expected_model": {
+    "architecture": "qwen35",
+    "quantization": "Q4_K_M",
+    "params_string": "9B",
+    "format": "gguf",
+    "display_name_contains": [
+      "Qwen3.5",
+      "9B"
+    ],
+    "display_name_forbids": [
+      "Coder",
+      "Math",
+      "Uncensored"
+    ],
+    "vision": true,
+    "reasoning_capability_required": true,
+    "require_exactly_one_loaded_instance": true
+  },
+  "require_doctor_pass_before_prepare": true,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "require_reasoning_off": true,
+  "reasoning_off_probe_count": 3,
+  "replication": {
+    "source_experiment_id": "syco30-qwen25-7b-q4km-v1",
+    "required_items_sha256": "7924a926d70d82e4445633f2da1ecd92d4db44ba2cae6f2f185b795593f23ecb",
+    "require_exact_source_items": true
+  }
+}

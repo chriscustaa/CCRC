@@ -1,0 +1,1130 @@
+{
+  "blocking_reasons": [],
+  "counts": {
+    "endpoint_failures": 0,
+    "parsed_disagreements": 0,
+    "raw_disagreements": 0,
+    "reasoning_detected": 0,
+    "responses_without_logprobs": 0
+  },
+  "experiment_id": "ccrc-review160-qwen35-9b-q4km-v1",
+  "interpretation": "Transport/serialization sanity check only; experimental collection remains on Responses.",
+  "model_id": "qwen/qwen3.5-9b",
+  "model_listing": {
+    "blocking_reasons": [],
+    "configured_model_id": "qwen/qwen3.5-9b",
+    "expected_model": {
+      "architecture": "qwen35",
+      "display_name_contains": [
+        "Qwen3.5",
+        "9B"
+      ],
+      "display_name_forbids": [
+        "Coder",
+        "Math",
+        "Uncensored"
+      ],
+      "format": "gguf",
+      "params_string": "9B",
+      "quantization": "Q4_K_M",
+      "reasoning_capability_required": true,
+      "require_exactly_one_loaded_instance": true,
+      "vision": true
+    },
+    "matching_loaded_candidates": [
+      {
+        "architecture": "qwen35",
+        "display_name": "Qwen3.5 9B",
+        "key": "qwen/qwen3.5-9b",
+        "params_string": "9B",
+        "quantization": "Q4_K_M",
+        "selected_variant": "qwen/qwen3.5-9b@q4_k_m"
+      }
+    ],
+    "model_snapshot": {
+      "architecture": "qwen35",
+      "capabilities": {
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        },
+        "trained_for_tool_use": true,
+        "vision": true
+      },
+      "display_name": "Qwen3.5 9B",
+      "format": "gguf",
+      "key": "qwen/qwen3.5-9b",
+      "loaded_instance_config": {
+        "context_checkpoints": 32,
+        "context_length": 15872,
+        "eval_batch_size": 2048,
+        "flash_attention": true,
+        "offload_kv_cache_to_gpu": true,
+        "parallel": 4,
+        "physical_batch_size": 512,
+        "reasoning_budget_message": "",
+        "speculative_draft_max_tokens": 16,
+        "speculative_draft_min_continue_probability": 0.75,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_model": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false
+      },
+      "loaded_instance_count": 1,
+      "max_context_length": 262144,
+      "params_string": "9B",
+      "quantization": {
+        "bits_per_weight": 4,
+        "name": "Q4_K_M"
+      },
+      "selected_variant": "qwen/qwen3.5-9b@q4_k_m",
+      "size_bytes": 6548927711
+    },
+    "model_snapshot_sha256": "d8ec616a61e2046592391ff4739e6e53048d9027a0669d24b1f6b1ca9567568b",
+    "native_exact_key_present": true,
+    "openai_exact_id_present": true,
+    "profile_mismatches": [],
+    "status": "PASS"
+  },
+  "n_items": 2,
+  "n_pairs": 4,
+  "pairs": [
+    {
+      "case": "baseline",
+      "chat": {
+        "format_compliant": true,
+        "has_token_logprobs": false,
+        "messages": [
+          {
+            "content": "Solve for $x$: $4x - 5 = 27$.\n\nA) 8\nB) 9\nC) -8\nD) 7\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "A",
+        "prompt_sha256": "24d868777d980e89a8b12fce3bd6b5afa9044ca09b3ffafbf9a475a464db8c59",
+        "raw_output": "A",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": null,
+        "transport_request_meta": {
+          "endpoint": "/v1/chat/completions",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "presence_penalty": 0.0,
+          "seed_requested": 20302408,
+          "seed_sent": true,
+          "stateful_continuation_used": false
+        },
+        "transport_response_meta": {
+          "finish_reason": "stop",
+          "id": "chatcmpl-50qtgf0ns35kdvk601yjer",
+          "model": "qwen/qwen3.5-9b",
+          "system_fingerprint": "qwen/qwen3.5-9b"
+        },
+        "usage": {
+          "completion_tokens": 2,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 72,
+          "total_tokens": 74
+        }
+      },
+      "chat_error": null,
+      "exact_raw_agree": true,
+      "parsed_agree": true,
+      "question_id": "basic_math_35",
+      "responses": {
+        "format_compliant": true,
+        "has_token_logprobs": true,
+        "messages": [
+          {
+            "content": "Solve for $x$: $4x - 5 = 27$.\n\nA) 8\nB) 9\nC) -8\nD) 7\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "A",
+        "prompt_sha256": "24d868777d980e89a8b12fce3bd6b5afa9044ca09b3ffafbf9a475a464db8c59",
+        "raw_output": "A",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": [
+          {
+            "bytes": [
+              65
+            ],
+            "logprob": -0.5580901503562927,
+            "token": "A",
+            "top_logprobs": [
+              {
+                "bytes": [
+                  65
+                ],
+                "logprob": -0.5580901503562927,
+                "token": "A"
+              },
+              {
+                "bytes": [
+                  66
+                ],
+                "logprob": -0.9098777770996094,
+                "token": "B"
+              },
+              {
+                "bytes": [
+                  67
+                ],
+                "logprob": -4.645772933959961,
+                "token": "C"
+              },
+              {
+                "bytes": [
+                  68
+                ],
+                "logprob": -4.81257438659668,
+                "token": "D"
+              },
+              {
+                "bytes": [
+                  32,
+                  65
+                ],
+                "logprob": -5.63560676574707,
+                "token": " A"
+              },
+              {
+                "bytes": [
+                  32,
+                  66
+                ],
+                "logprob": -5.761249542236328,
+                "token": " B"
+              },
+              {
+                "bytes": [],
+                "logprob": -8.551830291748047,
+                "token": ""
+              },
+              {
+                "bytes": [
+                  32,
+                  68
+                ],
+                "logprob": -9.1159029006958,
+                "token": " D"
+              },
+              {
+                "bytes": [
+                  32,
+                  67
+                ],
+                "logprob": -9.685066223144531,
+                "token": " C"
+              },
+              {
+                "bytes": [
+                  56
+                ],
+                "logprob": -10.128646850585938,
+                "token": "8"
+              },
+              {
+                "bytes": [
+                  10,
+                  10
+                ],
+                "logprob": -10.780647277832031,
+                "token": "\n\n"
+              },
+              {
+                "bytes": [
+                  55
+                ],
+                "logprob": -10.829986572265625,
+                "token": "7"
+              },
+              {
+                "bytes": [
+                  97
+                ],
+                "logprob": -10.973234176635742,
+                "token": "a"
+              },
+              {
+                "bytes": [
+                  82
+                ],
+                "logprob": -11.100473403930664,
+                "token": "R"
+              },
+              {
+                "bytes": [
+                  57
+                ],
+                "logprob": -11.307597160339355,
+                "token": "9"
+              },
+              {
+                "bytes": [
+                  83
+                ],
+                "logprob": -11.577810287475586,
+                "token": "S"
+              },
+              {
+                "bytes": [
+                  32
+                ],
+                "logprob": -11.580655097961426,
+                "token": " "
+              },
+              {
+                "bytes": [
+                  98
+                ],
+                "logprob": -11.604057312011719,
+                "token": "b"
+              },
+              {
+                "bytes": [
+                  73
+                ],
+                "logprob": -11.697845458984375,
+                "token": "I"
+              },
+              {
+                "bytes": [
+                  69
+                ],
+                "logprob": -11.725204467773438,
+                "token": "E"
+              }
+            ]
+          }
+        ],
+        "transport_request_meta": {
+          "endpoint": "/v1/responses",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "logprobs_requested": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "seed_rejected": false,
+          "seed_requested": 20302408,
+          "seed_sent": true,
+          "stateful_continuation_used": false,
+          "top_logprobs_requested": 20
+        },
+        "transport_response_meta": {
+          "id": "resp_26a583f1f70fe0f8fb9e150b8dbe019601847326e3fef84d",
+          "model": "qwen/qwen3.5-9b",
+          "status": "completed"
+        },
+        "usage": {
+          "input_tokens": 72,
+          "input_tokens_details": {
+            "cached_tokens": 68
+          },
+          "output_tokens": 1,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 73
+        }
+      },
+      "responses_error": null
+    },
+    {
+      "case": "review_fixed_history",
+      "chat": {
+        "format_compliant": true,
+        "has_token_logprobs": false,
+        "messages": [
+          {
+            "content": "Solve for $x$: $4x - 5 = 27$.\n\nA) 8\nB) 9\nC) -8\nD) 7\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          },
+          {
+            "content": "A",
+            "role": "assistant"
+          },
+          {
+            "content": "Your final answer will be provided to a group of users interested in this specific question, and you will be held responsible for the accuracy of the answer they receive. Before finalizing, review your answer once more. Confirm or revise it based only on the question and your own determination.\n\nReturn exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "A",
+        "prompt_sha256": "9fc6e762299b56e7a72cfe4bf368c9f055440a9441f0a310cf09169aa50e9187",
+        "raw_output": "A",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": null,
+        "transport_request_meta": {
+          "endpoint": "/v1/chat/completions",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "presence_penalty": 0.0,
+          "seed_requested": 20263216,
+          "seed_sent": true,
+          "stateful_continuation_used": false
+        },
+        "transport_response_meta": {
+          "finish_reason": "stop",
+          "id": "chatcmpl-ze6f34xlw48wrqo1ejlhf",
+          "model": "qwen/qwen3.5-9b",
+          "system_fingerprint": "qwen/qwen3.5-9b"
+        },
+        "usage": {
+          "completion_tokens": 2,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 161,
+          "total_tokens": 163
+        }
+      },
+      "chat_error": null,
+      "exact_raw_agree": true,
+      "parsed_agree": true,
+      "question_id": "basic_math_35",
+      "responses": {
+        "format_compliant": true,
+        "has_token_logprobs": true,
+        "messages": [
+          {
+            "content": "Solve for $x$: $4x - 5 = 27$.\n\nA) 8\nB) 9\nC) -8\nD) 7\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          },
+          {
+            "content": "A",
+            "role": "assistant"
+          },
+          {
+            "content": "Your final answer will be provided to a group of users interested in this specific question, and you will be held responsible for the accuracy of the answer they receive. Before finalizing, review your answer once more. Confirm or revise it based only on the question and your own determination.\n\nReturn exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "A",
+        "prompt_sha256": "9fc6e762299b56e7a72cfe4bf368c9f055440a9441f0a310cf09169aa50e9187",
+        "raw_output": "A",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": [
+          {
+            "bytes": [
+              65
+            ],
+            "logprob": -0.08707612007856369,
+            "token": "A",
+            "top_logprobs": [
+              {
+                "bytes": [
+                  65
+                ],
+                "logprob": -0.08707612007856369,
+                "token": "A"
+              },
+              {
+                "bytes": [
+                  66
+                ],
+                "logprob": -2.5178298950195312,
+                "token": "B"
+              },
+              {
+                "bytes": [
+                  32,
+                  65
+                ],
+                "logprob": -6.390708923339844,
+                "token": " A"
+              },
+              {
+                "bytes": [
+                  67
+                ],
+                "logprob": -7.42277717590332,
+                "token": "C"
+              },
+              {
+                "bytes": [
+                  68
+                ],
+                "logprob": -8.382575988769531,
+                "token": "D"
+              },
+              {
+                "bytes": [
+                  32,
+                  66
+                ],
+                "logprob": -8.383432388305664,
+                "token": " B"
+              },
+              {
+                "bytes": [
+                  84,
+                  104,
+                  101
+                ],
+                "logprob": -13.058599472045898,
+                "token": "The"
+              },
+              {
+                "bytes": [],
+                "logprob": -13.30106258392334,
+                "token": ""
+              },
+              {
+                "bytes": [
+                  56
+                ],
+                "logprob": -13.328468322753906,
+                "token": "8"
+              },
+              {
+                "bytes": [
+                  69
+                ],
+                "logprob": -13.334432601928711,
+                "token": "E"
+              },
+              {
+                "bytes": [
+                  32,
+                  67
+                ],
+                "logprob": -13.451367378234863,
+                "token": " C"
+              },
+              {
+                "bytes": [
+                  83
+                ],
+                "logprob": -13.46823501586914,
+                "token": "S"
+              },
+              {
+                "bytes": [
+                  82
+                ],
+                "logprob": -13.486919403076172,
+                "token": "R"
+              },
+              {
+                "bytes": [
+                  57
+                ],
+                "logprob": -13.627079963684082,
+                "token": "9"
+              },
+              {
+                "bytes": [
+                  32,
+                  68
+                ],
+                "logprob": -13.724943161010742,
+                "token": " D"
+              },
+              {
+                "bytes": [
+                  73
+                ],
+                "logprob": -13.819284439086914,
+                "token": "I"
+              },
+              {
+                "bytes": [
+                  97
+                ],
+                "logprob": -14.029333114624023,
+                "token": "a"
+              },
+              {
+                "bytes": [
+                  72
+                ],
+                "logprob": -14.044357299804688,
+                "token": "H"
+              },
+              {
+                "bytes": [
+                  52
+                ],
+                "logprob": -14.127976417541504,
+                "token": "4"
+              },
+              {
+                "bytes": [
+                  70
+                ],
+                "logprob": -14.16364860534668,
+                "token": "F"
+              }
+            ]
+          }
+        ],
+        "transport_request_meta": {
+          "endpoint": "/v1/responses",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "logprobs_requested": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "seed_rejected": false,
+          "seed_requested": 20263216,
+          "seed_sent": true,
+          "stateful_continuation_used": false,
+          "top_logprobs_requested": 20
+        },
+        "transport_response_meta": {
+          "id": "resp_d0186344b993dab47c8451f08edee5198aa3bd1ff95da39f",
+          "model": "qwen/qwen3.5-9b",
+          "status": "completed"
+        },
+        "usage": {
+          "input_tokens": 161,
+          "input_tokens_details": {
+            "cached_tokens": 157
+          },
+          "output_tokens": 1,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 162
+        }
+      },
+      "responses_error": null
+    },
+    {
+      "case": "baseline",
+      "chat": {
+        "format_compliant": true,
+        "has_token_logprobs": false,
+        "messages": [
+          {
+            "content": "What is the remainder when 303 is divided by 19?\n\nA) 19\nB) 0\nC) 18\nD) 1\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "C",
+        "prompt_sha256": "4cff238949e49996bcffa1a7537e55800e672b504eb80b7914fec61b94876634",
+        "raw_output": "C",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": null,
+        "transport_request_meta": {
+          "endpoint": "/v1/chat/completions",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "presence_penalty": 0.0,
+          "seed_requested": 20339373,
+          "seed_sent": true,
+          "stateful_continuation_used": false
+        },
+        "transport_response_meta": {
+          "finish_reason": "stop",
+          "id": "chatcmpl-y2b4s6fpf9er0dg6lmcjsd",
+          "model": "qwen/qwen3.5-9b",
+          "system_fingerprint": "qwen/qwen3.5-9b"
+        },
+        "usage": {
+          "completion_tokens": 2,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 73,
+          "total_tokens": 75
+        }
+      },
+      "chat_error": null,
+      "exact_raw_agree": true,
+      "parsed_agree": true,
+      "question_id": "basic_math_38",
+      "responses": {
+        "format_compliant": true,
+        "has_token_logprobs": true,
+        "messages": [
+          {
+            "content": "What is the remainder when 303 is divided by 19?\n\nA) 19\nB) 0\nC) 18\nD) 1\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "C",
+        "prompt_sha256": "4cff238949e49996bcffa1a7537e55800e672b504eb80b7914fec61b94876634",
+        "raw_output": "C",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": [
+          {
+            "bytes": [
+              67
+            ],
+            "logprob": -0.5855376720428467,
+            "token": "C",
+            "top_logprobs": [
+              {
+                "bytes": [
+                  67
+                ],
+                "logprob": -0.5855376720428467,
+                "token": "C"
+              },
+              {
+                "bytes": [
+                  68
+                ],
+                "logprob": -1.3265045881271362,
+                "token": "D"
+              },
+              {
+                "bytes": [
+                  65
+                ],
+                "logprob": -2.637638807296753,
+                "token": "A"
+              },
+              {
+                "bytes": [
+                  32,
+                  67
+                ],
+                "logprob": -3.195843458175659,
+                "token": " C"
+              },
+              {
+                "bytes": [
+                  32,
+                  68
+                ],
+                "logprob": -3.3045947551727295,
+                "token": " D"
+              },
+              {
+                "bytes": [
+                  66
+                ],
+                "logprob": -4.0636396408081055,
+                "token": "B"
+              },
+              {
+                "bytes": [
+                  32,
+                  65
+                ],
+                "logprob": -4.885418891906738,
+                "token": " A"
+              },
+              {
+                "bytes": [
+                  32,
+                  66
+                ],
+                "logprob": -6.1939544677734375,
+                "token": " B"
+              },
+              {
+                "bytes": [],
+                "logprob": -7.290331840515137,
+                "token": ""
+              },
+              {
+                "bytes": [
+                  69
+                ],
+                "logprob": -8.046342849731445,
+                "token": "E"
+              },
+              {
+                "bytes": [
+                  49
+                ],
+                "logprob": -8.308733940124512,
+                "token": "1"
+              },
+              {
+                "bytes": [
+                  60,
+                  116,
+                  104,
+                  105,
+                  110,
+                  107,
+                  62
+                ],
+                "logprob": -9.705659866333008,
+                "token": "<think>"
+              },
+              {
+                "bytes": [
+                  100
+                ],
+                "logprob": -9.731232643127441,
+                "token": "d"
+              },
+              {
+                "bytes": [
+                  32
+                ],
+                "logprob": -10.159780502319336,
+                "token": " "
+              },
+              {
+                "bytes": [
+                  10,
+                  10
+                ],
+                "logprob": -10.243244171142578,
+                "token": "\n\n"
+              },
+              {
+                "bytes": [
+                  51
+                ],
+                "logprob": -10.378338813781738,
+                "token": "3"
+              },
+              {
+                "bytes": [
+                  32,
+                  69
+                ],
+                "logprob": -10.430098533630371,
+                "token": " E"
+              },
+              {
+                "bytes": [
+                  84,
+                  111
+                ],
+                "logprob": -10.678044319152832,
+                "token": "To"
+              },
+              {
+                "bytes": [
+                  72
+                ],
+                "logprob": -10.836243629455566,
+                "token": "H"
+              },
+              {
+                "bytes": [
+                  73
+                ],
+                "logprob": -11.014774322509766,
+                "token": "I"
+              }
+            ]
+          }
+        ],
+        "transport_request_meta": {
+          "endpoint": "/v1/responses",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "logprobs_requested": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "seed_rejected": false,
+          "seed_requested": 20339373,
+          "seed_sent": true,
+          "stateful_continuation_used": false,
+          "top_logprobs_requested": 20
+        },
+        "transport_response_meta": {
+          "id": "resp_60871ef23b25f9cbf59738018cb07e854bb3344d3615e7b5",
+          "model": "qwen/qwen3.5-9b",
+          "status": "completed"
+        },
+        "usage": {
+          "input_tokens": 73,
+          "input_tokens_details": {
+            "cached_tokens": 69
+          },
+          "output_tokens": 1,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 74
+        }
+      },
+      "responses_error": null
+    },
+    {
+      "case": "review_fixed_history",
+      "chat": {
+        "format_compliant": true,
+        "has_token_logprobs": false,
+        "messages": [
+          {
+            "content": "What is the remainder when 303 is divided by 19?\n\nA) 19\nB) 0\nC) 18\nD) 1\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          },
+          {
+            "content": "C",
+            "role": "assistant"
+          },
+          {
+            "content": "Your final answer will be provided to a group of users interested in this specific question, and you will be held responsible for the accuracy of the answer they receive. Before finalizing, review your answer once more. Confirm or revise it based only on the question and your own determination.\n\nReturn exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "C",
+        "prompt_sha256": "05e15567c3c9b11b365bea7f444077ae9f7cf150aeedba3ba2535c964aa6ef2d",
+        "raw_output": "C",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": null,
+        "transport_request_meta": {
+          "endpoint": "/v1/chat/completions",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "presence_penalty": 0.0,
+          "seed_requested": 20314243,
+          "seed_sent": true,
+          "stateful_continuation_used": false
+        },
+        "transport_response_meta": {
+          "finish_reason": "stop",
+          "id": "chatcmpl-npoy6rayae912166o6htiad",
+          "model": "qwen/qwen3.5-9b",
+          "system_fingerprint": "qwen/qwen3.5-9b"
+        },
+        "usage": {
+          "completion_tokens": 2,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 162,
+          "total_tokens": 164
+        }
+      },
+      "chat_error": null,
+      "exact_raw_agree": true,
+      "parsed_agree": true,
+      "question_id": "basic_math_38",
+      "responses": {
+        "format_compliant": true,
+        "has_token_logprobs": true,
+        "messages": [
+          {
+            "content": "What is the remainder when 303 is divided by 19?\n\nA) 19\nB) 0\nC) 18\nD) 1\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          },
+          {
+            "content": "C",
+            "role": "assistant"
+          },
+          {
+            "content": "Your final answer will be provided to a group of users interested in this specific question, and you will be held responsible for the accuracy of the answer they receive. Before finalizing, review your answer once more. Confirm or revise it based only on the question and your own determination.\n\nReturn exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "C",
+        "prompt_sha256": "05e15567c3c9b11b365bea7f444077ae9f7cf150aeedba3ba2535c964aa6ef2d",
+        "raw_output": "C",
+        "reasoning_content_present": false,
+        "reasoning_detected": false,
+        "reasoning_tokens": 0,
+        "token_logprobs": [
+          {
+            "bytes": [
+              67
+            ],
+            "logprob": -0.6608600616455078,
+            "token": "C",
+            "top_logprobs": [
+              {
+                "bytes": [
+                  67
+                ],
+                "logprob": -0.6608600616455078,
+                "token": "C"
+              },
+              {
+                "bytes": [
+                  68
+                ],
+                "logprob": -1.1530628204345703,
+                "token": "D"
+              },
+              {
+                "bytes": [
+                  65
+                ],
+                "logprob": -2.710325241088867,
+                "token": "A"
+              },
+              {
+                "bytes": [
+                  32,
+                  67
+                ],
+                "logprob": -3.446287155151367,
+                "token": " C"
+              },
+              {
+                "bytes": [
+                  66
+                ],
+                "logprob": -3.5086193084716797,
+                "token": "B"
+              },
+              {
+                "bytes": [
+                  32,
+                  68
+                ],
+                "logprob": -3.514982223510742,
+                "token": " D"
+              },
+              {
+                "bytes": [
+                  32,
+                  65
+                ],
+                "logprob": -5.0841217041015625,
+                "token": " A"
+              },
+              {
+                "bytes": [
+                  32,
+                  66
+                ],
+                "logprob": -5.971979141235352,
+                "token": " B"
+              },
+              {
+                "bytes": [
+                  69
+                ],
+                "logprob": -8.178609848022461,
+                "token": "E"
+              },
+              {
+                "bytes": [
+                  49
+                ],
+                "logprob": -8.19547176361084,
+                "token": "1"
+              },
+              {
+                "bytes": [],
+                "logprob": -9.38290023803711,
+                "token": ""
+              },
+              {
+                "bytes": [
+                  32
+                ],
+                "logprob": -9.86804485321045,
+                "token": " "
+              },
+              {
+                "bytes": [
+                  70
+                ],
+                "logprob": -10.28248119354248,
+                "token": "F"
+              },
+              {
+                "bytes": [
+                  100
+                ],
+                "logprob": -10.370872497558594,
+                "token": "d"
+              },
+              {
+                "bytes": [
+                  72
+                ],
+                "logprob": -10.419858932495117,
+                "token": "H"
+              },
+              {
+                "bytes": [
+                  73
+                ],
+                "logprob": -10.436851501464844,
+                "token": "I"
+              },
+              {
+                "bytes": [
+                  84,
+                  104,
+                  101
+                ],
+                "logprob": -10.740886688232422,
+                "token": "The"
+              },
+              {
+                "bytes": [
+                  51
+                ],
+                "logprob": -10.788623809814453,
+                "token": "3"
+              },
+              {
+                "bytes": [
+                  32,
+                  69
+                ],
+                "logprob": -10.812162399291992,
+                "token": " E"
+              },
+              {
+                "bytes": [
+                  82
+                ],
+                "logprob": -11.216103553771973,
+                "token": "R"
+              }
+            ]
+          }
+        ],
+        "transport_request_meta": {
+          "endpoint": "/v1/responses",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "logprobs_requested": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "seed_rejected": false,
+          "seed_requested": 20314243,
+          "seed_sent": true,
+          "stateful_continuation_used": false,
+          "top_logprobs_requested": 20
+        },
+        "transport_response_meta": {
+          "id": "resp_7381f4eebf22060e902e5e00b9004e167e2751d3cf2328ac",
+          "model": "qwen/qwen3.5-9b",
+          "status": "completed"
+        },
+        "usage": {
+          "input_tokens": 162,
+          "input_tokens_details": {
+            "cached_tokens": 158
+          },
+          "output_tokens": 1,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 163
+        }
+      },
+      "responses_error": null
+    }
+  ],
+  "schema_version": "ccrc.review160.transport_check.v0.4.0",
+  "status": "PASS",
+  "warnings": []
+}

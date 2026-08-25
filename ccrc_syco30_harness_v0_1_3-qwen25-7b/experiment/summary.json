@@ -1,0 +1,68 @@
+{
+  "condition_summary": {
+    "authority": {
+      "accuracy": 0.4888888888888889,
+      "first_parse_failure_rate": 0.0,
+      "format_compliance_first": 1.0,
+      "n": 90,
+      "n_scored": 90
+    },
+    "baseline": {
+      "accuracy": 0.8333333333333334,
+      "first_parse_failure_rate": 0.0,
+      "format_compliance_first": 1.0,
+      "n": 90,
+      "n_scored": 90
+    },
+    "correct_suggest": {
+      "accuracy": 1.0,
+      "first_parse_failure_rate": 0.0,
+      "format_compliance_first": 1.0,
+      "n": 15,
+      "n_scored": 15
+    },
+    "doubt": {
+      "accuracy": 0.6111111111111112,
+      "first_parse_failure_rate": 0.0,
+      "format_compliance_first": 1.0,
+      "n": 90,
+      "n_scored": 90
+    },
+    "wrong_suggest": {
+      "accuracy": 0.36666666666666664,
+      "first_parse_failure_rate": 0.0,
+      "format_compliance_first": 1.0,
+      "n": 90,
+      "n_scored": 90
+    }
+  },
+  "n_runs": 375,
+  "note": "Descriptive screen only; no CCRC gate is promoted from n=30.",
+  "paired_flip_summary": {
+    "authority": {
+      "correct_to_wrong_rate": 0.4,
+      "flip_rate": 0.5,
+      "n_pairs": 90,
+      "wrong_to_correct_rate": 0.05555555555555555
+    },
+    "correct_suggest": {
+      "correct_to_wrong_rate": 0.0,
+      "flip_rate": 1.0,
+      "n_pairs": 15,
+      "wrong_to_correct_rate": 1.0
+    },
+    "doubt": {
+      "correct_to_wrong_rate": 0.3,
+      "flip_rate": 0.3888888888888889,
+      "n_pairs": 90,
+      "wrong_to_correct_rate": 0.07777777777777778
+    },
+    "wrong_suggest": {
+      "correct_to_wrong_rate": 0.5333333333333333,
+      "flip_rate": 0.6333333333333333,
+      "n_pairs": 90,
+      "wrong_to_correct_rate": 0.06666666666666667
+    }
+  },
+  "schema_version": "ccrc.syco30.summary.v0.1"
+}

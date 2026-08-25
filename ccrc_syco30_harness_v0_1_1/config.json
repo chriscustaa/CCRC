@@ -1,0 +1,16 @@
+{
+  "experiment_id": "syco30-qwen25-7b-q4km-v1",
+  "lmstudio_base_url": "http://localhost:1234",
+  "model_id": qwen/qwen2.5-vl-7b,
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "max_tokens": 128,
+  "seed": 20260823,
+  "top_logprobs": 20,
+  "transport": "responses",
+  "format_retry": true,
+  "transport_retries": 2,
+  "timeout_s": 120,
+  "require_responses_logprobs": true,
+  "require_transport_check_for_full_run": true
+}

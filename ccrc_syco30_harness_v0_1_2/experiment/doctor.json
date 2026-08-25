@@ -1,0 +1,765 @@
+{
+  "authentication": {
+    "lm_api_token_present": true,
+    "token_value_recorded": false
+  },
+  "base_url": "http://localhost:1234",
+  "chat_responses_text_agree": true,
+  "checks": {
+    "chat": {
+      "meta": {
+        "finish_reason": "stop",
+        "id": "chatcmpl-ffash4l6fgdwqavtowhm78",
+        "model": "qwen/qwen2.5-vl-7b",
+        "system_fingerprint": "qwen/qwen2.5-vl-7b"
+      },
+      "ok": true,
+      "request_meta": {
+        "endpoint": "/v1/chat/completions",
+        "logit_bias_used": false,
+        "seed_requested": 20260823,
+        "seed_sent": true,
+        "stateful_continuation_used": false
+      },
+      "text": "B",
+      "usage": {
+        "completion_tokens": 2,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 66,
+        "total_tokens": 68
+      }
+    },
+    "native_models_v0": {
+      "data": {
+        "data": [
+          {
+            "arch": "qwen2vl",
+            "compatibility_type": "gguf",
+            "id": "qwen/qwen2.5-vl-7b",
+            "loaded_context_length": 128000,
+            "max_context_length": 128000,
+            "object": "model",
+            "publisher": "qwen",
+            "quantization": "Q4_K_M",
+            "state": "loaded",
+            "type": "vlm"
+          },
+          {
+            "arch": "muse-glimmer",
+            "compatibility_type": "gguf",
+            "id": "meta/muse-glimmer",
+            "max_context_length": 131072,
+            "object": "model",
+            "publisher": "meta",
+            "quantization": "Q4_K_M",
+            "state": "not-loaded",
+            "type": "vlm"
+          },
+          {
+            "arch": "qwen35",
+            "capabilities": [
+              "tool_use"
+            ],
+            "compatibility_type": "gguf",
+            "id": "qwen/qwen3.8-27b",
+            "max_context_length": 262144,
+            "object": "model",
+            "publisher": "qwen",
+            "quantization": "Q4_K_M",
+            "state": "not-loaded",
+            "type": "vlm"
+          },
+          {
+            "arch": "qwen35",
+            "capabilities": [
+              "tool_use"
+            ],
+            "compatibility_type": "gguf",
+            "id": "prism-ml/bonsai-27b",
+            "max_context_length": 262144,
+            "object": "model",
+            "publisher": "prism-ml",
+            "quantization": "Q1_0",
+            "state": "not-loaded",
+            "type": "vlm"
+          },
+          {
+            "arch": "gemma4",
+            "capabilities": [
+              "tool_use"
+            ],
+            "compatibility_type": "gguf",
+            "id": "google/gemma-4-e4b",
+            "max_context_length": 131072,
+            "object": "model",
+            "publisher": "google",
+            "quantization": "Q4_K_M",
+            "state": "not-loaded",
+            "type": "vlm"
+          },
+          {
+            "arch": "qwen35",
+            "capabilities": [
+              "tool_use"
+            ],
+            "compatibility_type": "gguf",
+            "id": "qwen/qwen3.5-9b",
+            "max_context_length": 262144,
+            "object": "model",
+            "publisher": "qwen",
+            "quantization": "Q4_K_M",
+            "state": "not-loaded",
+            "type": "vlm"
+          },
+          {
+            "arch": "nomic-bert",
+            "compatibility_type": "gguf",
+            "id": "text-embedding-nomic-embed-text-v1.5",
+            "max_context_length": 2048,
+            "object": "model",
+            "publisher": "nomic-ai",
+            "quantization": "Q4_K_M",
+            "state": "not-loaded",
+            "type": "embeddings"
+          },
+          {
+            "arch": "gpt-oss",
+            "capabilities": [
+              "tool_use"
+            ],
+            "compatibility_type": "gguf",
+            "id": "openai/gpt-oss-20b",
+            "max_context_length": 131072,
+            "object": "model",
+            "publisher": "openai",
+            "quantization": "MXFP4",
+            "state": "not-loaded",
+            "type": "llm"
+          },
+          {
+            "arch": "qwen3",
+            "compatibility_type": "gguf",
+            "id": "deepseek/deepseek-r1-0528-qwen3-8b",
+            "max_context_length": 131072,
+            "object": "model",
+            "publisher": "deepseek",
+            "quantization": "Q4_K_M",
+            "state": "not-loaded",
+            "type": "llm"
+          },
+          {
+            "arch": "gemma3",
+            "compatibility_type": "gguf",
+            "id": "google/gemma-3-12b",
+            "max_context_length": 131072,
+            "object": "model",
+            "publisher": "google",
+            "quantization": "Q4_K_M",
+            "state": "not-loaded",
+            "type": "vlm"
+          }
+        ],
+        "object": "list"
+      },
+      "ok": true
+    },
+    "native_models_v1": {
+      "data": {
+        "models": [
+          {
+            "architecture": "qwen2vl",
+            "capabilities": {
+              "trained_for_tool_use": false,
+              "vision": true
+            },
+            "description": null,
+            "display_name": "Qwen2.5 VL 7B",
+            "format": "gguf",
+            "key": "qwen/qwen2.5-vl-7b",
+            "loaded_instances": [
+              {
+                "config": {
+                  "context_checkpoints": 32,
+                  "context_length": 128000,
+                  "eval_batch_size": 2048,
+                  "flash_attention": true,
+                  "offload_kv_cache_to_gpu": true,
+                  "parallel": 4,
+                  "physical_batch_size": 512,
+                  "reasoning_budget_message": "",
+                  "speculative_draft_max_tokens": 16,
+                  "speculative_draft_min_continue_probability": 0.75,
+                  "speculative_draft_min_tokens": 0,
+                  "speculative_draft_model": "",
+                  "speculative_draft_mtp": false,
+                  "speculative_draft_simple": false
+                },
+                "id": "qwen/qwen2.5-vl-7b"
+              }
+            ],
+            "max_context_length": 128000,
+            "params_string": "7B",
+            "publisher": "qwen",
+            "quantization": {
+              "bits_per_weight": 4,
+              "name": "Q4_K_M"
+            },
+            "selected_variant": "qwen/qwen2.5-vl-7b@q4_k_m",
+            "size_bytes": 6037411994,
+            "type": "llm",
+            "variants": [
+              "qwen/qwen2.5-vl-7b@q4_k_m"
+            ]
+          },
+          {
+            "architecture": "muse-glimmer",
+            "capabilities": {
+              "reasoning": {
+                "allowed_options": [
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh"
+                ],
+                "default": "high"
+              },
+              "trained_for_tool_use": false,
+              "vision": true
+            },
+            "description": null,
+            "display_name": "Muse Glimmer",
+            "format": "gguf",
+            "key": "meta/muse-glimmer",
+            "loaded_instances": [],
+            "max_context_length": 131072,
+            "params_string": "28B",
+            "publisher": "meta",
+            "quantization": {
+              "bits_per_weight": 4,
+              "name": "Q4_K_M"
+            },
+            "selected_variant": "meta/muse-glimmer@q4_k_m",
+            "size_bytes": 18157122004,
+            "type": "llm",
+            "variants": [
+              "meta/muse-glimmer@q4_k_m"
+            ]
+          },
+          {
+            "architecture": "qwen35",
+            "capabilities": {
+              "reasoning": {
+                "allowed_options": [
+                  "off",
+                  "low",
+                  "medium",
+                  "xhigh",
+                  "on"
+                ],
+                "default": "xhigh"
+              },
+              "trained_for_tool_use": true,
+              "vision": true
+            },
+            "description": null,
+            "display_name": "Qwen3.8 27B",
+            "format": "gguf",
+            "key": "qwen/qwen3.8-27b",
+            "loaded_instances": [],
+            "max_context_length": 262144,
+            "params_string": "27B",
+            "publisher": "qwen",
+            "quantization": {
+              "bits_per_weight": 4,
+              "name": "Q4_K_M"
+            },
+            "selected_variant": "qwen/qwen3.8-27b@q4_k_m",
+            "size_bytes": 17742039110,
+            "type": "llm",
+            "variants": [
+              "qwen/qwen3.8-27b@q4_k_m"
+            ]
+          },
+          {
+            "architecture": "qwen35",
+            "capabilities": {
+              "reasoning": {
+                "allowed_options": [
+                  "off",
+                  "on"
+                ],
+                "default": "on"
+              },
+              "trained_for_tool_use": true,
+              "vision": true
+            },
+            "description": null,
+            "display_name": "Bonsai 27B",
+            "format": "gguf",
+            "key": "prism-ml/bonsai-27b",
+            "loaded_instances": [],
+            "max_context_length": 262144,
+            "params_string": "27B",
+            "publisher": "prism-ml",
+            "quantization": {
+              "bits_per_weight": 1,
+              "name": "Q1_0"
+            },
+            "selected_variant": "prism-ml/bonsai-27b@q1_0",
+            "size_bytes": 4734614604,
+            "type": "llm",
+            "variants": [
+              "prism-ml/bonsai-27b@q1_0"
+            ]
+          },
+          {
+            "architecture": "gemma4",
+            "capabilities": {
+              "reasoning": {
+                "allowed_options": [
+                  "off",
+                  "on"
+                ],
+                "default": "on"
+              },
+              "trained_for_tool_use": true,
+              "vision": true
+            },
+            "description": null,
+            "display_name": "Gemma 4 E4B",
+            "format": "gguf",
+            "key": "google/gemma-4-e4b",
+            "loaded_instances": [],
+            "max_context_length": 131072,
+            "params_string": "7.5B",
+            "publisher": "google",
+            "quantization": {
+              "bits_per_weight": 4,
+              "name": "Q4_K_M"
+            },
+            "selected_variant": "google/gemma-4-e4b@q4_k_m",
+            "size_bytes": 6326936720,
+            "type": "llm",
+            "variants": [
+              "google/gemma-4-e4b@q4_k_m"
+            ]
+          },
+          {
+            "architecture": "qwen35",
+            "capabilities": {
+              "reasoning": {
+                "allowed_options": [
+                  "off",
+                  "on"
+                ],
+                "default": "on"
+              },
+              "trained_for_tool_use": true,
+              "vision": true
+            },
+            "description": null,
+            "display_name": "Qwen3.5 9B",
+            "format": "gguf",
+            "key": "qwen/qwen3.5-9b",
+            "loaded_instances": [],
+            "max_context_length": 262144,
+            "params_string": "9B",
+            "publisher": "qwen",
+            "quantization": {
+              "bits_per_weight": 4,
+              "name": "Q4_K_M"
+            },
+            "selected_variant": "qwen/qwen3.5-9b@q4_k_m",
+            "size_bytes": 6548926907,
+            "type": "llm",
+            "variants": [
+              "qwen/qwen3.5-9b@q4_k_m"
+            ]
+          },
+          {
+            "display_name": "Nomic Embed Text v1.5",
+            "format": "gguf",
+            "key": "text-embedding-nomic-embed-text-v1.5",
+            "loaded_instances": [],
+            "max_context_length": 2048,
+            "params_string": null,
+            "publisher": "nomic-ai",
+            "quantization": {
+              "bits_per_weight": 4,
+              "name": "Q4_K_M"
+            },
+            "size_bytes": 84106624,
+            "type": "embedding"
+          },
+          {
+            "architecture": "gpt-oss",
+            "capabilities": {
+              "reasoning": {
+                "allowed_options": [
+                  "low",
+                  "medium",
+                  "high"
+                ],
+                "default": "low"
+              },
+              "trained_for_tool_use": true,
+              "vision": false
+            },
+            "description": null,
+            "display_name": "GPT-OSS 20B",
+            "format": "gguf",
+            "key": "openai/gpt-oss-20b",
+            "loaded_instances": [],
+            "max_context_length": 131072,
+            "params_string": "20B",
+            "publisher": "openai",
+            "quantization": {
+              "bits_per_weight": 4,
+              "name": "MXFP4"
+            },
+            "selected_variant": "openai/gpt-oss-20b@mxfp4",
+            "size_bytes": 12109664234,
+            "type": "llm",
+            "variants": [
+              "openai/gpt-oss-20b@mxfp4"
+            ]
+          },
+          {
+            "architecture": "qwen3",
+            "capabilities": {
+              "reasoning": {
+                "allowed_options": [
+                  "on"
+                ],
+                "default": "on"
+              },
+              "trained_for_tool_use": false,
+              "vision": false
+            },
+            "description": null,
+            "display_name": "Deepseek R1 0528 Qwen3 8B",
+            "format": "gguf",
+            "key": "deepseek/deepseek-r1-0528-qwen3-8b",
+            "loaded_instances": [],
+            "max_context_length": 131072,
+            "params_string": "8B",
+            "publisher": "deepseek",
+            "quantization": {
+              "bits_per_weight": 4,
+              "name": "Q4_K_M"
+            },
+            "selected_variant": "deepseek/deepseek-r1-0528-qwen3-8b@q4_k_m",
+            "size_bytes": 5027844358,
+            "type": "llm",
+            "variants": [
+              "deepseek/deepseek-r1-0528-qwen3-8b@q4_k_m"
+            ]
+          },
+          {
+            "architecture": "gemma3",
+            "capabilities": {
+              "trained_for_tool_use": false,
+              "vision": true
+            },
+            "description": null,
+            "display_name": "Gemma 3 12B",
+            "format": "gguf",
+            "key": "google/gemma-3-12b",
+            "loaded_instances": [],
+            "max_context_length": 131072,
+            "params_string": "12B",
+            "publisher": "google",
+            "quantization": {
+              "bits_per_weight": 4,
+              "name": "Q4_K_M"
+            },
+            "selected_variant": "google/gemma-3-12b@q4_k_m",
+            "size_bytes": 8154847769,
+            "type": "llm",
+            "variants": [
+              "google/gemma-3-12b@q4_k_m"
+            ]
+          }
+        ]
+      },
+      "ok": true
+    },
+    "openai_models": {
+      "data": {
+        "data": [
+          {
+            "id": "qwen/qwen2.5-vl-7b",
+            "object": "model",
+            "owned_by": "organization_owner"
+          },
+          {
+            "id": "meta/muse-glimmer",
+            "object": "model",
+            "owned_by": "organization_owner"
+          },
+          {
+            "id": "qwen/qwen3.8-27b",
+            "object": "model",
+            "owned_by": "organization_owner"
+          },
+          {
+            "id": "prism-ml/bonsai-27b",
+            "object": "model",
+            "owned_by": "organization_owner"
+          },
+          {
+            "id": "google/gemma-4-e4b",
+            "object": "model",
+            "owned_by": "organization_owner"
+          },
+          {
+            "id": "qwen/qwen3.5-9b",
+            "object": "model",
+            "owned_by": "organization_owner"
+          },
+          {
+            "id": "text-embedding-nomic-embed-text-v1.5",
+            "object": "model",
+            "owned_by": "organization_owner"
+          },
+          {
+            "id": "openai/gpt-oss-20b",
+            "object": "model",
+            "owned_by": "organization_owner"
+          },
+          {
+            "id": "deepseek/deepseek-r1-0528-qwen3-8b",
+            "object": "model",
+            "owned_by": "organization_owner"
+          },
+          {
+            "id": "google/gemma-3-12b",
+            "object": "model",
+            "owned_by": "organization_owner"
+          }
+        ],
+        "object": "list"
+      },
+      "ok": true
+    },
+    "responses": {
+      "has_logprobs": true,
+      "meta": {
+        "id": "resp_41b6cc8db1e1f13920dd709ea330c26db6e4c5c5d883c977",
+        "model": "qwen/qwen2.5-vl-7b",
+        "status": "completed"
+      },
+      "ok": true,
+      "request_meta": {
+        "endpoint": "/v1/responses",
+        "logit_bias_used": false,
+        "logprobs_requested": true,
+        "previous_response_id": null,
+        "seed_rejected": false,
+        "seed_requested": 20260823,
+        "seed_sent": true,
+        "stateful_continuation_used": false,
+        "top_logprobs_requested": 20
+      },
+      "text": "B",
+      "token_logprobs": [
+        {
+          "bytes": [
+            66
+          ],
+          "logprob": -9.501431486569345e-05,
+          "token": "B",
+          "top_logprobs": [
+            {
+              "bytes": [
+                66
+              ],
+              "logprob": -9.501431486569345e-05,
+              "token": "B"
+            },
+            {
+              "bytes": [
+                65
+              ],
+              "logprob": -10.041194915771484,
+              "token": "A"
+            },
+            {
+              "bytes": [
+                68
+              ],
+              "logprob": -10.373907089233398,
+              "token": "D"
+            },
+            {
+              "bytes": [
+                67
+              ],
+              "logprob": -11.179649353027344,
+              "token": "C"
+            },
+            {
+              "bytes": [
+                65,
+                110,
+                115,
+                119,
+                101,
+                114
+              ],
+              "logprob": -13.027774810791016,
+              "token": "Answer"
+            },
+            {
+              "bytes": [
+                32,
+                66
+              ],
+              "logprob": -13.605454444885254,
+              "token": " B"
+            },
+            {
+              "bytes": [
+                69
+              ],
+              "logprob": -13.898547172546387,
+              "token": "E"
+            },
+            {
+              "bytes": [
+                98
+              ],
+              "logprob": -14.364105224609375,
+              "token": "b"
+            },
+            {
+              "bytes": [
+                208,
+                145
+              ],
+              "logprob": -14.812926292419434,
+              "token": "Б"
+            },
+            {
+              "bytes": [
+                66,
+                66
+              ],
+              "logprob": -15.929779052734375,
+              "token": "BB"
+            },
+            {
+              "bytes": [
+                95,
+                66
+              ],
+              "logprob": -16.051437377929688,
+              "token": "_B"
+            },
+            {
+              "bytes": [
+                46,
+                66
+              ],
+              "logprob": -16.226543426513672,
+              "token": ".B"
+            },
+            {
+              "bytes": [
+                62,
+                66
+              ],
+              "logprob": -16.38161849975586,
+              "token": ">B"
+            },
+            {
+              "bytes": [
+                9,
+                66
+              ],
+              "logprob": -16.436565399169922,
+              "token": "\tB"
+            },
+            {
+              "bytes": [
+                66,
+                97
+              ],
+              "logprob": -16.503192901611328,
+              "token": "Ba"
+            },
+            {
+              "bytes": [
+                66,
+                65
+              ],
+              "logprob": -16.566404342651367,
+              "token": "BA"
+            },
+            {
+              "bytes": [
+                70
+              ],
+              "logprob": -16.604413986206055,
+              "token": "F"
+            },
+            {
+              "bytes": [
+                82
+              ],
+              "logprob": -16.818984985351562,
+              "token": "R"
+            },
+            {
+              "bytes": [
+                84,
+                104,
+                101
+              ],
+              "logprob": -16.83127784729004,
+              "token": "The"
+            },
+            {
+              "bytes": [
+                66,
+                115
+              ],
+              "logprob": -16.878787994384766,
+              "token": "Bs"
+            }
+          ]
+        }
+      ],
+      "usage": {
+        "input_tokens": 66,
+        "input_tokens_details": {
+          "cached_tokens": 65
+        },
+        "output_tokens": 1,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 67
+      }
+    }
+  },
+  "configured_model_id": "qqwen/qwen2.5-vl-7b",
+  "created_at_utc": "2026-08-24T10:47:03.095484+00:00",
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.9 (tags/v3.13.9:8183fa5, Oct 14 2025, 14:09:13) [MSC v.1944 64 bit (AMD64)]",
+    "requests_version": "2.34.2"
+  },
+  "full_run_preflight": {
+    "action_if_not_ready": null,
+    "ready_for_primary_transport": true,
+    "responses_available": true,
+    "responses_logprobs_available": true
+  },
+  "harness_version": "0.1.2",
+  "recommended_transport": "responses",
+  "resolved_model_id": "qqwen/qwen2.5-vl-7b",
+  "schema_version": "ccrc.syco30.doctor.v0.1.1"
+}

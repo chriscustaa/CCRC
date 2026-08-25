@@ -1,0 +1,157 @@
+{
+  "experiment_id": "ccrc-review160-qwen35-9b-q4km-v1",
+  "harness": {
+    "tree_sha256": "5f2a5333e68c25a3105aac75bad9b1c234290f90ffa18c9fe00b2f730c3eec3e",
+    "version": "0.4.0"
+  },
+  "heldout_selection": {
+    "algorithm": "capacity-proportional domain/difficulty stratification over unique semantic stems after exact prior-ID/stem exclusion",
+    "difficulty_counts": {
+      "easy": 30,
+      "hard": 65,
+      "medium": 65
+    },
+    "domain_counts": {
+      "analogies": 17,
+      "basic_math": 47,
+      "causal_reasoning": 1,
+      "common_sense": 1,
+      "logical_reasoning": 17,
+      "reading_comprehension": 11,
+      "scientific_facts": 22,
+      "word_problems": 44
+    },
+    "excluded_count": 30,
+    "excluded_items_path_at_prepare": "C:\\Users\\chris\\Downloads\\ccrc_decomp30_harness_v0_3_0_qwen35\\experiment_decomp30\\items.jsonl",
+    "excluded_items_sha256": "7924a926d70d82e4445633f2da1ecd92d4db44ba2cae6f2f185b795593f23ecb",
+    "n": 160,
+    "overlap_source_ids": [],
+    "seed": 20260823,
+    "selected_items_sha256": "1f246915d7bc7538b38b01160e15ee26527638f19ac9e2b8bd6e8670772e925b",
+    "source_experiment_id": "ccrc-decomp30-qwen35-9b-q4km-v1",
+    "unique_semantic_stems": 160
+  },
+  "offline_m5_preregistration": {
+    "gamma": 1.0,
+    "gamma_tuning_allowed": false,
+    "harms": "F-correct -> guided-wrong",
+    "mandatory_comparator": "M5_FV must outperform M5_FP, not merely F",
+    "primary": "M5_FV = logp_F + (logp_F - logp_V)",
+    "primary_endpoint": "paired A/B/C/D argmax accuracy(M5_FV) - accuracy(F)",
+    "promotion_rule": "Live token-level M5 remains blocked unless verdict-derived M5 improves held-out accuracy with low overshoot and beats the neutral-paraphrase sham.",
+    "repairs": "F-wrong -> guided-correct",
+    "sham": "M5_FP = logp_F + (logp_F - logp_P)"
+  },
+  "planned_model": {
+    "description": "Qwen3.5 9B GGUF Q4_K_M, non-thinking held-out review/M5 screen",
+    "expected_profile": {
+      "architecture": "qwen35",
+      "display_name_contains": [
+        "Qwen3.5",
+        "9B"
+      ],
+      "display_name_forbids": [
+        "Coder",
+        "Math",
+        "Uncensored"
+      ],
+      "format": "gguf",
+      "params_string": "9B",
+      "quantization": "Q4_K_M",
+      "reasoning_capability_required": true,
+      "require_exactly_one_loaded_instance": true,
+      "vision": true
+    },
+    "frequency_penalty": 0.0,
+    "logit_bias": null,
+    "max_tokens": 128,
+    "model_id": "qwen/qwen3.5-9b",
+    "observed_snapshot": {
+      "architecture": "qwen35",
+      "capabilities": {
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        },
+        "trained_for_tool_use": true,
+        "vision": true
+      },
+      "display_name": "Qwen3.5 9B",
+      "format": "gguf",
+      "key": "qwen/qwen3.5-9b",
+      "loaded_instance_config": {
+        "context_checkpoints": 32,
+        "context_length": 15872,
+        "eval_batch_size": 2048,
+        "flash_attention": true,
+        "offload_kv_cache_to_gpu": true,
+        "parallel": 4,
+        "physical_batch_size": 512,
+        "reasoning_budget_message": "",
+        "speculative_draft_max_tokens": 16,
+        "speculative_draft_min_continue_probability": 0.75,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_model": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false
+      },
+      "loaded_instance_count": 1,
+      "max_context_length": 262144,
+      "params_string": "9B",
+      "quantization": {
+        "bits_per_weight": 4,
+        "name": "Q4_K_M"
+      },
+      "selected_variant": "qwen/qwen3.5-9b@q4_k_m",
+      "size_bytes": 6548927711
+    },
+    "observed_snapshot_sha256": "d8ec616a61e2046592391ff4739e6e53048d9027a0669d24b1f6b1ca9567568b",
+    "presence_penalty": 0.0,
+    "reasoning_required_off": true,
+    "stateful_responses_continuation": false,
+    "temperature": 0.0,
+    "top_logprobs": 20,
+    "top_p": 1.0,
+    "transport": "responses"
+  },
+  "review_design": {
+    "conditions": [
+      "F",
+      "R0",
+      "R1",
+      "R2",
+      "R3",
+      "P",
+      "V"
+    ],
+    "contrasts": {
+      "accountability_increment": "R1-R0",
+      "additional_consideration_increment": "R3-R0",
+      "anticipated_audit_increment": "R2-R0",
+      "neutral_wording_sham": "P-F",
+      "plain_review": "R0-F",
+      "wrong_verdict": "V-F"
+    },
+    "initial_condition": "B: one actual model baseline answer generated once per question",
+    "review_endpoints": [
+      "baseline-wrong to correct repair rate",
+      "baseline-correct to wrong harm rate",
+      "net revision utility = repair rate - harm rate",
+      "paired accuracy change",
+      "correct-answer logprob margin"
+    ],
+    "shared_prefix": "all followups use the same frozen parsed B answer; no ground-truth answer is injected"
+  },
+  "schema_version": "ccrc.review160.manifest.v0.4.0",
+  "source": {
+    "name": "SycoBench-600",
+    "origin": "https://raw.githubusercontent.com/debu-sinha/sycobench-600/v1.0.1/data/questions.json",
+    "questions_sha256": "ae41f4b94ac46fb0109778546a091534208881cf74eea87c43ce24736bb8dd4d",
+    "revision": "v1.0.1",
+    "source_count": 600
+  },
+  "stage_boundary": "Held-out constructive-review and offline M5 validation only. No live contrastive decoding, gamma tuning, activation steering, or probe training."
+}

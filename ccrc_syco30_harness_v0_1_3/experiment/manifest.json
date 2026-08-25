@@ -1,0 +1,94 @@
+{
+  "experiment_id": "syco30-qwen25-7b-q4km-v1",
+  "harness": {
+    "tree_sha256": "33a7aacbae38ee09e34d8d496757ca66d505874ab9bd4db1765c7c85954509c1",
+    "version": "0.1.3"
+  },
+  "planned_model": {
+    "description": "Qwen 2.5 7B Instruct GGUF Q4_K_M",
+    "expected_profile": {
+      "architecture": "qwen2",
+      "display_name_contains": [
+        "Qwen2.5",
+        "7B",
+        "Instruct"
+      ],
+      "display_name_forbids": [
+        "VL",
+        "Coder",
+        "Math"
+      ],
+      "format": "gguf",
+      "params_string": "7B",
+      "quantization": "Q4_K_M",
+      "require_exactly_one_loaded_instance": true,
+      "vision": false
+    },
+    "logit_bias": null,
+    "max_tokens": 128,
+    "model_id": "qwen2.5-7b-instruct",
+    "observed_snapshot": {
+      "architecture": "qwen2",
+      "capabilities": {
+        "trained_for_tool_use": true,
+        "vision": false
+      },
+      "display_name": "Qwen2.5 7B Instruct",
+      "format": "gguf",
+      "key": "qwen2.5-7b-instruct",
+      "loaded_instance_config": {
+        "context_checkpoints": 32,
+        "context_length": 32768,
+        "eval_batch_size": 2048,
+        "flash_attention": true,
+        "offload_kv_cache_to_gpu": true,
+        "parallel": 4,
+        "physical_batch_size": 512,
+        "reasoning_budget_message": "",
+        "speculative_draft_max_tokens": 16,
+        "speculative_draft_min_continue_probability": 0.75,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_model": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false
+      },
+      "loaded_instance_count": 1,
+      "max_context_length": 32768,
+      "params_string": "7B",
+      "quantization": {
+        "bits_per_weight": 4,
+        "name": "Q4_K_M"
+      },
+      "selected_variant": null,
+      "size_bytes": 4683073952
+    },
+    "observed_snapshot_sha256": "c7f1611cdbb7d8754610eed45c82691d62eb8bce3aeaef410a99afdde3edb431",
+    "stateful_responses_continuation": false,
+    "temperature": 0.0,
+    "top_logprobs": 20,
+    "top_p": 1.0,
+    "transport": "responses"
+  },
+  "protocol": {
+    "comparison_transport": "chat",
+    "execution_order": "deterministically shuffled question/variant families and follow-up conditions",
+    "format_retry_semantics": "Upstream-compatible: retry output becomes benchmark response; first output remains preserved.",
+    "primary_transport": "responses",
+    "prompt_hash_scope": "canonical_api_messages_pre_chat_template",
+    "upstream": "SycoBench-600 v1.0.1"
+  },
+  "schema_version": "ccrc.syco30.manifest.v0.1.3",
+  "selection": {
+    "algorithm": "domain-quota + within-domain difficulty quota + exact-stem dedupe",
+    "n": 30,
+    "seed": 20260823
+  },
+  "source": {
+    "name": "SycoBench-600",
+    "origin": "https://raw.githubusercontent.com/debu-sinha/sycobench-600/v1.0.1/data/questions.json",
+    "questions_sha256": "ae41f4b94ac46fb0109778546a091534208881cf74eea87c43ce24736bb8dd4d",
+    "revision": "v1.0.1",
+    "source_count": 600
+  },
+  "stage_boundary": "Native SycoBench measurement only; no M5 or custom CCRC interventions."
+}

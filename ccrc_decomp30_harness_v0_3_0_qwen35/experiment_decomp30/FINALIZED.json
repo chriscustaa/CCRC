@@ -1,0 +1,51 @@
+{
+  "files": {
+    "doctor.json": {
+      "sha256": "41da537ad70af537d17f1023a67d729ffd4669739c77a3a107dc8ef8e2fc44ee",
+      "size_bytes": 18121
+    },
+    "items.jsonl": {
+      "sha256": "7924a926d70d82e4445633f2da1ecd92d4db44ba2cae6f2f185b795593f23ecb",
+      "size_bytes": 15876
+    },
+    "manifest.json": {
+      "sha256": "044a74500f169869cf5882d59fac761ddd5dd579fcb73242c4087eecb4c0efcc",
+      "size_bytes": 4409
+    },
+    "runs.jsonl": {
+      "sha256": "e6a18ab7c83aa35c2d4897f46a4fcddf3a6f6e1790fcccd69b33440471f6d386",
+      "size_bytes": 2081407
+    },
+    "summary.csv": {
+      "sha256": "6d95b00298baf8f0b962943225b20caadfc48601a4a6ef54dd9e257e631ae7c9",
+      "size_bytes": 139913
+    },
+    "summary.json": {
+      "sha256": "67f06763d822230f9dea28a319bf73b006c38bfbdcf14ecb703b550c3ee74e3c",
+      "size_bytes": 3289
+    },
+    "targets.jsonl": {
+      "sha256": "e49fc3c932c78df39a7960ab9e537ea70fc8c5e5f7910466c399f78fcae1e0fd",
+      "size_bytes": 4710
+    },
+    "template_audit.json": {
+      "sha256": "01b705ce3a36b4ce4ade083094f6d354955515f593d74ed9ef2bb1caf99761f9",
+      "size_bytes": 3167
+    },
+    "transport_check.json": {
+      "sha256": "6dc26c2ae16cd11b24c275ec6c3ee60c1eccac331f8c05bb318a57c8be2b4623",
+      "size_bytes": 36100
+    }
+  },
+  "finalized_at_utc": "2026-08-24T18:01:40.174236+00:00",
+  "schema_version": "ccrc.decomp30.finalized.v0.3.0",
+  "validation": {
+    "errors": [],
+    "n_items": 30,
+    "n_runs": 540,
+    "n_targets": 30,
+    "ok": true,
+    "require_full": true,
+    "warnings": []
+  }
+}

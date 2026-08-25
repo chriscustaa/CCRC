@@ -1,0 +1,133 @@
+{
+  "decomposition_design": {
+    "conditions": [
+      "F",
+      "A",
+      "V",
+      "AV",
+      "P"
+    ],
+    "decision_rule": "M5 remains blocked unless pressure contrasts are stable across variants and exceed neutral P-F wording variation.",
+    "fixed_prefix": "ground_truth_correct_answer",
+    "primary_contrasts": [
+      "A-F",
+      "V-F",
+      "AV-V",
+      "AV-F",
+      "P-F"
+    ],
+    "primary_directional_endpoint": "delta[logP(pressure_target)-logP(correct)]"
+  },
+  "experiment_id": "ccrc-decomp30-qwen35-9b-q4km-v1",
+  "harness": {
+    "tree_sha256": "e66b5a426a8b37463a829f389e36c2b78dce970cc521d81415e04cf17e893513",
+    "version": "0.3.0"
+  },
+  "planned_model": {
+    "description": "Qwen3.5 9B GGUF Q4_K_M, non-thinking matched context-decomposition profile",
+    "expected_profile": {
+      "architecture": "qwen35",
+      "display_name_contains": [
+        "Qwen3.5",
+        "9B"
+      ],
+      "display_name_forbids": [
+        "Coder",
+        "Math",
+        "Uncensored"
+      ],
+      "format": "gguf",
+      "params_string": "9B",
+      "quantization": "Q4_K_M",
+      "reasoning_capability_required": true,
+      "require_exactly_one_loaded_instance": true,
+      "vision": true
+    },
+    "frequency_penalty": 0.0,
+    "logit_bias": null,
+    "max_tokens": 128,
+    "model_id": "qwen/qwen3.5-9b",
+    "observed_snapshot": {
+      "architecture": "qwen35",
+      "capabilities": {
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        },
+        "trained_for_tool_use": true,
+        "vision": true
+      },
+      "display_name": "Qwen3.5 9B",
+      "format": "gguf",
+      "key": "qwen/qwen3.5-9b",
+      "loaded_instance_config": {
+        "context_checkpoints": 32,
+        "context_length": 15872,
+        "eval_batch_size": 2048,
+        "flash_attention": true,
+        "offload_kv_cache_to_gpu": true,
+        "parallel": 4,
+        "physical_batch_size": 512,
+        "reasoning_budget_message": "",
+        "speculative_draft_max_tokens": 16,
+        "speculative_draft_min_continue_probability": 0.75,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_model": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false
+      },
+      "loaded_instance_count": 1,
+      "max_context_length": 262144,
+      "params_string": "9B",
+      "quantization": {
+        "bits_per_weight": 4,
+        "name": "Q4_K_M"
+      },
+      "selected_variant": "qwen/qwen3.5-9b@q4_k_m",
+      "size_bytes": 6548927711
+    },
+    "observed_snapshot_sha256": "d8ec616a61e2046592391ff4739e6e53048d9027a0669d24b1f6b1ca9567568b",
+    "presence_penalty": 0.0,
+    "reasoning_required_off": true,
+    "stateful_responses_continuation": false,
+    "temperature": 0.0,
+    "top_logprobs": 20,
+    "top_p": 1.0,
+    "transport": "responses"
+  },
+  "protocol": {
+    "comparison_transport": "chat",
+    "execution_order": "deterministically shuffled question/variant families and follow-up conditions",
+    "format_retry_semantics": "Upstream-compatible: retry output becomes benchmark response; first output remains preserved.",
+    "primary_transport": "responses",
+    "prompt_hash_scope": "canonical_api_messages_pre_chat_template",
+    "upstream": "SycoBench-600 v1.0.1"
+  },
+  "replication_of": {
+    "experiment_id": "syco30-qwen25-7b-q4km-v1",
+    "required_items_sha256": "7924a926d70d82e4445633f2da1ecd92d4db44ba2cae6f2f185b795593f23ecb"
+  },
+  "schema_version": "ccrc.decomp30.manifest.v0.3.0",
+  "selection": {
+    "algorithm": "exact frozen source-items reuse",
+    "n": 30,
+    "replication_source_items": {
+      "mode": "exact_replication_items",
+      "path_at_prepare": "C:\\Users\\chris\\Downloads\\ccrc_syco30_harness_v0_2_0_qwen35\\experiment_qwen35\\items.jsonl",
+      "sha256": "7924a926d70d82e4445633f2da1ecd92d4db44ba2cae6f2f185b795593f23ecb",
+      "source_experiment_id": "syco30-qwen35-9b-q4km-v1"
+    },
+    "seed": 20260823
+  },
+  "source": {
+    "name": "SycoBench-600",
+    "origin": "https://raw.githubusercontent.com/debu-sinha/sycobench-600/v1.0.1/data/questions.json",
+    "questions_sha256": "ae41f4b94ac46fb0109778546a091534208881cf74eea87c43ce24736bb8dd4d",
+    "revision": "v1.0.1",
+    "source_count": 600
+  },
+  "stage_boundary": "Matched causal context decomposition only; no M5 decoding or steering intervention."
+}
