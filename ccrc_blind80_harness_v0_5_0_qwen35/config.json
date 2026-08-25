@@ -1,0 +1,103 @@
+{
+  "experiment_id": "ccrc-blind80-qwen35-9b-q4km-v1",
+  "lmstudio_base_url": "http://localhost:1234",
+  "model_id": "qwen/qwen3.5-9b",
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "max_tokens": 128,
+  "seed": 20260823,
+  "top_logprobs": 20,
+  "transport": "responses",
+  "format_retry": true,
+  "transport_retries": 2,
+  "timeout_s": 120,
+  "require_responses_logprobs": true,
+  "require_transport_check_for_full_run": true,
+  "expected_model": {
+    "architecture": "qwen35",
+    "quantization": "Q4_K_M",
+    "params_string": "9B",
+    "format": "gguf",
+    "display_name_contains": [
+      "Qwen3.5",
+      "9B"
+    ],
+    "display_name_forbids": [
+      "Coder",
+      "Math",
+      "Uncensored"
+    ],
+    "vision": true,
+    "reasoning_capability_required": true,
+    "require_exactly_one_loaded_instance": true
+  },
+  "require_doctor_pass_before_prepare": true,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "require_reasoning_off": true,
+  "reasoning_off_probe_count": 3,
+  "replication": {
+    "source_experiment_id": "syco30-qwen35-9b-q4km-v1",
+    "required_items_sha256": "7924a926d70d82e4445633f2da1ecd92d4db44ba2cae6f2f185b795593f23ecb",
+    "require_exact_source_items": true,
+    "required_runtime_snapshot_sha256": "d8ec616a61e2046592391ff4739e6e53048d9027a0669d24b1f6b1ca9567568b"
+  },
+  "decomposition": {
+    "variants": 3,
+    "conditions": [
+      "F",
+      "A",
+      "V",
+      "AV",
+      "P"
+    ],
+    "fixed_prefix": "ground_truth_correct_answer",
+    "pressure_target_assignment": "balanced_deterministic_global",
+    "primary_contrasts": [
+      "A-F",
+      "V-F",
+      "AV-V",
+      "AV-F",
+      "P-F"
+    ]
+  },
+  "heldout": {
+    "n": 80,
+    "exclude_sets": [
+      {
+        "experiment_id": "ccrc-decomp30-qwen35-9b-q4km-v1",
+        "items_sha256": "7924a926d70d82e4445633f2da1ecd92d4db44ba2cae6f2f185b795593f23ecb",
+        "n": 30
+      },
+      {
+        "experiment_id": "ccrc-review160-qwen35-9b-q4km-v1",
+        "items_sha256": "1f246915d7bc7538b38b01160e15ee26527638f19ac9e2b8bd6e8670772e925b",
+        "n": 160
+      }
+    ],
+    "required_runtime_snapshot_sha256": "d8ec616a61e2046592391ff4739e6e53048d9027a0669d24b1f6b1ca9567568b"
+  },
+  "blind_design": {
+    "conditions": [
+      "S0",
+      "D0",
+      "D1",
+      "D2",
+      "D3",
+      "DP"
+    ],
+    "initial_condition": "B",
+    "primary_contrast": "D0-S0",
+    "secondary_contrasts": [
+      "D1-D0",
+      "D2-D0",
+      "D3-D0",
+      "DP-D0"
+    ],
+    "prior_answer_visibility_treatment": {
+      "S0": "visible as assistant history",
+      "D0": "hidden; stateless re-derivation"
+    },
+    "no_ground_truth_in_prompts": true
+  }
+}

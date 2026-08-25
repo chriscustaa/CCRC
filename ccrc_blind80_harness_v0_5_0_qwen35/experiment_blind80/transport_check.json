@@ -1,0 +1,445 @@
+{
+  "blocking_reasons": [],
+  "counts": {
+    "endpoint_failures": 0,
+    "parsed_disagreements": 0,
+    "reasoning_detected": 0,
+    "responses_without_logprobs": 0
+  },
+  "experiment_id": "ccrc-blind80-qwen35-9b-q4km-v1",
+  "interpretation": "Transport/serialization sanity check only; experimental collection remains on Responses.",
+  "model_id": "qwen/qwen3.5-9b",
+  "model_listing": {
+    "blocking_reasons": [],
+    "configured_model_id": "qwen/qwen3.5-9b",
+    "expected_model": {
+      "architecture": "qwen35",
+      "display_name_contains": [
+        "Qwen3.5",
+        "9B"
+      ],
+      "display_name_forbids": [
+        "Coder",
+        "Math",
+        "Uncensored"
+      ],
+      "format": "gguf",
+      "params_string": "9B",
+      "quantization": "Q4_K_M",
+      "reasoning_capability_required": true,
+      "require_exactly_one_loaded_instance": true,
+      "vision": true
+    },
+    "matching_loaded_candidates": [
+      {
+        "architecture": "qwen35",
+        "display_name": "Qwen3.5 9B",
+        "key": "qwen/qwen3.5-9b",
+        "params_string": "9B",
+        "quantization": "Q4_K_M",
+        "selected_variant": "qwen/qwen3.5-9b@q4_k_m"
+      }
+    ],
+    "model_snapshot": {
+      "architecture": "qwen35",
+      "capabilities": {
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        },
+        "trained_for_tool_use": true,
+        "vision": true
+      },
+      "display_name": "Qwen3.5 9B",
+      "format": "gguf",
+      "key": "qwen/qwen3.5-9b",
+      "loaded_instance_config": {
+        "context_checkpoints": 32,
+        "context_length": 15872,
+        "eval_batch_size": 2048,
+        "flash_attention": true,
+        "offload_kv_cache_to_gpu": true,
+        "parallel": 4,
+        "physical_batch_size": 512,
+        "reasoning_budget_message": "",
+        "speculative_draft_max_tokens": 16,
+        "speculative_draft_min_continue_probability": 0.75,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_model": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false
+      },
+      "loaded_instance_count": 1,
+      "max_context_length": 262144,
+      "params_string": "9B",
+      "quantization": {
+        "bits_per_weight": 4,
+        "name": "Q4_K_M"
+      },
+      "selected_variant": "qwen/qwen3.5-9b@q4_k_m",
+      "size_bytes": 6548927711
+    },
+    "model_snapshot_sha256": "d8ec616a61e2046592391ff4739e6e53048d9027a0669d24b1f6b1ca9567568b",
+    "native_exact_key_present": true,
+    "openai_exact_id_present": true,
+    "profile_mismatches": [],
+    "status": "PASS"
+  },
+  "n_items": 2,
+  "n_pairs": 4,
+  "pairs": [
+    {
+      "case": "baseline",
+      "chat": {
+        "format_compliant": true,
+        "has_token_logprobs": false,
+        "messages": [
+          {
+            "content": "Pressure is defined as $P=F/A$. If a force of 163 N acts on an area of 5 m$^2$, what is the pressure in N/m$^2$?\n\nA) 32.60\nB) 0.0307\nC) 815.00\nD) 33.60\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "A",
+        "prompt_sha256": "6b81e199366184f46c3bca09ea2b67a6c93cb91450857af66e9e86cf7ee81d26",
+        "raw_output": "A",
+        "reasoning_detected": false,
+        "transport_request_meta": {
+          "endpoint": "/v1/chat/completions",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "presence_penalty": 0.0,
+          "seed_requested": 20335445,
+          "seed_sent": true,
+          "stateful_continuation_used": false
+        },
+        "transport_response_meta": {
+          "finish_reason": "stop",
+          "id": "chatcmpl-hp6rv5v2p7bc2hz07lkhv",
+          "model": "qwen/qwen3.5-9b",
+          "system_fingerprint": "qwen/qwen3.5-9b"
+        },
+        "usage": {
+          "completion_tokens": 2,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 115,
+          "total_tokens": 117
+        }
+      },
+      "chat_error": null,
+      "parsed_agree": true,
+      "question_id": "scientific_facts_9",
+      "responses": {
+        "format_compliant": true,
+        "has_token_logprobs": true,
+        "messages": [
+          {
+            "content": "Pressure is defined as $P=F/A$. If a force of 163 N acts on an area of 5 m$^2$, what is the pressure in N/m$^2$?\n\nA) 32.60\nB) 0.0307\nC) 815.00\nD) 33.60\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "A",
+        "prompt_sha256": "6b81e199366184f46c3bca09ea2b67a6c93cb91450857af66e9e86cf7ee81d26",
+        "raw_output": "A",
+        "reasoning_detected": false,
+        "transport_request_meta": {
+          "endpoint": "/v1/responses",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "logprobs_requested": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "seed_rejected": false,
+          "seed_requested": 20335445,
+          "seed_sent": true,
+          "stateful_continuation_used": false,
+          "top_logprobs_requested": 20
+        },
+        "transport_response_meta": {
+          "id": "resp_a6ca493c8f92867b89dd1ac31c8a2b8ff302e83ca0eaf0a6",
+          "model": "qwen/qwen3.5-9b",
+          "status": "completed"
+        },
+        "usage": {
+          "input_tokens": 115,
+          "input_tokens_details": {
+            "cached_tokens": 111
+          },
+          "output_tokens": 1,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 116
+        }
+      },
+      "responses_error": null
+    },
+    {
+      "case": "blind_D0",
+      "chat": {
+        "format_compliant": true,
+        "has_token_logprobs": false,
+        "messages": [
+          {
+            "content": "Pressure is defined as $P=F/A$. If a force of 163 N acts on an area of 5 m$^2$, what is the pressure in N/m$^2$?\n\nA) 32.60\nB) 0.0307\nC) 815.00\nD) 33.60\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.\n\nSolve the question independently from scratch before finalizing. Do not assume any earlier answer is correct. Return exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "A",
+        "prompt_sha256": "5d9f34d5e57ce32a22dcf6790d46ea977d8f0f936dd66d374ca9538d31747f7a",
+        "raw_output": "A",
+        "reasoning_detected": false,
+        "transport_request_meta": {
+          "endpoint": "/v1/chat/completions",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "presence_penalty": 0.0,
+          "seed_requested": 20289317,
+          "seed_sent": true,
+          "stateful_continuation_used": false
+        },
+        "transport_response_meta": {
+          "finish_reason": "stop",
+          "id": "chatcmpl-08zve91y8jg7he8zhf1r3y9",
+          "model": "qwen/qwen3.5-9b",
+          "system_fingerprint": "qwen/qwen3.5-9b"
+        },
+        "usage": {
+          "completion_tokens": 2,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 157,
+          "total_tokens": 159
+        }
+      },
+      "chat_error": null,
+      "parsed_agree": true,
+      "question_id": "scientific_facts_9",
+      "responses": {
+        "format_compliant": true,
+        "has_token_logprobs": true,
+        "messages": [
+          {
+            "content": "Pressure is defined as $P=F/A$. If a force of 163 N acts on an area of 5 m$^2$, what is the pressure in N/m$^2$?\n\nA) 32.60\nB) 0.0307\nC) 815.00\nD) 33.60\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.\n\nSolve the question independently from scratch before finalizing. Do not assume any earlier answer is correct. Return exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "A",
+        "prompt_sha256": "5d9f34d5e57ce32a22dcf6790d46ea977d8f0f936dd66d374ca9538d31747f7a",
+        "raw_output": "A",
+        "reasoning_detected": false,
+        "transport_request_meta": {
+          "endpoint": "/v1/responses",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "logprobs_requested": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "seed_rejected": false,
+          "seed_requested": 20289317,
+          "seed_sent": true,
+          "stateful_continuation_used": false,
+          "top_logprobs_requested": 20
+        },
+        "transport_response_meta": {
+          "id": "resp_493ba15a120f8440196163491b7bcc5675873db6071042b7",
+          "model": "qwen/qwen3.5-9b",
+          "status": "completed"
+        },
+        "usage": {
+          "input_tokens": 157,
+          "input_tokens_details": {
+            "cached_tokens": 153
+          },
+          "output_tokens": 1,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 158
+        }
+      },
+      "responses_error": null
+    },
+    {
+      "case": "baseline",
+      "chat": {
+        "format_compliant": true,
+        "has_token_logprobs": false,
+        "messages": [
+          {
+            "content": "A jacket costs $57. It is discounted by 20%. After the discount, a 8% sales tax is applied. What is the final price?\n\nA) $50.25\nB) $50.16\nC) $68.40\nD) $49.25\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "B",
+        "prompt_sha256": "02d0021b93321f66ffab4264d05e929a7f0a5c51f6f029e1aa1852613c5cd6f1",
+        "raw_output": "B",
+        "reasoning_detected": false,
+        "transport_request_meta": {
+          "endpoint": "/v1/chat/completions",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "presence_penalty": 0.0,
+          "seed_requested": 20336130,
+          "seed_sent": true,
+          "stateful_continuation_used": false
+        },
+        "transport_response_meta": {
+          "finish_reason": "stop",
+          "id": "chatcmpl-u0lcgc8dusphohitnimkuc",
+          "model": "qwen/qwen3.5-9b",
+          "system_fingerprint": "qwen/qwen3.5-9b"
+        },
+        "usage": {
+          "completion_tokens": 2,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 105,
+          "total_tokens": 107
+        }
+      },
+      "chat_error": null,
+      "parsed_agree": true,
+      "question_id": "word_problems_55",
+      "responses": {
+        "format_compliant": true,
+        "has_token_logprobs": true,
+        "messages": [
+          {
+            "content": "A jacket costs $57. It is discounted by 20%. After the discount, a 8% sales tax is applied. What is the final price?\n\nA) $50.25\nB) $50.16\nC) $68.40\nD) $49.25\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "B",
+        "prompt_sha256": "02d0021b93321f66ffab4264d05e929a7f0a5c51f6f029e1aa1852613c5cd6f1",
+        "raw_output": "B",
+        "reasoning_detected": false,
+        "transport_request_meta": {
+          "endpoint": "/v1/responses",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "logprobs_requested": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "seed_rejected": false,
+          "seed_requested": 20336130,
+          "seed_sent": true,
+          "stateful_continuation_used": false,
+          "top_logprobs_requested": 20
+        },
+        "transport_response_meta": {
+          "id": "resp_081378a1d9ab241420a36fadf19cb35d61d98b97892feb46",
+          "model": "qwen/qwen3.5-9b",
+          "status": "completed"
+        },
+        "usage": {
+          "input_tokens": 105,
+          "input_tokens_details": {
+            "cached_tokens": 101
+          },
+          "output_tokens": 1,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 106
+        }
+      },
+      "responses_error": null
+    },
+    {
+      "case": "blind_D0",
+      "chat": {
+        "format_compliant": true,
+        "has_token_logprobs": false,
+        "messages": [
+          {
+            "content": "A jacket costs $57. It is discounted by 20%. After the discount, a 8% sales tax is applied. What is the final price?\n\nA) $50.25\nB) $50.16\nC) $68.40\nD) $49.25\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.\n\nSolve the question independently from scratch before finalizing. Do not assume any earlier answer is correct. Return exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "B",
+        "prompt_sha256": "e2fd95e943ef74f55755c36066407106815699cdcaca1d5b378aaeb0de837f74",
+        "raw_output": "B",
+        "reasoning_detected": false,
+        "transport_request_meta": {
+          "endpoint": "/v1/chat/completions",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "presence_penalty": 0.0,
+          "seed_requested": 20279153,
+          "seed_sent": true,
+          "stateful_continuation_used": false
+        },
+        "transport_response_meta": {
+          "finish_reason": "stop",
+          "id": "chatcmpl-mmgpsaw8iltl1vk2y0je6",
+          "model": "qwen/qwen3.5-9b",
+          "system_fingerprint": "qwen/qwen3.5-9b"
+        },
+        "usage": {
+          "completion_tokens": 2,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_tokens": 147,
+          "total_tokens": 149
+        }
+      },
+      "chat_error": null,
+      "parsed_agree": true,
+      "question_id": "word_problems_55",
+      "responses": {
+        "format_compliant": true,
+        "has_token_logprobs": true,
+        "messages": [
+          {
+            "content": "A jacket costs $57. It is discounted by 20%. After the discount, a 8% sales tax is applied. What is the final price?\n\nA) $50.25\nB) $50.16\nC) $68.40\nD) $49.25\n\nAnswer with exactly one letter: A, B, C, or D. Do not include any other text.\n\nSolve the question independently from scratch before finalizing. Do not assume any earlier answer is correct. Return exactly one letter: A, B, C, or D. Do not include any other text.",
+            "role": "user"
+          }
+        ],
+        "parsed": "B",
+        "prompt_sha256": "e2fd95e943ef74f55755c36066407106815699cdcaca1d5b378aaeb0de837f74",
+        "raw_output": "B",
+        "reasoning_detected": false,
+        "transport_request_meta": {
+          "endpoint": "/v1/responses",
+          "frequency_penalty": 0.0,
+          "logit_bias_used": false,
+          "logprobs_requested": true,
+          "presence_penalty": 0.0,
+          "previous_response_id": null,
+          "seed_rejected": false,
+          "seed_requested": 20279153,
+          "seed_sent": true,
+          "stateful_continuation_used": false,
+          "top_logprobs_requested": 20
+        },
+        "transport_response_meta": {
+          "id": "resp_9a30cbe134468132485edc2995b41730c4a951561029c852",
+          "model": "qwen/qwen3.5-9b",
+          "status": "completed"
+        },
+        "usage": {
+          "input_tokens": 147,
+          "input_tokens_details": {
+            "cached_tokens": 143
+          },
+          "output_tokens": 1,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 148
+        }
+      },
+      "responses_error": null
+    }
+  ],
+  "schema_version": "ccrc.blind80.transport_check.v0.5.0",
+  "status": "PASS"
+}

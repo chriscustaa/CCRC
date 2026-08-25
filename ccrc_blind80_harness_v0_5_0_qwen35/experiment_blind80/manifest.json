@@ -1,0 +1,145 @@
+{
+  "blind_design": {
+    "B": "one actual initial answer generated once",
+    "D0": "same CORE_REDERIVE instruction, B hidden, stateless re-derivation",
+    "D1": "blind re-derivation + accountability",
+    "D2": "blind re-derivation + anticipated LLM audit",
+    "D3": "blind re-derivation + one additional consideration",
+    "DP": "blind neutral paraphrase/sham",
+    "S0": "same CORE_REDERIVE instruction with B visible as assistant history",
+    "primary_contrast": "D0-S0",
+    "primary_endpoints": [
+      "paired accuracy difference",
+      "B-wrong -> correct repairs",
+      "B-correct -> wrong harms",
+      "agreement with B",
+      "correct-answer margin",
+      "frozen-B margin"
+    ],
+    "promotion_rule": "Promote blind re-derivation only if D0 improves over S0 with repairs exceeding harms and positive paired accuracy signal. Social framings require incremental benefit over D0 without increased harm."
+  },
+  "experiment_id": "ccrc-blind80-qwen35-9b-q4km-v1",
+  "harness": {
+    "tree_sha256": "5fe636700954c447f68717025e1835feee27fded33d28f6ee7889e777d24bbe3",
+    "version": "0.5.0"
+  },
+  "heldout_selection": {
+    "algorithm": "capacity-proportional domain/difficulty stratification over unique semantic stems after exact exclusion of Decomp30 and Review160 IDs/stems",
+    "difficulty_counts": {
+      "easy": 14,
+      "hard": 32,
+      "medium": 34
+    },
+    "domain_counts": {
+      "analogies": 9,
+      "basic_math": 23,
+      "logical_reasoning": 9,
+      "reading_comprehension": 5,
+      "scientific_facts": 12,
+      "word_problems": 22
+    },
+    "excluded_unique_ids": 190,
+    "excluded_unique_stems": 190,
+    "exclusion_sets": [
+      {
+        "n": 30,
+        "path": "C:\\Users\\chris\\Downloads\\ccrc_decomp30_harness_v0_3_0_qwen35\\experiment_decomp30\\items.jsonl",
+        "sha256": "7924a926d70d82e4445633f2da1ecd92d4db44ba2cae6f2f185b795593f23ecb"
+      },
+      {
+        "n": 160,
+        "path": "C:\\Users\\chris\\Downloads\\ccrc_review160_harness_v0_4_0_qwen35\\experiment_review160\\items.jsonl",
+        "sha256": "1f246915d7bc7538b38b01160e15ee26527638f19ac9e2b8bd6e8670772e925b"
+      }
+    ],
+    "n": 80,
+    "seed": 20260823,
+    "selected_items_sha256": "cec194ee1445611160523d5defdd4ef5ad1246d69953325cb9a484a9c708e338",
+    "source_id_overlap": [],
+    "unique_semantic_stems": 80
+  },
+  "planned_model": {
+    "description": "Qwen3.5 9B GGUF Q4_K_M, non-thinking blind re-derivation test",
+    "expected_profile": {
+      "architecture": "qwen35",
+      "display_name_contains": [
+        "Qwen3.5",
+        "9B"
+      ],
+      "display_name_forbids": [
+        "Coder",
+        "Math",
+        "Uncensored"
+      ],
+      "format": "gguf",
+      "params_string": "9B",
+      "quantization": "Q4_K_M",
+      "reasoning_capability_required": true,
+      "require_exactly_one_loaded_instance": true,
+      "vision": true
+    },
+    "frequency_penalty": 0.0,
+    "logit_bias": null,
+    "max_tokens": 128,
+    "model_id": "qwen/qwen3.5-9b",
+    "observed_snapshot": {
+      "architecture": "qwen35",
+      "capabilities": {
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        },
+        "trained_for_tool_use": true,
+        "vision": true
+      },
+      "display_name": "Qwen3.5 9B",
+      "format": "gguf",
+      "key": "qwen/qwen3.5-9b",
+      "loaded_instance_config": {
+        "context_checkpoints": 32,
+        "context_length": 15872,
+        "eval_batch_size": 2048,
+        "flash_attention": true,
+        "offload_kv_cache_to_gpu": true,
+        "parallel": 4,
+        "physical_batch_size": 512,
+        "reasoning_budget_message": "",
+        "speculative_draft_max_tokens": 16,
+        "speculative_draft_min_continue_probability": 0.75,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_model": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false
+      },
+      "loaded_instance_count": 1,
+      "max_context_length": 262144,
+      "params_string": "9B",
+      "quantization": {
+        "bits_per_weight": 4,
+        "name": "Q4_K_M"
+      },
+      "selected_variant": "qwen/qwen3.5-9b@q4_k_m",
+      "size_bytes": 6548927711
+    },
+    "observed_snapshot_sha256": "d8ec616a61e2046592391ff4739e6e53048d9027a0669d24b1f6b1ca9567568b",
+    "presence_penalty": 0.0,
+    "reasoning_required_off": true,
+    "stateful_responses_continuation": false,
+    "temperature": 0.0,
+    "top_logprobs": 20,
+    "top_p": 1.0,
+    "transport": "responses"
+  },
+  "schema_version": "ccrc.blind80.manifest.v0.5.0",
+  "source": {
+    "name": "SycoBench-600",
+    "origin": "https://raw.githubusercontent.com/debu-sinha/sycobench-600/v1.0.1/data/questions.json",
+    "questions_sha256": "ae41f4b94ac46fb0109778546a091534208881cf74eea87c43ce24736bb8dd4d",
+    "revision": "v1.0.1",
+    "source_count": 600
+  },
+  "stage_boundary": "Blind re-derivation mechanism test only. No M5, gamma tuning, hidden-state steering, activation probes, or model training."
+}

@@ -1,0 +1,171 @@
+{
+  "condition_summary": {
+    "B": {
+      "accuracy": 0.6875,
+      "format_compliance_first": 1.0,
+      "mean_correct_margin": 1.9730620868096593,
+      "n": 80
+    },
+    "D0": {
+      "accuracy": 0.7125,
+      "format_compliance_first": 1.0,
+      "mean_correct_margin": 2.175044985479326,
+      "n": 80
+    },
+    "D1": {
+      "accuracy": 0.6875,
+      "format_compliance_first": 1.0,
+      "mean_correct_margin": 2.0891384312184527,
+      "n": 80
+    },
+    "D2": {
+      "accuracy": 0.7125,
+      "format_compliance_first": 1.0,
+      "mean_correct_margin": 2.332981148650288,
+      "n": 80
+    },
+    "D3": {
+      "accuracy": 0.65,
+      "format_compliance_first": 1.0,
+      "mean_correct_margin": 1.7900421494152396,
+      "n": 80
+    },
+    "DP": {
+      "accuracy": 0.6875,
+      "format_compliance_first": 1.0,
+      "mean_correct_margin": 1.827765859354986,
+      "n": 80
+    },
+    "S0": {
+      "accuracy": 0.6875,
+      "format_compliance_first": 1.0,
+      "mean_correct_margin": 2.2727019727637527,
+      "n": 80
+    }
+  },
+  "decision_rule": "Blind D0 is promoted only if it improves over visible S0 with repairs exceeding harms and a positive paired accuracy signal. Social framings D1/D2/D3 are promoted only if they add benefit over D0 without increasing harm. Otherwise keep blind review unpromoted.",
+  "n_questions": 80,
+  "n_runs": 560,
+  "primary_and_secondary_contrasts": {
+    "D0-S0": {
+      "mean_accuracy_delta": 0.025,
+      "mean_delta_correct_margin": -0.09765698728442658,
+      "mean_delta_frozen_B_margin": -0.5254295528429793,
+      "n_accuracy_pairs": 80,
+      "n_correct_margin_pairs": 80,
+      "n_frozen_margin_pairs": 80
+    },
+    "D1-D0": {
+      "mean_accuracy_delta": -0.025,
+      "mean_delta_correct_margin": -0.08590655426087324,
+      "mean_delta_frozen_B_margin": 0.010723172253347003,
+      "n_accuracy_pairs": 80,
+      "n_correct_margin_pairs": 80,
+      "n_frozen_margin_pairs": 80
+    },
+    "D2-D0": {
+      "mean_accuracy_delta": 0.0,
+      "mean_delta_correct_margin": 0.15793616317096165,
+      "mean_delta_frozen_B_margin": 0.23720954090240412,
+      "n_accuracy_pairs": 80,
+      "n_correct_margin_pairs": 80,
+      "n_frozen_margin_pairs": 80
+    },
+    "D3-D0": {
+      "mean_accuracy_delta": -0.0625,
+      "mean_delta_correct_margin": -0.3850028360640863,
+      "mean_delta_frozen_B_margin": -0.36223305299936326,
+      "n_accuracy_pairs": 80,
+      "n_correct_margin_pairs": 80,
+      "n_frozen_margin_pairs": 80
+    },
+    "DP-D0": {
+      "mean_accuracy_delta": -0.025,
+      "mean_delta_correct_margin": -0.3472791261243401,
+      "mean_delta_frozen_B_margin": -0.30212868817325217,
+      "n_accuracy_pairs": 80,
+      "n_correct_margin_pairs": 80,
+      "n_frozen_margin_pairs": 80
+    }
+  },
+  "revision_metrics_relative_to_B": {
+    "D0": {
+      "agreement_with_B": 0.9125,
+      "baseline_correct_n": 55,
+      "baseline_wrong_n": 25,
+      "harm_rate_given_B_correct": 0.03636363636363636,
+      "harms": 2,
+      "mcnemar_B_vs_condition_p": 0.6875,
+      "n_usable": 80,
+      "net_revision_utility": 0.12363636363636364,
+      "repair_rate_given_B_wrong": 0.16,
+      "repairs": 4
+    },
+    "D1": {
+      "agreement_with_B": 0.95,
+      "baseline_correct_n": 55,
+      "baseline_wrong_n": 25,
+      "harm_rate_given_B_correct": 0.03636363636363636,
+      "harms": 2,
+      "mcnemar_B_vs_condition_p": 1.0,
+      "n_usable": 80,
+      "net_revision_utility": 0.04363636363636364,
+      "repair_rate_given_B_wrong": 0.08,
+      "repairs": 2
+    },
+    "D2": {
+      "agreement_with_B": 0.925,
+      "baseline_correct_n": 55,
+      "baseline_wrong_n": 25,
+      "harm_rate_given_B_correct": 0.03636363636363636,
+      "harms": 2,
+      "mcnemar_B_vs_condition_p": 0.6875,
+      "n_usable": 80,
+      "net_revision_utility": 0.12363636363636364,
+      "repair_rate_given_B_wrong": 0.16,
+      "repairs": 4
+    },
+    "D3": {
+      "agreement_with_B": 0.9125,
+      "baseline_correct_n": 55,
+      "baseline_wrong_n": 25,
+      "harm_rate_given_B_correct": 0.07272727272727272,
+      "harms": 4,
+      "mcnemar_B_vs_condition_p": 0.375,
+      "n_usable": 80,
+      "net_revision_utility": -0.03272727272727272,
+      "repair_rate_given_B_wrong": 0.04,
+      "repairs": 1
+    },
+    "DP": {
+      "agreement_with_B": 0.9375,
+      "baseline_correct_n": 55,
+      "baseline_wrong_n": 25,
+      "harm_rate_given_B_correct": 0.03636363636363636,
+      "harms": 2,
+      "mcnemar_B_vs_condition_p": 1.0,
+      "n_usable": 80,
+      "net_revision_utility": 0.04363636363636364,
+      "repair_rate_given_B_wrong": 0.08,
+      "repairs": 2
+    },
+    "S0": {
+      "agreement_with_B": 0.9875,
+      "baseline_correct_n": 55,
+      "baseline_wrong_n": 25,
+      "harm_rate_given_B_correct": 0.0,
+      "harms": 0,
+      "mcnemar_B_vs_condition_p": 1.0,
+      "n_usable": 80,
+      "net_revision_utility": 0.0,
+      "repair_rate_given_B_wrong": 0.0,
+      "repairs": 0
+    }
+  },
+  "schema_version": "ccrc.blind80.summary.v0.5.0",
+  "transition_candidate_counts": {
+    "harms": 12,
+    "repairs": 13,
+    "total": 30
+  }
+}

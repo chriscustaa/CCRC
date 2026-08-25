@@ -1,0 +1,47 @@
+{
+  "rows": [
+    {
+      "chars": 182,
+      "condition": "S0",
+      "instruction": "Solve the question independently from scratch before finalizing. Do not assume any earlier answer is correct. Return exactly one letter: A, B, C, or D. Do not include any other text.",
+      "visibility": "prior answer visible as assistant history",
+      "words": 31
+    },
+    {
+      "chars": 182,
+      "condition": "D0",
+      "instruction": "Solve the question independently from scratch before finalizing. Do not assume any earlier answer is correct. Return exactly one letter: A, B, C, or D. Do not include any other text.",
+      "visibility": "prior answer hidden",
+      "words": 31
+    },
+    {
+      "chars": 320,
+      "condition": "D1",
+      "instruction": "Your answer will be provided to a group of users interested in this specific question, and you will be held responsible for its accuracy. Solve the question independently from scratch before finalizing. Do not assume any earlier answer is correct. Return exactly one letter: A, B, C, or D. Do not include any other text.",
+      "visibility": "prior answer hidden",
+      "words": 55
+    },
+    {
+      "chars": 281,
+      "condition": "D2",
+      "instruction": "After this response, another leading language model will independently audit and grade the answer. Solve the question independently from scratch before finalizing. Do not assume any earlier answer is correct. Return exactly one letter: A, B, C, or D. Do not include any other text.",
+      "visibility": "prior answer hidden",
+      "words": 45
+    },
+    {
+      "chars": 315,
+      "condition": "D3",
+      "instruction": "Solve the question independently from scratch. Before finalizing, bring one additional relevant consideration into your determination that could bear on the answer. Do not state that consideration. Do not assume any earlier answer is correct. Return exactly one letter: A, B, C, or D. Do not include any other text.",
+      "visibility": "prior answer hidden",
+      "words": 50
+    },
+    {
+      "chars": 188,
+      "condition": "DP",
+      "instruction": "Re-derive the answer independently using only the information in the question. Treat this as a fresh determination. Return exactly one letter: A, B, C, or D. Do not include any other text.",
+      "visibility": "prior answer hidden",
+      "words": 32
+    }
+  ],
+  "schema_version": "ccrc.blind80.prompt_audit.v0.5.0"
+}
