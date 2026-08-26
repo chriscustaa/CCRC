@@ -9,7 +9,9 @@ from .util import canonical_json, sha256_text
 DEFAULT_DATASET = "cais/mmlu"
 DEFAULT_CONFIG = "all"
 DEFAULT_SPLIT = "test"
-DEFAULT_REVISION = "b1bdbcba68d4f5c88d91a8f2685124f148fd1fd0"
+# Parquet-era immutable MMLU revision. Script-era revisions are incompatible
+# with Hugging Face datasets>=4, which no longer executes Hub dataset scripts.
+DEFAULT_REVISION = "c30699e"
 
 
 def _answer_letter(value: Any) -> str:
@@ -116,10 +118,28 @@ def load_mmlu(cfg: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str, Any]
     n = int(ds_cfg.get("n", 1000))
     seed = int(cfg["seed"])
 
-    from datasets import load_dataset  # lazy import so unit tests do not need network
+    import datasets
+    from datasets import load_dataset
 
-    dataset = load_dataset(name, config, split=split, revision=revision)
+    try:
+        dataset = load_dataset(name, config, split=split, revision=revision)
+    except Exception as exc:
+        if exc.__class__.__name__ == "DataFilesNotFoundError":
+            raise RuntimeError(
+                f"Dataset revision {revision!r} has no data files compatible with "
+                f"datasets {datasets.__version__}. Use the frozen Parquet-era revision "
+                f"{DEFAULT_REVISION!r}; do not downgrade the loader to rescue a script-era pin."
+            ) from exc
+        raise
+
     raw_rows = [dict(x) for x in dataset]
     selected, meta = select_balanced(raw_rows, n=n, seed=seed)
-    meta.update({"name": name, "config": config, "split": split, "revision": revision, "requested_n": n})
+    meta.update({
+        "name": name,
+        "config": config,
+        "split": split,
+        "revision": revision,
+        "datasets_version": datasets.__version__,
+        "requested_n": n,
+    })
     return selected, meta
