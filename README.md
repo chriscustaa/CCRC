@@ -171,4 +171,10 @@ When citing a result, also identify the exact analysis file, experiment ID, mode
 
 ## License
 
-No repository-wide license has been declared yet. Public visibility permits inspection, but does not itself grant permission to copy, modify, or redistribute the CCRC code or documentation. The `LICENSE_NOTES.md` files describe upstream dataset terms only. Until a root license is added, contact the repository owner before reuse beyond what applicable law permits.
+CCRC uses scoped dual licensing:
+
+- **Software:** [BSD-3-Clause-Clear](./LICENSE), permitting use, modification, and redistribution while expressly granting no patent rights.
+- **Original research content:** [CC BY 4.0](./LICENSE-CONTENT.md), permitting sharing and adaptation with attribution while excluding patent and trademark rights.
+- **Third-party material:** remains under its respective upstream terms and is not relicensed here.
+
+See [`LICENSE-CONTENT.md`](./LICENSE-CONTENT.md) for the exact scope, attribution guidance, exclusions, and contribution terms.
