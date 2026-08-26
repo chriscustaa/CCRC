@@ -34,7 +34,7 @@
     "name": "cais/mmlu",
     "config": "all",
     "split": "test",
-    "revision": "c30699e",
+    "revision": "c30699e8356da336a370243923dbaf21066bb9fe",
     "n": 1000,
     "selection": "subject-balanced deterministic hash rank; answer excluded from rank"
   },

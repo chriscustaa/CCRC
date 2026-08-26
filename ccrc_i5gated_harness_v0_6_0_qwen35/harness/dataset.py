@@ -11,7 +11,7 @@ DEFAULT_CONFIG = "all"
 DEFAULT_SPLIT = "test"
 # Parquet-era immutable MMLU revision. Script-era revisions are incompatible
 # with Hugging Face datasets>=4, which no longer executes Hub dataset scripts.
-DEFAULT_REVISION = "c30699e"
+DEFAULT_REVISION = "c30699e8356da336a370243923dbaf21066bb9fe"
 
 
 def _answer_letter(value: Any) -> str:
