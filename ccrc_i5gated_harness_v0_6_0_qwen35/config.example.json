@@ -1,0 +1,66 @@
+{
+  "experiment_id": "ccrc-i5gated1000-qwen35-9b-q4km-v1",
+  "lmstudio_base_url": "http://localhost:1234",
+  "model_id": null,
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "max_tokens": 32,
+  "seed": 20260825,
+  "top_logprobs": 20,
+  "transport": "responses",
+  "format_retry": true,
+  "transport_retries": 2,
+  "timeout_s": 120,
+  "require_doctor_pass_before_prepare": true,
+  "require_transport_check_for_full_run": true,
+  "require_reasoning_off": true,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "expected_model": {
+    "architecture": "qwen35",
+    "quantization": "Q4_K_M",
+    "params_string": "9B",
+    "format": "gguf",
+    "display_name_contains": ["Qwen3.5", "9B"],
+    "display_name_forbids": ["Coder", "Math", "Uncensored"],
+    "vision": true,
+    "reasoning_capability_required": true,
+    "require_exactly_one_loaded_instance": true
+  },
+  "runtime": {
+    "required_snapshot_sha256": "d8ec616a61e2046592391ff4739e6e53048d9027a0669d24b1f6b1ca9567568b"
+  },
+  "dataset": {
+    "name": "cais/mmlu",
+    "config": "all",
+    "split": "test",
+    "revision": "c30699e8356da336a370243923dbaf21066bb9fe",
+    "n": 1000,
+    "selection": "subject-balanced deterministic hash rank; answer excluded from rank"
+  },
+  "controller": {
+    "primary_theta": 0.20,
+    "comparator_theta": 0.50,
+    "thresholds": [0.20, 0.50],
+    "sensor": "complete A/B/C/D first-token candidate-logprob top-two gap",
+    "sensor_missing_policy": "route_fail_closed",
+    "blind_branch": "D0/D5 stateless re-derivation",
+    "verifier": "neutral blind V1/V2 with deterministic distinct option permutations",
+    "vote": "majority(D,V1,V2), baseline excluded",
+    "no_majority": "abstain"
+  },
+  "treatment": {
+    "name": "I5",
+    "frozen": true,
+    "applies_to": ["B5", "D5"],
+    "excluded_from": ["B0", "D0", "V1", "V2"]
+  },
+  "analysis": {
+    "primary_effect": "B5-B0 paired strict accuracy",
+    "controller_effect_without_i5": "C(theta=0.20)-B0",
+    "controller_effect_with_i5": "D(theta=0.20)-B5",
+    "i5_inside_controller": "D(theta=0.20)-C(theta=0.20)",
+    "interaction": "(D-C)-(B5-B0)",
+    "secondary_theta": 0.50
+  }
+}
