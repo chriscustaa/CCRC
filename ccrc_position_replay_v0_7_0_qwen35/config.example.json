@@ -1,0 +1,43 @@
+{
+  "decision": {
+    "positive_schedule_fraction": 0.95
+  },
+  "expected_model": {
+    "architecture": "qwen35",
+    "display_name_contains": [
+      "Qwen3.5",
+      "9B"
+    ],
+    "display_name_forbids": [
+      "Coder",
+      "Math",
+      "Uncensored"
+    ],
+    "format": "gguf",
+    "params_string": "9B",
+    "quantization": "Q4_K_M",
+    "reasoning_capability_required": true,
+    "require_exactly_one_loaded_instance": true,
+    "vision": true
+  },
+  "experiment_id": "ccrc-position-balanced-replay-qwen35-9b-q4km-v1",
+  "format_retry": true,
+  "frequency_penalty": 0.0,
+  "lmstudio_base_url": "http://localhost:1234",
+  "max_tokens": 128,
+  "model_id": "qwen/qwen3.5-9b",
+  "presence_penalty": 0.0,
+  "require_reasoning_off": true,
+  "require_responses_logprobs": true,
+  "required_runtime_snapshot_sha256": "d8ec616a61e2046592391ff4739e6e53048d9027a0669d24b1f6b1ca9567568b",
+  "routing": {
+    "theta": 0.2
+  },
+  "seed": 2026082607,
+  "temperature": 0.0,
+  "timeout_s": 120,
+  "top_logprobs": 20,
+  "top_p": 1.0,
+  "transport": "responses",
+  "transport_retries": 2
+}

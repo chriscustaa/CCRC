@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ccrc-position-replay"
+version = "0.7.0"
+description = "Frozen 568-cell position-balanced replay for the CCRC verifier actuator"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31,<3"]
+
+[project.scripts]
+ccrc-position-replay = "harness.cli:main"
+
+[tool.setuptools]
+packages = ["harness"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

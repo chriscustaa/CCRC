@@ -1,0 +1,11 @@
+{
+  "experiment_id": "ccrc-i5gated1000-qwen35-9b-q4km-v1",
+  "finalized_at_utc": "2026-08-26T07:54:20.926015+00:00",
+  "items_sha256": "57ec360f7681a93b18223ea75d238f7ad46d46cfc72236c423dc9d32a57b506c",
+  "runs_sha256": "0da5cc818691a6290c375df0f3b3b6f25208f3df3aef5f9ad5b543fa34e92a99",
+  "schema_version": "ccrc.i5gated.finalized.v0.6.0",
+  "status": "PASS",
+  "summary_sha256": "9de7680e6e7523ea62a2b6c5a68a369f8ef60b5b82b65acd5ea47a811e1567f5",
+  "validation_errors": 0,
+  "validation_warnings": 0
+}

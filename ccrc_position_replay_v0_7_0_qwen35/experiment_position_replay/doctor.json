@@ -1,0 +1,151 @@
+{
+  "authentication": {
+    "lm_api_token_present": true,
+    "token_value_recorded": false
+  },
+  "blocking_reasons": [],
+  "created_at_utc": "2026-08-26T18:38:00.651385+00:00",
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.9 (tags/v3.13.9:8183fa5, Oct 14 2025, 14:09:13) [MSC v.1944 64 bit (AMD64)]",
+    "requests_version": "2.34.2"
+  },
+  "harness_version": "0.7.0",
+  "model_identity": {
+    "blocking_reasons": [],
+    "configured_model_id": "qwen/qwen3.5-9b",
+    "expected_model": {
+      "architecture": "qwen35",
+      "display_name_contains": [
+        "Qwen3.5",
+        "9B"
+      ],
+      "display_name_forbids": [
+        "Coder",
+        "Math",
+        "Uncensored"
+      ],
+      "format": "gguf",
+      "params_string": "9B",
+      "quantization": "Q4_K_M",
+      "reasoning_capability_required": true,
+      "require_exactly_one_loaded_instance": true,
+      "vision": true
+    },
+    "matching_loaded_candidates": [
+      {
+        "architecture": "qwen35",
+        "display_name": "Qwen3.5 9B",
+        "key": "qwen/qwen3.5-9b",
+        "params_string": "9B",
+        "quantization": "Q4_K_M",
+        "selected_variant": "qwen/qwen3.5-9b@q4_k_m"
+      }
+    ],
+    "model_snapshot": {
+      "architecture": "qwen35",
+      "capabilities": {
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        },
+        "trained_for_tool_use": true,
+        "vision": true
+      },
+      "display_name": "Qwen3.5 9B",
+      "format": "gguf",
+      "key": "qwen/qwen3.5-9b",
+      "loaded_instance_config": {
+        "context_checkpoints": 32,
+        "context_length": 15872,
+        "eval_batch_size": 2048,
+        "flash_attention": true,
+        "offload_kv_cache_to_gpu": true,
+        "parallel": 4,
+        "physical_batch_size": 512,
+        "reasoning_budget_message": "",
+        "speculative_draft_max_tokens": 16,
+        "speculative_draft_min_continue_probability": 0.75,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_model": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false
+      },
+      "loaded_instance_count": 1,
+      "max_context_length": 262144,
+      "params_string": "9B",
+      "quantization": {
+        "bits_per_weight": 4,
+        "name": "Q4_K_M"
+      },
+      "selected_variant": "qwen/qwen3.5-9b@q4_k_m",
+      "size_bytes": 6548927711
+    },
+    "model_snapshot_sha256": "d8ec616a61e2046592391ff4739e6e53048d9027a0669d24b1f6b1ca9567568b",
+    "native_exact_key_present": true,
+    "openai_exact_id_present": true,
+    "profile_mismatches": [],
+    "status": "PASS"
+  },
+  "reasoning_off_probes": [
+    {
+      "ok": true,
+      "prompt": "Which product is larger? A) 17*23 B) 19*20. Answer exactly A or B.",
+      "raw_output": "B",
+      "reasoning_content_present": false,
+      "reasoning_detected": false,
+      "reasoning_tokens": 0,
+      "response_model": "qwen/qwen3.5-9b"
+    },
+    {
+      "ok": true,
+      "prompt": "If all bloops are razzies and no razzies are tazzies, can any bloop be a tazzy? A) Yes B) No. Answer exactly A or B.",
+      "raw_output": "B",
+      "reasoning_content_present": false,
+      "reasoning_detected": false,
+      "reasoning_tokens": 0,
+      "response_model": "qwen/qwen3.5-9b"
+    },
+    {
+      "ok": true,
+      "prompt": "Which fraction is larger? A) 17/31 B) 18/33. Answer exactly A or B.",
+      "raw_output": "B",
+      "reasoning_content_present": false,
+      "reasoning_detected": false,
+      "reasoning_tokens": 0,
+      "response_model": "qwen/qwen3.5-9b"
+    }
+  ],
+  "required_runtime_snapshot_sha256": "d8ec616a61e2046592391ff4739e6e53048d9027a0669d24b1f6b1ca9567568b",
+  "responses_probe": {
+    "exact_format": true,
+    "has_logprobs": true,
+    "ok": true,
+    "parsed": "B",
+    "raw_output": "B",
+    "reasoning_detected": false,
+    "request_meta": {
+      "endpoint": "/v1/responses",
+      "frequency_penalty": 0.0,
+      "logit_bias_used": false,
+      "logprobs_requested": true,
+      "presence_penalty": 0.0,
+      "previous_response_id": null,
+      "seed_rejected": false,
+      "seed_requested": 2026082607,
+      "seed_sent": true,
+      "stateful_continuation_used": false,
+      "top_logprobs_requested": 20
+    },
+    "response_meta": {
+      "id": "resp_ce3966f1ed460ea2e1a90b9a628693f07aed2f48d18207e9",
+      "model": "qwen/qwen3.5-9b",
+      "status": "completed"
+    }
+  },
+  "schema_version": "ccrc.position_replay.doctor.v0.7.0",
+  "status": "PASS"
+}

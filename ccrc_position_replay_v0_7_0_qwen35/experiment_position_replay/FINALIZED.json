@@ -1,0 +1,10 @@
+{
+  "actual_model_calls": 568,
+  "completed_base_cells": 568,
+  "finalized_at_utc": "2026-08-26T19:17:37.809069+00:00",
+  "planned_base_cells": 568,
+  "primary_actuator_survives": true,
+  "primary_kill_reasons": [],
+  "schema_version": "ccrc.position_replay.finalized.v0.7.0",
+  "validation_status": "PASS"
+}

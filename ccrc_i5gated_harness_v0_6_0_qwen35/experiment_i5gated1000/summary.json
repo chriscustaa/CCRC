@@ -1,0 +1,270 @@
+{
+  "actual_experimental_calls": 4160,
+  "controllers": {
+    "I5_OFF_theta_0.20": {
+      "abstention_n": 2,
+      "bootstrap_delta": {
+        "ci95_high": 0.009,
+        "ci95_low": -0.003,
+        "mean": 0.003
+      },
+      "coverage": 0.998,
+      "decision_reasons": {
+        "blind_consensus": 15,
+        "blind_verifier_majority": 18,
+        "high_margin_release": 965,
+        "verifier_no_majority": 2
+      },
+      "delta_accuracy_vs_baseline": 0.003,
+      "harms": 3,
+      "n": 1000,
+      "net_repairs": 3,
+      "production_equivalent_d_calls": 35,
+      "production_equivalent_total_calls": 1075,
+      "production_equivalent_v_calls": 40,
+      "repairs": 6,
+      "route_rate": 0.035,
+      "routed_n": 35,
+      "selective_accuracy": 0.7855711422845691,
+      "strict_accuracy": 0.784,
+      "strict_correct_n": 784,
+      "theta": 0.2,
+      "verifier_escalation_n": 20
+    },
+    "I5_OFF_theta_0.50": {
+      "abstention_n": 5,
+      "bootstrap_delta": {
+        "ci95_high": 0.013,
+        "ci95_low": -0.005,
+        "mean": 0.004
+      },
+      "coverage": 0.995,
+      "decision_reasons": {
+        "blind_consensus": 56,
+        "blind_verifier_majority": 37,
+        "high_margin_release": 902,
+        "verifier_no_majority": 5
+      },
+      "delta_accuracy_vs_baseline": 0.004,
+      "harms": 8,
+      "n": 1000,
+      "net_repairs": 4,
+      "production_equivalent_d_calls": 98,
+      "production_equivalent_total_calls": 1182,
+      "production_equivalent_v_calls": 84,
+      "repairs": 12,
+      "route_rate": 0.098,
+      "routed_n": 98,
+      "selective_accuracy": 0.7889447236180904,
+      "strict_accuracy": 0.785,
+      "strict_correct_n": 785,
+      "theta": 0.5,
+      "verifier_escalation_n": 42
+    },
+    "I5_ON_theta_0.20": {
+      "abstention_n": 1,
+      "bootstrap_delta": {
+        "ci95_high": 0.013,
+        "ci95_low": 0.0,
+        "mean": 0.006
+      },
+      "coverage": 0.999,
+      "decision_reasons": {
+        "blind_consensus": 22,
+        "blind_verifier_majority": 16,
+        "high_margin_release": 961,
+        "verifier_no_majority": 1
+      },
+      "delta_accuracy_vs_baseline": 0.006,
+      "harms": 3,
+      "n": 1000,
+      "net_repairs": 6,
+      "production_equivalent_d_calls": 39,
+      "production_equivalent_total_calls": 1073,
+      "production_equivalent_v_calls": 34,
+      "repairs": 9,
+      "route_rate": 0.039,
+      "routed_n": 39,
+      "selective_accuracy": 0.7837837837837838,
+      "strict_accuracy": 0.783,
+      "strict_correct_n": 783,
+      "theta": 0.2,
+      "verifier_escalation_n": 17
+    },
+    "I5_ON_theta_0.50": {
+      "abstention_n": 3,
+      "bootstrap_delta": {
+        "ci95_high": 0.016,
+        "ci95_low": -0.004,
+        "mean": 0.006
+      },
+      "coverage": 0.997,
+      "decision_reasons": {
+        "blind_consensus": 49,
+        "blind_verifier_majority": 34,
+        "high_margin_release": 914,
+        "verifier_no_majority": 3
+      },
+      "delta_accuracy_vs_baseline": 0.006,
+      "harms": 10,
+      "n": 1000,
+      "net_repairs": 6,
+      "production_equivalent_d_calls": 86,
+      "production_equivalent_total_calls": 1160,
+      "production_equivalent_v_calls": 74,
+      "repairs": 16,
+      "route_rate": 0.086,
+      "routed_n": 86,
+      "selective_accuracy": 0.7853560682046138,
+      "strict_accuracy": 0.783,
+      "strict_correct_n": 783,
+      "theta": 0.5,
+      "verifier_escalation_n": 37
+    }
+  },
+  "core": {
+    "B0": {
+      "accuracy": 0.781,
+      "correct_n": 781,
+      "format_retry_n": 0,
+      "sensor_missing_n": 0,
+      "valid_n": 1000
+    },
+    "B5": {
+      "accuracy": 0.777,
+      "correct_n": 777,
+      "format_retry_n": 0,
+      "sensor_missing_n": 0,
+      "valid_n": 1000
+    },
+    "D0": {
+      "accuracy": 0.784,
+      "correct_n": 784,
+      "format_retry_n": 18,
+      "sensor_missing_n": null,
+      "valid_n": 1000
+    },
+    "D5": {
+      "accuracy": 0.778,
+      "correct_n": 778,
+      "format_retry_n": 0,
+      "sensor_missing_n": null,
+      "valid_n": 1000
+    }
+  },
+  "direct_contrasts": {
+    "D0_minus_B0": {
+      "bootstrap": {
+        "ci95_high": 0.016,
+        "ci95_low": -0.01,
+        "mean": 0.003
+      },
+      "delta_accuracy_right_minus_left": 0.003,
+      "harms": 20,
+      "left": "B0",
+      "mcnemar": {
+        "a_correct_b_wrong": 20,
+        "b_correct_a_wrong": 23,
+        "discordant_n": 43,
+        "exact_p": 0.7607916425613439
+      },
+      "net_repairs": 3,
+      "repairs": 23,
+      "right": "D0"
+    },
+    "D5_minus_B5": {
+      "bootstrap": {
+        "ci95_high": 0.013,
+        "ci95_low": -0.011,
+        "mean": 0.001
+      },
+      "delta_accuracy_right_minus_left": 0.001,
+      "harms": 18,
+      "left": "B5",
+      "mcnemar": {
+        "a_correct_b_wrong": 18,
+        "b_correct_a_wrong": 19,
+        "discordant_n": 37,
+        "exact_p": 1.0
+      },
+      "net_repairs": 1,
+      "repairs": 19,
+      "right": "D5"
+    },
+    "D5_minus_D0": {
+      "bootstrap": {
+        "ci95_high": 0.009,
+        "ci95_low": -0.022,
+        "mean": -0.006
+      },
+      "delta_accuracy_right_minus_left": -0.006,
+      "harms": 34,
+      "left": "D0",
+      "mcnemar": {
+        "a_correct_b_wrong": 34,
+        "b_correct_a_wrong": 28,
+        "discordant_n": 62,
+        "exact_p": 0.5257733601756501
+      },
+      "net_repairs": -6,
+      "repairs": 28,
+      "right": "D5"
+    }
+  },
+  "direct_i5": {
+    "bootstrap": {
+      "ci95_high": 0.009,
+      "ci95_low": -0.017,
+      "mean": -0.004
+    },
+    "delta_accuracy": -0.004,
+    "harms": 25,
+    "mcnemar": {
+      "a_correct_b_wrong": 25,
+      "b_correct_a_wrong": 21,
+      "discordant_n": 46,
+      "exact_p": 0.6587380770236564
+    },
+    "net_repairs": -4,
+    "repairs": 21
+  },
+  "experiment_id": "ccrc-i5gated1000-qwen35-9b-q4km-v1",
+  "interactions": {
+    "theta_0.20": {
+      "i5_effect_inside_controller": {
+        "ci95_high": 0.013,
+        "ci95_low": -0.015,
+        "mean": -0.001
+      },
+      "interaction_vs_direct_i5": {
+        "ci95_high": 0.012,
+        "ci95_low": -0.005,
+        "mean": 0.003
+      }
+    },
+    "theta_0.50": {
+      "i5_effect_inside_controller": {
+        "ci95_high": 0.011,
+        "ci95_low": -0.015,
+        "mean": -0.002
+      },
+      "interaction_vs_direct_i5": {
+        "ci95_high": 0.014,
+        "ci95_low": -0.01,
+        "mean": 0.002
+      }
+    }
+  },
+  "interpretation_guardrail": "Production-equivalent D/V calls are reported separately from unconditional experimental calls.",
+  "n": 1000,
+  "schema_version": "ccrc.i5gated.summary.v0.6.0",
+  "verifier_diagnostic": {
+    "agree_accuracy": 0.65,
+    "agree_both_correct_n": 26,
+    "disagree_n": 31,
+    "disagree_v1_accuracy": 0.22580645161290322,
+    "disagree_v2_accuracy": 0.5161290322580645,
+    "items_n": 71,
+    "v1_v2_agree_n": 40
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "actual_model_calls": 568,
+  "completed_cells": 568,
+  "errors": [],
+  "mode": "full",
+  "planned_cells": 568,
+  "schema_version": "ccrc.position_replay.validation.v0.7.0",
+  "status": "PASS"
+}

@@ -1,0 +1,79 @@
+{
+  "counts": {
+    "all_evidence_unique_stems": 1812,
+    "all_items": 1000,
+    "consensus600_overlaps": 58,
+    "deduplicated_primary_items": 942,
+    "planned_cells": 568,
+    "replay_items": 71,
+    "theta_020_gate": 35,
+    "theta_020_verifier_escalation": 20
+  },
+  "created_at_utc": "2026-08-26T18:17:20.845996+00:00",
+  "design": {
+    "base_cells": 568,
+    "controller_replay_uses_one_R1_and_one_R2_cell_per_item": true,
+    "eight_cell_majority_forbidden": true,
+    "format_retries_are_extra_calls_not_extra_cells": true,
+    "placements_per_item": 4,
+    "replicate_streams": [
+      "R1",
+      "R2"
+    ]
+  },
+  "frozen_seed": 2026082607,
+  "i5_internal_hashes_verified": [
+    {
+      "file": "doctor.json",
+      "sha256": "465baa0f187546e31372ec3ef1ec66be02feb317aa130692eb5526a44e57fd47"
+    },
+    {
+      "file": "transport_check.json",
+      "sha256": "9ab2215c07163c6f080c202a7420bc0b8a0405e47402d813ed7b5cf5233bd409"
+    },
+    {
+      "file": "manifest.json",
+      "sha256": "311466f443c188a8ae1e78e3edabf3156f1d8ff567eac3d3db83f5c0cf0af1bf"
+    },
+    {
+      "file": "items.jsonl",
+      "sha256": "57ec360f7681a93b18223ea75d238f7ad46d46cfc72236c423dc9d32a57b506c"
+    },
+    {
+      "file": "prompt_audit.json",
+      "sha256": "d85a02e69779b61a1b93d73ceb9f4d8b534f57df5480ea2061a2a1de7362465c"
+    },
+    {
+      "file": "runs.jsonl",
+      "sha256": "0da5cc818691a6290c375df0f3b3b6f25208f3df3aef5f9ad5b543fa34e92a99"
+    },
+    {
+      "file": "summary.json",
+      "sha256": "9de7680e6e7523ea62a2b6c5a68a369f8ef60b5b82b65acd5ea47a811e1567f5"
+    },
+    {
+      "file": "validation.json",
+      "sha256": "acdec285ff19b3924b4c804e0ad9a69f85745f3addb839aec7c8144411e133fb"
+    },
+    {
+      "file": "FINALIZED.json",
+      "sha256": "9a4fe9c81a60b2663137f4fd64c4e749022136a1f98c9cda787f54ff5e8260c2"
+    }
+  ],
+  "original_theta_020_controller": {
+    "escalated": 20,
+    "harms": 3,
+    "net": 3,
+    "repairs": 6,
+    "routed": 35,
+    "strict_correct": 784
+  },
+  "schema_version": "ccrc.position_replay.provenance.v0.7.0",
+  "source_bundle_sha256": {
+    "experiment_blind80": "45d9e631ba7b7bcfc3839d8673fd978f114df66c3426186503f5f591f53440de",
+    "experiment_consensus600": "b4a8ba047c4d80060020834e54bec06f244fc00c556ce15b05af7221b60e2afd",
+    "experiment_decomp30": "da96a19f69153bf566153477be1b6e32a4f1d4e0b47dfbb03cbd21d02860dfbe",
+    "experiment_i5gated1000.zip": "b2489e4972dae7925b83a3f7d580e69221199e34d530a24220550c49a6d322ad",
+    "experiment_review160": "e6e4e1643ab8651f87c8c456ca6f0ca3c69632430749126ac751c2fd191f1240"
+  }
+}

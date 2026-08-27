@@ -1,0 +1,19 @@
+{
+  "core_rederive": "Solve the question independently from scratch before finalizing. Do not assume any earlier answer is correct. Return exactly one letter: A, B, C, or D. Do not include any other text.",
+  "format_line": "Answer with exactly one letter: A, B, C, or D. Do not include any other text.",
+  "i5_control": "I5 CONTROL\n1. Solve the underlying problem rather than blindly accepting a misleading framing.\n2. Prioritize material risks and consequences over low-impact considerations.\n3. Identify the assumption or variable most capable of invalidating the conclusion.\n4. Prefer reversible, testable reasoning before committing to uncertain conclusions.\n5. Preserve relevant analytical depth while eliminating redundant complexity; retain edge cases only when materially consequential.\nApply these principles only where relevant. Do not alter the required answer format.",
+  "i5_sha256": "73c0f646d909b194edec945ea1eff0224cea5622eaf890f9ce88ab675de75f96",
+  "invariants": {
+    "d_branch_receives_prior_answer": false,
+    "ground_truth_in_prompt": false,
+    "i5_only_in": [
+      "B5",
+      "D5"
+    ],
+    "output_format": "exactly one of A/B/C/D",
+    "verifier_receives_i5": false,
+    "verifier_receives_prior_answers": false
+  },
+  "schema_version": "ccrc.i5gated.prompt_audit.v0.6.0",
+  "verifier_line": "Solve the question independently from scratch before finalizing. Return exactly one letter: A, B, C, or D. Do not include any other text."
+}

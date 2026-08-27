@@ -1,0 +1,484 @@
+{
+  "actual_model_calls": 568,
+  "experimental_base_cells": 568,
+  "format_retry_calls": 0,
+  "policy_replay": {
+    "forbidden_analysis_not_performed": "No majority or aggregation across all eight replay cells.",
+    "primary": {
+      "actuator_survives": true,
+      "balanced_schedule_distribution": {
+        "balance_rule": "For each stream separately, A/B/C/D counts differ by at most one.",
+        "exact_expected_net": 3.125,
+        "net_distribution": {
+          "-1": 7333078739038164,
+          "-2": 193270252425768,
+          "-3": 1365644984004,
+          "0": 119491861359790080,
+          "1": 965955341363774580,
+          "2": 3976922255704177248,
+          "3": 8267270188230203724,
+          "4": 7272591340242066048,
+          "5": 812645620490835432,
+          "6": 26968118827463352
+        },
+        "positive_schedule_count": 21322352864858520384,
+        "positive_schedule_fraction": 0.9940781681913312,
+        "same_slot_across_R1_R2_admissible": true,
+        "schedule_count": 21449372440854758400
+      },
+      "baseline_B0_correct_n": 735,
+      "closed_form_uniform_expected_harms": 2.9375,
+      "closed_form_uniform_expected_net": 3.125,
+      "closed_form_uniform_expected_repairs": 6.0625,
+      "closed_form_uniform_expected_strict_correct_n": 738.125,
+      "cohort": "deduplicated_942_primary",
+      "kill_reasons": [],
+      "n_items": 942,
+      "per_escalated_item": [
+        {
+          "question_id": "mmlu-0107",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0183",
+          "uniform_pair_expected_net": 0.9375,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.9375
+        },
+        {
+          "question_id": "mmlu-0186",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0191",
+          "uniform_pair_expected_net": -0.9375,
+          "uniform_pair_harm_probability": 0.9375,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0255",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0292",
+          "uniform_pair_expected_net": 0.75,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.75
+        },
+        {
+          "question_id": "mmlu-0442",
+          "uniform_pair_expected_net": 0.75,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.75
+        },
+        {
+          "question_id": "mmlu-0446",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0447",
+          "uniform_pair_expected_net": -1.0,
+          "uniform_pair_harm_probability": 1.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0482",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0555",
+          "uniform_pair_expected_net": 0.9375,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.9375
+        },
+        {
+          "question_id": "mmlu-0565",
+          "uniform_pair_expected_net": -1.0,
+          "uniform_pair_harm_probability": 1.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0652",
+          "uniform_pair_expected_net": 0.9375,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.9375
+        },
+        {
+          "question_id": "mmlu-0661",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0745",
+          "uniform_pair_expected_net": 0.0625,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0625
+        },
+        {
+          "question_id": "mmlu-0792",
+          "uniform_pair_expected_net": 0.9375,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.9375
+        },
+        {
+          "question_id": "mmlu-0825",
+          "uniform_pair_expected_net": 0.75,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.75
+        },
+        {
+          "question_id": "mmlu-0835",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        }
+      ],
+      "positive_schedule_fraction_threshold": 0.95,
+      "routed_n": 33,
+      "theta": 0.2,
+      "verifier_escalation_n": 18
+    },
+    "secondary": {
+      "actuator_survives": true,
+      "balanced_schedule_distribution": {
+        "balance_rule": "For each stream separately, A/B/C/D counts differ by at most one.",
+        "exact_expected_net": 3.1875,
+        "net_distribution": {
+          "-1": 43146422545260636,
+          "-2": 1131424884402876,
+          "-3": 8080838841600,
+          "0": 710517519112759344,
+          "1": 5811347185326366516,
+          "2": 24255153205582614840,
+          "3": 51430279805079354396,
+          "4": 47270189321920068336,
+          "5": 7686095057147536092,
+          "6": 441694268881739244,
+          "7": 7743506877816696
+        },
+        "positive_schedule_count": 136902502350815496120,
+        "positive_schedule_fraction": 0.9945167934022493,
+        "same_slot_across_R1_R2_admissible": true,
+        "schedule_count": 137657305798196760576
+      },
+      "baseline_B0_correct_n": 781,
+      "closed_form_uniform_expected_harms": 2.9375,
+      "closed_form_uniform_expected_net": 3.1875,
+      "closed_form_uniform_expected_repairs": 6.125,
+      "closed_form_uniform_expected_strict_correct_n": 784.1875,
+      "cohort": "full_1000_secondary",
+      "kill_reasons": [],
+      "n_items": 1000,
+      "per_escalated_item": [
+        {
+          "question_id": "mmlu-0107",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0176",
+          "uniform_pair_expected_net": 0.0625,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0625
+        },
+        {
+          "question_id": "mmlu-0183",
+          "uniform_pair_expected_net": 0.9375,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.9375
+        },
+        {
+          "question_id": "mmlu-0186",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0191",
+          "uniform_pair_expected_net": -0.9375,
+          "uniform_pair_harm_probability": 0.9375,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0255",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0292",
+          "uniform_pair_expected_net": 0.75,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.75
+        },
+        {
+          "question_id": "mmlu-0442",
+          "uniform_pair_expected_net": 0.75,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.75
+        },
+        {
+          "question_id": "mmlu-0446",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0447",
+          "uniform_pair_expected_net": -1.0,
+          "uniform_pair_harm_probability": 1.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0482",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0555",
+          "uniform_pair_expected_net": 0.9375,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.9375
+        },
+        {
+          "question_id": "mmlu-0565",
+          "uniform_pair_expected_net": -1.0,
+          "uniform_pair_harm_probability": 1.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0599",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0652",
+          "uniform_pair_expected_net": 0.9375,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.9375
+        },
+        {
+          "question_id": "mmlu-0661",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        },
+        {
+          "question_id": "mmlu-0745",
+          "uniform_pair_expected_net": 0.0625,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0625
+        },
+        {
+          "question_id": "mmlu-0792",
+          "uniform_pair_expected_net": 0.9375,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.9375
+        },
+        {
+          "question_id": "mmlu-0825",
+          "uniform_pair_expected_net": 0.75,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.75
+        },
+        {
+          "question_id": "mmlu-0835",
+          "uniform_pair_expected_net": 0.0,
+          "uniform_pair_harm_probability": 0.0,
+          "uniform_pair_repair_probability": 0.0
+        }
+      ],
+      "positive_schedule_fraction_threshold": 0.95,
+      "routed_n": 35,
+      "theta": 0.2,
+      "verifier_escalation_n": 20
+    }
+  },
+  "primary_decision": {
+    "actuator_survives": true,
+    "if_killed": "Retire the current verifier actuator; do not tune theta or invent an eight-cell controller.",
+    "if_survives": "Topology qualifies for a fresh, powered confirmatory sample; this replay is not efficacy confirmation.",
+    "kill_reasons": []
+  },
+  "representation_instability": {
+    "interpretation": "R1/R2 share wording and placement but use frozen distinct seed streams. Disagreement measures replicate/seed/runtime instability, not a wording effect.",
+    "items": 71,
+    "items_with_more_than_one_canonical_answer_across_eight_cells": 56,
+    "items_with_three_or_more_canonical_answers_across_eight_cells": 17,
+    "same_placement_replicate_agreement_n": 283,
+    "same_placement_replicate_agreement_rate": 0.9964788732394366,
+    "same_placement_replicate_pairs": 284
+  },
+  "schema_version": "ccrc.position_replay.analysis.v0.7.0",
+  "slot_effects": {
+    "R1": {
+      "accuracy_by_correct_display_slot": {
+        "A": {
+          "accuracy": 0.39436619718309857,
+          "correct_n": 28,
+          "n": 71
+        },
+        "B": {
+          "accuracy": 0.323943661971831,
+          "correct_n": 23,
+          "n": 71
+        },
+        "C": {
+          "accuracy": 0.6197183098591549,
+          "correct_n": 44,
+          "n": 71
+        },
+        "D": {
+          "accuracy": 0.6056338028169014,
+          "correct_n": 43,
+          "n": 71
+        }
+      },
+      "chosen_display_counts": {
+        "A": 68,
+        "B": 40,
+        "C": 91,
+        "D": 85
+      },
+      "n": 284
+    },
+    "R2": {
+      "accuracy_by_correct_display_slot": {
+        "A": {
+          "accuracy": 0.38028169014084506,
+          "correct_n": 27,
+          "n": 71
+        },
+        "B": {
+          "accuracy": 0.323943661971831,
+          "correct_n": 23,
+          "n": 71
+        },
+        "C": {
+          "accuracy": 0.6197183098591549,
+          "correct_n": 44,
+          "n": 71
+        },
+        "D": {
+          "accuracy": 0.6056338028169014,
+          "correct_n": 43,
+          "n": 71
+        }
+      },
+      "chosen_display_counts": {
+        "A": 67,
+        "B": 40,
+        "C": 91,
+        "D": 86
+      },
+      "n": 284
+    },
+    "pooled": {
+      "accuracy_by_correct_display_slot": {
+        "A": {
+          "accuracy": 0.3873239436619718,
+          "correct_n": 55,
+          "n": 142
+        },
+        "B": {
+          "accuracy": 0.323943661971831,
+          "correct_n": 46,
+          "n": 142
+        },
+        "C": {
+          "accuracy": 0.6197183098591549,
+          "correct_n": 88,
+          "n": 142
+        },
+        "D": {
+          "accuracy": 0.6056338028169014,
+          "correct_n": 86,
+          "n": 142
+        }
+      },
+      "chosen_display_counts": {
+        "A": 135,
+        "B": 80,
+        "C": 182,
+        "D": 171
+      },
+      "n": 568
+    }
+  },
+  "within_item_slot_contrasts": [
+    {
+      "items_left_better": 13,
+      "items_right_better": 9,
+      "items_tied": 49,
+      "left": "A",
+      "mean_accuracy_difference_left_minus_right": 0.06338028169014084,
+      "n_items": 71,
+      "right": "B",
+      "two_sided_exact_sign_p": 0.5234670639038086
+    },
+    {
+      "items_left_better": 5,
+      "items_right_better": 22,
+      "items_tied": 44,
+      "left": "A",
+      "mean_accuracy_difference_left_minus_right": -0.2323943661971831,
+      "n_items": 71,
+      "right": "C",
+      "two_sided_exact_sign_p": 0.0015137195587158203
+    },
+    {
+      "items_left_better": 9,
+      "items_right_better": 25,
+      "items_tied": 37,
+      "left": "A",
+      "mean_accuracy_difference_left_minus_right": -0.21830985915492956,
+      "n_items": 71,
+      "right": "D",
+      "two_sided_exact_sign_p": 0.00904118549078703
+    },
+    {
+      "items_left_better": 1,
+      "items_right_better": 22,
+      "items_tied": 48,
+      "left": "B",
+      "mean_accuracy_difference_left_minus_right": -0.29577464788732394,
+      "n_items": 71,
+      "right": "C",
+      "two_sided_exact_sign_p": 5.7220458984375e-06
+    },
+    {
+      "items_left_better": 6,
+      "items_right_better": 26,
+      "items_tied": 39,
+      "left": "B",
+      "mean_accuracy_difference_left_minus_right": -0.28169014084507044,
+      "n_items": 71,
+      "right": "D",
+      "two_sided_exact_sign_p": 0.0005350527353584766
+    },
+    {
+      "items_left_better": 11,
+      "items_right_better": 10,
+      "items_tied": 50,
+      "left": "C",
+      "mean_accuracy_difference_left_minus_right": 0.014084507042253521,
+      "n_items": 71,
+      "right": "D",
+      "two_sided_exact_sign_p": 1.0
+    }
+  ]
+}

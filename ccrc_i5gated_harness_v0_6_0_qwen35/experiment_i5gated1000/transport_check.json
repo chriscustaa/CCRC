@@ -1,0 +1,41 @@
+{
+  "checks": [
+    {
+      "candidate_logprobs": {
+        "A": -8.606644630432129,
+        "B": -0.3517792820930481,
+        "C": -8.863189697265625,
+        "D": -8.82192325592041
+      },
+      "model": "qwen/qwen3.5-9b",
+      "reasoning_detected": false,
+      "text": "B"
+    },
+    {
+      "candidate_logprobs": {
+        "A": -1.694462537765503,
+        "B": -1.7172362804412842,
+        "C": -0.5938919186592102,
+        "D": -2.697718381881714
+      },
+      "model": "qwen/qwen3.5-9b",
+      "reasoning_detected": false,
+      "text": "C"
+    },
+    {
+      "candidate_logprobs": {
+        "A": -2.2167863845825195,
+        "B": -1.640076756477356,
+        "C": -0.9594355821609497,
+        "D": -3.3490116596221924
+      },
+      "model": "qwen/qwen3.5-9b",
+      "reasoning_detected": false,
+      "text": "C"
+    }
+  ],
+  "model_snapshot_sha256": "d8ec616a61e2046592391ff4739e6e53048d9027a0669d24b1f6b1ca9567568b",
+  "runtime_snapshot_matches_required": true,
+  "schema_version": "ccrc.i5gated.transport.v0.6.0",
+  "status": "PASS"
+}

@@ -1,0 +1,61 @@
+{
+  "config": {
+    "decision": {
+      "positive_schedule_fraction": 0.95
+    },
+    "expected_model": {
+      "architecture": "qwen35",
+      "display_name_contains": [
+        "Qwen3.5",
+        "9B"
+      ],
+      "display_name_forbids": [
+        "Coder",
+        "Math",
+        "Uncensored"
+      ],
+      "format": "gguf",
+      "params_string": "9B",
+      "quantization": "Q4_K_M",
+      "reasoning_capability_required": true,
+      "require_exactly_one_loaded_instance": true,
+      "vision": true
+    },
+    "experiment_id": "ccrc-position-balanced-replay-qwen35-9b-q4km-v1",
+    "format_retry": true,
+    "frequency_penalty": 0.0,
+    "lmstudio_base_url": "http://localhost:1234",
+    "max_tokens": 128,
+    "model_id": "qwen/qwen3.5-9b",
+    "presence_penalty": 0.0,
+    "require_reasoning_off": true,
+    "require_responses_logprobs": true,
+    "required_runtime_snapshot_sha256": "d8ec616a61e2046592391ff4739e6e53048d9027a0669d24b1f6b1ca9567568b",
+    "routing": {
+      "theta": 0.2
+    },
+    "seed": 2026082607,
+    "temperature": 0.0,
+    "timeout_s": 120,
+    "top_logprobs": 20,
+    "top_p": 1.0,
+    "transport": "responses",
+    "transport_retries": 2
+  },
+  "created_at_utc": "2026-08-26T18:39:25.931388+00:00",
+  "experiment_id": "ccrc-position-balanced-replay-qwen35-9b-q4km-v1",
+  "format_retries_may_add_calls": true,
+  "frozen_input_hash_manifest_sha256": "014558b5ea203b36dd001dd62eda583b0022917f86ed2264ee70cc631f109e7b",
+  "harness_version": "0.7.0",
+  "planned_base_cells": 568,
+  "policy_constraints": {
+    "D0_is_third_vote": true,
+    "closed_form_expected_net_must_be_positive": true,
+    "majority_across_eight_replay_cells_forbidden": true,
+    "one_R1_and_one_R2_vote_per_escalated_item": true,
+    "positive_schedule_fraction_threshold": 0.95,
+    "theta": 0.2
+  },
+  "preregistered_before_new_verifier_outcomes": true,
+  "schema_version": "ccrc.position_replay.manifest.v0.7.0"
+}
