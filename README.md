@@ -1,180 +1,139 @@
-# CCRC — Causal Contrastive Reasoning Control
+# CLAUDE.md
 
-An experimental, measurement-first framework for studying and selectively controlling **context-induced instability in language-model decisions**.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-**Status (2026-08-25): active, early-stage research—not a production safety system.** The current v0.6.0 study is preregistered but has no finalized results in this repository yet.
+## What this repository is
 
-I opened this work because the full research path may be useful to others: not only the positive findings, but also the failed interventions, narrowed hypotheses, frozen decision gates, and reproducibility artifacts. CCRC is intended to be inspected, challenged, replicated, and improved.
+CCRC (Causal Contrastive Reasoning Control) is an experimental research repository, not a product
+codebase. It studies whether runtime signals (answer log-probability margins) can detect
+context-induced decision fragility in an LLM and selectively trigger extra cognition (blind
+re-derivation, blind verification) — without becoming globally contrarian or blindly expensive.
+The target property is *conditional invariance*: stay stable when context shouldn't change the
+answer, stay updateable when it should.
 
-## What CCRC is
+Read `RESEARCH_STATE.md` at the repo root before doing any research work here — it is the
+authoritative, compact checkpoint of validated findings, the current controller hypothesis, and
+the next planned test (see its own "Fresh-session operating rule" and "Provenance hierarchy"
+sections). Note it can lag the newest `Experiment_*` directories (e.g. Consensus600,
+PositionReplay) if it hasn't been updated since their audit certs landed — check directory
+mtimes/git log if the two disagree, and prefer the primary experiment artifacts.
 
-CCRC asks whether a model's decision can be made more robust to irrelevant or misleading context without making the system blindly contrarian or universally invoking a costly second pass.
+Each experiment's own analysis/audit `.md` file is the primary evidence for that experiment; use
+`RESEARCH_STATE.md` for the cross-experiment narrative and current status only.
 
-The target is **conditional invariance**:
+## Repository layout
 
-- remain stable when context should not change the answer;
-- remain updateable when new evidence should change it;
-- detect likely fragility without treating confidence as truth;
-- intervene only where the expected repair value exceeds harms and added inference cost.
+Each `Experiment_<Name>/` directory is one self-contained research iteration:
 
-CCRC is therefore not a single prompt. It is a research architecture:
-
-1. Measure paired model states under controlled contextual changes.
-2. Decompose social framing from directional answer suggestions.
-3. Track both final-answer flips and A/B/C/D log-probability movement.
-4. Test candidate actuators on held-out data.
-5. Promote only interventions that produce more repairs than harms under frozen rules.
-6. Preserve manifests, runtime identity, raw runs, validation reports, and hash ledgers.
-
-## Current controller under test
-
-The present candidate uses the baseline top-two answer-logprob gap as a **fragility sensor, not a correctness judge**. Low-margin cases receive a stateless blind re-derivation. Disagreements escalate to two neutral, answer-blind verifiers using distinct option permutations.
-
-```mermaid
-flowchart TD
-    B["Baseline B + A–D logprobs"] --> G{"Gap g below threshold?"}
-    G -- No --> RB["Release B"]
-    G -- Yes --> D["Blind re-derivation D"]
-    D --> A{"B equals D?"}
-    A -- Yes --> RD["Release D"]
-    A -- No --> V["Blind V1/V2 vote or abstain"]
+```
+Experiment_<Name>/
+  <Analysis|Audit>_*.md          # human-readable findings + gate decision (start here for evidence)
+  ccrc_<name>_harness_v<ver>/    # the exact harness code + frozen inputs used for that run
+  ccrc_<name>_harness_v<ver>.zip # archived snapshot of the same package, for provenance/hashing
 ```
 
-On disagreement, the baseline is excluded from the final majority vote: `{D, V1, V2}`. No majority produces an abstention. This controller is **being evaluated**, not claimed as validated.
+Chronological order (oldest → newest): `Experiment_Syco30` → `Experiment_Decomp30` →
+`Experiment_Review160` → `Experiment_Blind80` → `Experiment_I5Gated1000` →
+`Experiment_Concensus600` → `Experiment_PositionReplay`. Later experiments build on frozen
+outcomes/items from earlier ones (e.g. PositionReplay replays I5Gated1000 + Consensus600 items) —
+check an experiment's `PREREGISTRATION.md`/provenance files for what it depends on before assuming
+independence.
 
-## Evidence so far
+Not every harness directory has its code unpacked — `Experiment_Concensus600`'s harness exists
+only inside its `.zip`; the others (`Syco30`, `Decomp30`, `Review160`, `Blind80`, `I5Gated1000`,
+`PositionReplay`) have both the unpacked directory and the archival zip.
 
-Results below are specific to the stated models, quantizations, benchmarks, prompts, and runtimes. Studies using different samples are not direct head-to-head comparisons.
+Top-level `LICENSE-CONTENT.md` explains the dual-license split: software (harness code, tests,
+scripts) is BSD-3-Clause-Clear; research content (analyses, preregistrations, result artifacts) is
+CC BY 4.0. Upstream datasets (SycoBench-600, MMLU) keep their own terms and are not vendored.
 
-| Stage | Design | Main result | Gate decision |
-|---|---|---|---|
-| [Syco30 / v0.1.3](./Syco30_Qwen2.5_PostRun_Analysis_v1.md) | 30 SycoBench items; Qwen2.5-7B Q4_K_M | Baseline accuracy 83.3%; pressure-robust accuracy 26.7%. Baseline answer margin strongly predicted later context-induced changes. | Susceptibility measurable; sensor exploratory; causal intervention blocked. |
-| [Cross-model / v0.2.0](./Syco30_Qwen35_CrossModel_Analysis_v1_1_CORRECTED.md) | Same 30 items; Qwen3.5-9B Q4_K_M | Baseline accuracy remained 83.3%; pressure-robust accuracy rose to 50.0%. Susceptibility was attenuated, and the margin relationship replicated. | Advance to matched causal decomposition. |
-| [Decomp30 / v0.3.0](./CCRC_Decomp30_Gate_Analysis_v1.md) | 30 questions × 3 template families × 6 conditions; 540 runs | A wrong directional verdict caused the dominant shift (`V-F = +7.663` logP units on the primary endpoint). Authority alone mainly flattened confidence; authority did not reliably amplify the verdict. | Narrow the causal claim; unblock only a bounded verdict-contamination M5 test. |
-| [Review160 / v0.4.0](./CCRC_Review160_HeldOut_Gate_Analysis_v1.md) | 160-item held-out SycoBench slice; 1,280 runs | Visible self-review repaired 0/48 initial errors. Preregistered M5 at `γ=1` produced a net `+1/160` decision gain; its interval included zero. | Reject visible constructive review and do not promote M5. |
-| [Blind80 / v0.5.0](./CCRC_Blind80_Gate_Analysis_v1.md) | 80 fresh semantic stems; 560 runs | Hiding the prior answer produced 4 repairs and 2 harms. Blind D0 accuracy was 71.25% versus 68.75% for visible-self S0; the paired interval included zero. | Blind re-derivation is a de-anchoring actuator, not a truth detector. Test sensor-gated use next. |
-| [I5 × gated controller / v0.6.0](./ccrc_i5gated_harness_v0_6_0_qwen35/PREREGISTRATION.md) | Frozen 2×2 design on 1,000 subject-balanced MMLU items | Tests a compact five-principle instruction layer independently and in combination with the sensor-gated blind verifier. | **Pending. No outcome claim yet.** |
+## Working inside one harness
 
-### Findings currently supported
-
-- Misleading context can cause large, repeatable decision and logprob movement.
-- An explicit directional verdict was the dominant harmful component in the matched decomposition; authority identity was smaller and qualitatively different.
-- Showing a model its own prior answer can create strong self-conditioning inertia, including on wrong answers.
-- Hiding the prior answer causes de-anchoring that can repair or harm; it does not reveal truth by itself.
-- The baseline A/B/C/D margin is a useful candidate routing signal, but must never be interpreted as proof of correctness.
-
-### Claims not supported
-
-- A universal “authority vector” or general latent bias direction.
-- Objective truth recovery from contrastive decoding.
-- A general hallucination fix, alignment method, or safety certification.
-- Production promotion of M5, unconditional blind re-derivation, or the current consensus verifier.
-- Generalization beyond the tested finite-choice settings, models, and benchmark slices.
-
-## M5: tested, not promoted
-
-M5 is the name used here for a local paired-state contrastive correction candidate:
-
-$$
-\Delta_t^{(k)} = z_t^{(k)} - z_t^{(0)}, \qquad
-z_t^* = z_t^{(0)} - \sum_k \gamma_k \Delta_t^{(k)}
-$$
-
-The observed difference $\Delta$ is conditional on the paired prompts; it is **not** assumed to be a pure or universal bias vector. A candidate-level held-out test at `γ=1` failed its promotion gate, so the repository does not justify implementing M5 as a live decoder.
-
-## Repository map
-
-| Path | Purpose |
-|---|---|
-| Root `*_Analysis_*.md` files | Human-readable findings and gate decisions. Start here for the evidence. |
-| `ccrc_syco30_harness_v0_1_*` | Early SycoBench harness iterations and the Qwen2.5 baseline study. |
-| `ccrc_syco30_harness_v0_2_0_qwen35` | Frozen Qwen3.5 cross-model replication. |
-| `ccrc_decomp30_harness_v0_3_0_qwen35` | Matched authority/verdict/paraphrase decomposition. |
-| `ccrc_review160_harness_v0_4_0_qwen35` | Held-out visible-review and M5 gate. |
-| `ccrc_blind80_harness_v0_5_0_qwen35` | Prior-answer visibility and blind re-derivation study. |
-| `ccrc_i5gated_harness_v0_6_0_qwen35` | Current I5 × sensor-gated consensus-verifier experiment. |
-| `*.zip` | Archived package snapshots retained for provenance; the unpacked directories are easier to inspect. |
-
-For the Review160 report, use [`CCRC_Review160_HeldOut_Gate_Analysis_v1.md`](./CCRC_Review160_HeldOut_Gate_Analysis_v1.md); the root file carrying ` (1)` is a byte-identical archival duplicate.
-
-## Reproduce the current experiment
-
-The v0.6.0 harness requires Python 3.10+, a local LM Studio server, Responses API transport with A/B/C/D candidate logprobs, and the exact model/runtime profile described in its config. Read the [preregistration](./ccrc_i5gated_harness_v0_6_0_qwen35/PREREGISTRATION.md) before running.
+Each `ccrc_<name>_harness_v<ver>/` is an independent Python package — there is no repo-wide build.
+`cd` into the specific harness directory before doing anything:
 
 ```bash
-git clone https://github.com/chriscustaa/CCRC.git
-cd CCRC/ccrc_i5gated_harness_v0_6_0_qwen35
+cd Experiment_<Name>/ccrc_<name>_harness_v<ver>
 
 python -m venv .venv
 # Windows: .venv\Scripts\activate
-# macOS/Linux: source .venv/bin/activate
-
 python -m pip install -U pip
-pip install -r requirements.txt
-cp config.example.json config.json
+pip install -r requirements.txt      # runtime dep is just `requests`; dev adds `pytest`
+cp config.example.json config.json   # then set model_id to the exact LM Studio model key
 ```
 
-Set `model_id` in `config.json` to the exact LM Studio model key, then run the tests and frozen workflow:
+Run the offline test suite (no network/model required):
 
 ```bash
 pytest -q
-mkdir -p experiment_i5gated1000
-
-python -m harness.cli doctor --config config.json --out experiment_i5gated1000/doctor.json
-python -m harness.cli transport-check --config config.json --out experiment_i5gated1000/transport_check.json
-python -m harness.cli prepare --config config.json --experiment-dir experiment_i5gated1000
-python -m harness.cli run --config config.json --experiment-dir experiment_i5gated1000
-python -m harness.cli summarize --config config.json --experiment-dir experiment_i5gated1000
-python -m harness.cli validate --config config.json --experiment-dir experiment_i5gated1000
-python -m harness.cli finalize --config config.json --experiment-dir experiment_i5gated1000
+# or, dependency-free:
+python tools/run_offline_tests.py
 ```
 
-The run is resumable by `run_key`. `FINALIZED.json` is emitted only after validation passes.
+Tests live in `tests/` and typically cover `design.py` (counterbalancing/permutation logic),
+`analysis.py` (statistics), and — critically — `test_frozen.py`, which re-verifies the SHA-256
+hashes and provenance counts of the experiment's frozen inputs (`frozen/FROZEN_SHA256.txt`). If
+you touch anything under `frozen/`, `test_frozen.py` is expected to fail unless the change is a
+deliberate, freshly-preregistered new experiment version.
 
-### Exact reproduction versus extension
+Running an actual experiment requires a local LM Studio server with the exact pinned model loaded
+and the Responses API transport (candidate logprobs for A/B/C/D). The CLI pipeline is staged and
+resumable; exact subcommand names vary slightly by harness version (`prepare`/`run-native` in
+early harnesses vs. `init`/`run` in later ones — check `harness/cli.py`'s `add_parser` calls or
+that experiment's own `README.md`), but the shape is always:
 
-To reproduce the registered study, preserve the pinned model revision, tokenizer/runtime behavior, quantization, dataset revision, selection algorithm, prompts, thresholds, seeds, and reasoning-OFF requirement.
+```bash
+python -m harness.cli doctor --config config.json --out doctor.json
+python -m harness.cli init --config config.json --doctor doctor.json --out <experiment_dir>
+python -m harness.cli transport-check --config config.json --out <experiment_dir>
+python -m harness.cli run --config config.json --out <experiment_dir> [--limit N]
+python -m harness.cli validate --out <experiment_dir>
+python -m harness.cli finalize --config config.json --out <experiment_dir>
+```
 
-If you change any of those, treat the work as a **new replication**:
+`doctor` verifies the LM Studio runtime/model identity against `config.json`'s `expected_model`
+block before anything else is allowed to run. `finalize` requires full validation to pass and
+writes `analysis.json`, `cell_results.csv`, `validation.json`, `FINALIZED.json`, and a SHA-256
+hash ledger (`hashes.sha256`).
 
-1. assign a new experiment and harness version;
-2. write and freeze a new preregistration before inspecting outcomes;
-3. retain the original run unchanged;
-4. report repairs, harms, abstentions, coverage, inference calls, and paired uncertainty—not accuracy alone;
-5. publish the manifest, raw JSONL, validation output, and SHA-256 ledger.
+## Architecture shared across harnesses
 
-## Contributing replications
+Every harness package follows the same module split under `harness/`:
 
-Issues and replication reports are welcome, especially:
+- `design.py` — counterbalancing: builds the frozen call plan (item × permutation × replicate
+  stream), assigns display-slot orderings (e.g. Williams-square latin-square balancing so no
+  option letter is systematically favored), and maps canonical ↔ displayed answer letters.
+- `model_identity.py` / `lmstudio.py` — talks to the local LM Studio server and hard-fails if the
+  loaded model's architecture, quantization, param count, or capabilities don't exactly match
+  `config.json`'s pinned `expected_model`. This is a deliberate gate: results are only trusted
+  against a single verified runtime snapshot.
+- `preflight.py` — the `doctor` check combining transport + model identity verification.
+- `runner.py` — executes the (resumable, `run_key`-addressed) call plan against the model.
+- `parsing.py` — extracts the single-letter answer from model output, with a bounded format-retry.
+- `analysis.py` — turns raw run rows into the experiment's statistical decision (repairs/harms,
+  gate pass/fail, significance tests).
+- `validate.py` — independent re-validation of a completed run (hash/shape/logic checks), plus
+  `verify_frozen()` for the frozen-input integrity check used by `test_frozen.py`.
+- `util.py` — canonical JSON, SHA-256 hashing, and `stable_seed()` — a deterministic seed derived
+  from `(base_seed, *parts)` so every model call's sampling seed is reproducible from the frozen
+  call plan alone.
 
-- replications on other model families, sizes, or quantizations;
-- open-ended task adaptations that preserve blind evaluation;
-- independent audits of selection, leakage, logprob capture, and hash provenance;
-- alternative fragility sensors evaluated on genuinely held-out data;
-- verifier designs that measure net repairs after verification and include their full call cost.
+`tools/build_frozen.py` generates the `frozen/` directory (items, call plan, provenance) from
+upstream data before a run starts; `tools/package_release.py` builds the archival `.zip` snapshot.
 
-Please separate preregistered outcomes from exploratory analysis and report negative results. A failed promotion gate is useful evidence here, not a failed contribution.
+## Critical invariants when touching harness code or experiment data
 
-## Upstream data and tools
-
-- Early experiments adapt the public [SycoBench-600](https://github.com/debu-sinha/sycobench-600) protocol. Its code is MIT; its dataset and raw-log artifacts are CC BY 4.0. The dataset is fetched at runtime and is not vendored here.
-- The current study fetches [`cais/mmlu`](https://huggingface.co/datasets/cais/mmlu) at its pinned revision. Re-check upstream terms before changing the revision or distribution source.
-- Experiments were designed for local inference through LM Studio. Model licenses and runtime behavior remain separate upstream dependencies.
-
-## Citation
-
-Until formal citation metadata is added, cite the repository as:
-
-> Custer, Chris. *CCRC: Causal Contrastive Reasoning Control*. Experimental research repository, 2026. https://github.com/chriscustaa/CCRC
-
-When citing a result, also identify the exact analysis file, experiment ID, model, quantization, and commit used.
-
-## License
-
-CCRC uses scoped dual licensing:
-
-- **Software:** [BSD-3-Clause-Clear](./LICENSE), permitting use, modification, and redistribution while expressly granting no patent rights.
-- **Original research content:** [CC BY 4.0](./LICENSE-CONTENT.md), permitting sharing and adaptation with attribution while excluding patent and trademark rights.
-- **Third-party material:** remains under its respective upstream terms and is not relicensed here.
-
-See [`LICENSE-CONTENT.md`](./LICENSE-CONTENT.md) for the exact scope, attribution guidance, exclusions, and contribution terms.
+- **Frozen means frozen.** Once a preregistration is written and `frozen/FROZEN_SHA256.txt` is
+  generated, do not alter thresholds, prompts, seeds, model/runtime settings, or selection rules
+  for that experiment — `assert_config_frozen()` / `verify_frozen()` exist specifically to catch
+  this. If a change is genuinely needed, it defines a *new* experiment version: new directory, new
+  preregistration written and frozen *before* looking at outcomes, original run left untouched.
+- **The logprob margin is a routing signal, not a correctness judge.** Don't write analysis or
+  code that treats a high-confidence answer as more likely correct — RESEARCH_STATE.md §3 and §9
+  are explicit that this must never be conflated.
+- **Blind means blind.** Verifier/re-derivation prompts must never leak the model's prior answer,
+  prior reasoning, or any hint that a prior attempt existed — several experiments (Review160,
+  Blind80) exist specifically to isolate this variable.
+- **Report full outcome accounting, not accuracy alone.** Repairs, harms, abstentions, coverage,
+  inference-call cost, and paired uncertainty intervals are the expected reporting shape (see any
+  `*_Analysis_*.md` / `*_Audit_Certificate_*.md` for the pattern to follow).

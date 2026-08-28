@@ -1,0 +1,9 @@
+{
+  "actual_model_calls": 502,
+  "completed_cells": 500,
+  "errors": [],
+  "mode": "full",
+  "planned_cells": 500,
+  "schema_version": "ccrc.trajectory100.validation.v0.9.0",
+  "status": "PASS"
+}

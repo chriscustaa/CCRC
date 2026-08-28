@@ -1,0 +1,62 @@
+{
+  "blocking_reasons": [],
+  "experimental_cells_consumed": 0,
+  "fixtures": [
+    {
+      "exact_format": true,
+      "fixture": "even-number",
+      "has_logprobs": true,
+      "ok": true,
+      "parsed": "B",
+      "raw_output": "B",
+      "reasoning_detected": false,
+      "request_meta": {
+        "endpoint": "/v1/responses",
+        "frequency_penalty": 0.0,
+        "logit_bias_used": false,
+        "logprobs_requested": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "seed_rejected": false,
+        "seed_requested": 2026089809,
+        "seed_sent": true,
+        "stateful_continuation_used": false,
+        "top_logprobs_requested": 20
+      },
+      "response_meta": {
+        "id": "resp_11db1eac3fcf5e7276741ff03d0aa96f7f9edb5e24217a1a",
+        "model": "qwen/qwen3.5-9b",
+        "status": "completed"
+      }
+    },
+    {
+      "exact_format": true,
+      "fixture": "capital-france",
+      "has_logprobs": true,
+      "ok": true,
+      "parsed": "C",
+      "raw_output": "C",
+      "reasoning_detected": false,
+      "request_meta": {
+        "endpoint": "/v1/responses",
+        "frequency_penalty": 0.0,
+        "logit_bias_used": false,
+        "logprobs_requested": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "seed_rejected": false,
+        "seed_requested": 2026089810,
+        "seed_sent": true,
+        "stateful_continuation_used": false,
+        "top_logprobs_requested": 20
+      },
+      "response_meta": {
+        "id": "resp_e9fd5d4acfb323395ee07838f3adb9a1621a368ed5f9dc94",
+        "model": "qwen/qwen3.5-9b",
+        "status": "completed"
+      }
+    }
+  ],
+  "schema_version": "ccrc.trajectory100.transport_check.v0.9.0",
+  "status": "PASS"
+}

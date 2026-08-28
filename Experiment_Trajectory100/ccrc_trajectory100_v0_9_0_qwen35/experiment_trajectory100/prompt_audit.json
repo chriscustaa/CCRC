@@ -1,0 +1,23 @@
+{
+  "format_line": "Answer with exactly one letter: A, B, C, or D. Do not include any other text.",
+  "format_retry": "Format reminder: Reply with exactly one letter: A, B, C, or D.",
+  "interpretation": "Cognitive-depth response curve under five interventions; not passive latent-state measurement.",
+  "prior_answer_visible": false,
+  "same_option_order_within_item": true,
+  "schema_version": "ccrc.trajectory100.prompt_audit.v0.9.0",
+  "stage_instruction_sha256": {
+    "T0": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "T1": "71a8ceeecd70d24bd70e17d3f20455aceead5121abcc3c563de6462a3f667749",
+    "T2": "77f7d03dd794b396bb39969f36ba62d25fdf0a587d42ddf531d32d9ee4e43bf2",
+    "T3": "0a073f280539d08ae32d5b7fa39902b41b08a113e84236c5ee5112851dfc4e8b",
+    "T4": "f90d56ac828ac3bb006db102fe2363003fd7a2a406e0e2bfe2acfa5ca9959c80"
+  },
+  "stage_instructions": {
+    "T0": "",
+    "T1": "Silently check the givens and identify exactly what the question is asking before choosing the best answer.",
+    "T2": "Silently solve the problem independently from first principles and check each answer choice before choosing the best answer.",
+    "T3": "Silently challenge the most tempting answer: look for a counterexample, hidden assumption, exception, or misleading distractor before choosing the best answer.",
+    "T4": "Silently make a final synthesis: reconcile the direct solution, the alternative choices, and possible objections before choosing the best answer."
+  },
+  "stateful_continuation": false
+}

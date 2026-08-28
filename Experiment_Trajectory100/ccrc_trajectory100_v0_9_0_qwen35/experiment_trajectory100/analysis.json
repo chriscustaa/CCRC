@@ -1,0 +1,164 @@
+{
+  "actual_model_calls": 502,
+  "answer_flip_counts_all_100": {
+    "0": 26,
+    "1": 20,
+    "2": 34,
+    "3": 16,
+    "4": 4
+  },
+  "control_stage_median_gap_offsets_from_T0": {
+    "T0": 0.0,
+    "T1": 0.10825157165527344,
+    "T2": 0.2892799377441406,
+    "T3": 0.28863054513931274,
+    "T4": 0.11739057302474976
+  },
+  "diagnostics_low_gap_core": {
+    "any_later_checkpoint_wrong_n_among_T0_correct": 16,
+    "fresh_T0_correct_n": 18,
+    "fresh_T0_wrong_n": 42,
+    "oracle_any_later_checkpoint_recovers_n": 21,
+    "oracle_any_later_checkpoint_recovers_rate_among_T0_wrong": 0.5,
+    "oracle_warning": "Uses truth and is diagnostic only; it is not a deployable policy."
+  },
+  "experimental_base_cells": 500,
+  "format_retry_calls": 2,
+  "frozen_trajectory_policy": {
+    "all_100_secondary": {
+      "exact_one_sided_mcnemar_p": 0.623046875,
+      "final_accuracy": 0.51,
+      "final_correct_n": 51,
+      "harms": 5,
+      "n": 100,
+      "net": 0,
+      "repairs": 5,
+      "rule": "Switch from T0 only when T2=T3=T4 on a different answer and the median control-centered T2:T4 gap change is positive.",
+      "switches": 12
+    },
+    "low_gap_core_primary": {
+      "exact_one_sided_mcnemar_p": 0.5,
+      "final_accuracy": 0.31666666666666665,
+      "final_correct_n": 19,
+      "harms": 4,
+      "n": 60,
+      "net": 1,
+      "repairs": 5,
+      "rule": "Switch from T0 only when T2=T3=T4 on a different answer and the median control-centered T2:T4 gap change is positive.",
+      "switches": 11
+    }
+  },
+  "interpretation_limits": [
+    "This is a reused, outcome-enriched development sample, not an efficacy confirmation.",
+    "The five points are responses to distinct prompt interventions, not passive reads of a latent internal state.",
+    "Raw gaps are not assumed comparable across templates; the policy uses control-centered changes.",
+    "No result estimates the user's proposed 25% irreducible-question prevalence."
+  ],
+  "pilot_decision": {
+    "disposition": "INCONCLUSIVE",
+    "meaning": "Do not tune on these 100; redesign only with a new preregistered pilot.",
+    "observed_harm_repair_ratio": 0.8,
+    "thresholds": {
+      "max_harm_repair_ratio": 0.5,
+      "minimum_net": 3,
+      "minimum_repairs": 5
+    }
+  },
+  "sample": {
+    "fresh_T0_matches_prior_n": 96,
+    "items": 100,
+    "low_gap_core": 60,
+    "near_gap_controls": 40
+  },
+  "schema_version": "ccrc.trajectory100.analysis.v0.9.0",
+  "stage_summary_all_100": {
+    "T0": {
+      "accuracy": 0.51,
+      "correct_n": 51,
+      "mean_confidence_gap": 0.2038328143954277,
+      "median_confidence_gap": 0.18256855010986328,
+      "n": 100
+    },
+    "T1": {
+      "accuracy": 0.49,
+      "correct_n": 49,
+      "mean_confidence_gap": 0.4672076253592968,
+      "median_confidence_gap": 0.34357738494873047,
+      "n": 100
+    },
+    "T2": {
+      "accuracy": 0.49,
+      "correct_n": 49,
+      "mean_confidence_gap": 0.5661834602802992,
+      "median_confidence_gap": 0.4905710816383362,
+      "n": 100
+    },
+    "T3": {
+      "accuracy": 0.46,
+      "correct_n": 46,
+      "mean_confidence_gap": 0.568740618750453,
+      "median_confidence_gap": 0.42890259623527527,
+      "n": 100
+    },
+    "T4": {
+      "accuracy": 0.51,
+      "correct_n": 51,
+      "mean_confidence_gap": 0.5470883049815893,
+      "median_confidence_gap": 0.3900928199291229,
+      "n": 100
+    }
+  },
+  "stage_summary_low_gap_core_60": {
+    "T0": {
+      "accuracy": 0.3,
+      "correct_n": 18,
+      "mean_confidence_gap": 0.11155137817064921,
+      "median_confidence_gap": 0.11478236317634583,
+      "n": 60
+    },
+    "T1": {
+      "accuracy": 0.4166666666666667,
+      "correct_n": 25,
+      "mean_confidence_gap": 0.42285497263073923,
+      "median_confidence_gap": 0.2834758460521698,
+      "n": 60
+    },
+    "T2": {
+      "accuracy": 0.4,
+      "correct_n": 24,
+      "mean_confidence_gap": 0.49218797162175176,
+      "median_confidence_gap": 0.3720702826976776,
+      "n": 60
+    },
+    "T3": {
+      "accuracy": 0.31666666666666665,
+      "correct_n": 19,
+      "mean_confidence_gap": 0.4820252758761247,
+      "median_confidence_gap": 0.3457803428173065,
+      "n": 60
+    },
+    "T4": {
+      "accuracy": 0.38333333333333336,
+      "correct_n": 23,
+      "mean_confidence_gap": 0.4610057607293129,
+      "median_confidence_gap": 0.31871598958969116,
+      "n": 60
+    }
+  },
+  "trajectory_class_counts_all_100": {
+    "correct_then_wrong_collapse": 13,
+    "oscillation": 46,
+    "single_unresolved_flip": 2,
+    "stable_correct": 17,
+    "stable_wrong": 9,
+    "wrong_then_correct_recovery": 13
+  },
+  "trajectory_class_counts_low_gap_core_60": {
+    "correct_then_wrong_collapse": 7,
+    "oscillation": 29,
+    "single_unresolved_flip": 2,
+    "stable_correct": 2,
+    "stable_wrong": 8,
+    "wrong_then_correct_recovery": 12
+  }
+}

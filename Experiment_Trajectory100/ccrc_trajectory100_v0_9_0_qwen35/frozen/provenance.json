@@ -1,0 +1,135 @@
+{
+  "control_gap_ranges": {
+    "prior_correct_max": 0.530769407749176,
+    "prior_correct_min": 0.20838725566864014,
+    "prior_wrong_max": 0.2495822310447693,
+    "prior_wrong_min": 0.20090484619140625
+  },
+  "counts": {
+    "construction_prior_correct": 50,
+    "construction_prior_wrong": 50,
+    "deduplicated_preconfirmatory_pool": 1542,
+    "i5_consensus_overlap_excluded": 58,
+    "low_gap_core": 60,
+    "low_gap_core_prior_correct": 17,
+    "low_gap_core_prior_wrong": 43,
+    "near_gap_controls": 40,
+    "pilot_items": 100,
+    "planned_cells": 500
+  },
+  "created_at_utc": "2026-08-28T06:39:07.149411+00:00",
+  "design": {
+    "call_order_randomized_after_plan_creation": true,
+    "format_retries_are_extra_calls_not_extra_cells": true,
+    "prior_answer_visible": false,
+    "same_option_order_at_all_stages": true,
+    "stages_per_item": 5,
+    "stateless": true
+  },
+  "frozen_seed": 2026082809,
+  "protected_confirmatory_7818_used_for_selection_or_tuning": false,
+  "schema_version": "ccrc.trajectory100.provenance.v0.9.0",
+  "selection": {
+    "controls": "Among remaining items, the 33 prior-correct and 7 prior-wrong smallest-gap rows, tie-broken by canonical stem hash, to balance construction labels 50/50.",
+    "core": "All unique pre-confirmatory items with prior T0 gap < 0.20.",
+    "no_replacement_after_fresh_T0": true
+  },
+  "source_internal_hashes_verified": {
+    "experiment_consensus600": [
+      {
+        "file": "doctor.json",
+        "sha256": "473b404ea105c1e21aecdf389d7a937dfeff59b58cd4d967ab07a3aecd01bc4e"
+      },
+      {
+        "file": "transport_check.json",
+        "sha256": "b207355b8713b51a1b1f83badee5b949ca087da47cc1f84fa410ea23408d52f5"
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "f1ba301caa1f42f5656cef07001467fd431eec506f0fc1cb21d188d886754427"
+      },
+      {
+        "file": "source_mmlu_test.parquet",
+        "sha256": "c08ff89872eac44b092e2e94a17d7a7c358f5a27c52241b60748830a81561c8b"
+      },
+      {
+        "file": "prior_items.jsonl",
+        "sha256": "b32037edbe4d5b52c487a3a756427f352e77c4131c258bd0f0273bfb5edd718f"
+      },
+      {
+        "file": "items.jsonl",
+        "sha256": "3d2eb5c7b33b97b8af16b6a1dd0e60a56afee98e96c3a3a1dd4231bf154839d4"
+      },
+      {
+        "file": "selection_audit.json",
+        "sha256": "2e215975ebe22569725a57ac59c5ede2206a2b87e618279dad5eeb547734737a"
+      },
+      {
+        "file": "prompt_audit.json",
+        "sha256": "a2556f652467ffe06cbe6b86b0200bb9bde004049931b91a6a68e49c7f1b503d"
+      },
+      {
+        "file": "runs.jsonl",
+        "sha256": "0dd9a9b195c82a3c9595428c7fe1d1f46c2bd2776ef7a13238655e2b2dd89fa0"
+      },
+      {
+        "file": "summary.csv",
+        "sha256": "48fcd2ab9aafc2df0f124074354b3798dc00fe753bbe326bbbbfb39aeaed754a"
+      },
+      {
+        "file": "summary.json",
+        "sha256": "35b5d16d194d169a184b2dd5402de5e7a938e0ff106cd591bde596e0774c23dc"
+      },
+      {
+        "file": "policy_decisions.jsonl",
+        "sha256": "276093c3acd89d6a83affca9f9195e84baf942cd71ab97437379af18f1d730f5"
+      },
+      {
+        "file": "FINALIZED.json",
+        "sha256": "ca39f10969fcc5602a01687f4f56d854fa4d3563d95234b83a5832429106a496"
+      }
+    ],
+    "experiment_i5gated1000": [
+      {
+        "file": "doctor.json",
+        "sha256": "465baa0f187546e31372ec3ef1ec66be02feb317aa130692eb5526a44e57fd47"
+      },
+      {
+        "file": "transport_check.json",
+        "sha256": "9ab2215c07163c6f080c202a7420bc0b8a0405e47402d813ed7b5cf5233bd409"
+      },
+      {
+        "file": "manifest.json",
+        "sha256": "311466f443c188a8ae1e78e3edabf3156f1d8ff567eac3d3db83f5c0cf0af1bf"
+      },
+      {
+        "file": "items.jsonl",
+        "sha256": "57ec360f7681a93b18223ea75d238f7ad46d46cfc72236c423dc9d32a57b506c"
+      },
+      {
+        "file": "prompt_audit.json",
+        "sha256": "d85a02e69779b61a1b93d73ceb9f4d8b534f57df5480ea2061a2a1de7362465c"
+      },
+      {
+        "file": "runs.jsonl",
+        "sha256": "0da5cc818691a6290c375df0f3b3b6f25208f3df3aef5f9ad5b543fa34e92a99"
+      },
+      {
+        "file": "summary.json",
+        "sha256": "9de7680e6e7523ea62a2b6c5a68a369f8ef60b5b82b65acd5ea47a811e1567f5"
+      },
+      {
+        "file": "validation.json",
+        "sha256": "acdec285ff19b3924b4c804e0ad9a69f85745f3addb839aec7c8144411e133fb"
+      },
+      {
+        "file": "FINALIZED.json",
+        "sha256": "9a4fe9c81a60b2663137f4fd64c4e749022136a1f98c9cda787f54ff5e8260c2"
+      }
+    ]
+  },
+  "source_zip_sha256": {
+    "experiment_consensus600.zip": "b4a8ba047c4d80060020834e54bec06f244fc00c556ce15b05af7221b60e2afd",
+    "experiment_i5gated1000.zip": "b2489e4972dae7925b83a3f7d580e69221199e34d530a24220550c49a6d322ad"
+  }
+}
