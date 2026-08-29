@@ -1,0 +1,74 @@
+{
+  "blocking_reasons": [],
+  "experimental_cells_consumed": 0,
+  "fixtures": [
+    {
+      "candidate_logprobs": {
+        "A": -5.55368709564209,
+        "B": -0.010001319460570812,
+        "C": -6.660323143005371,
+        "D": -8.687762260437012
+      },
+      "exact_format": true,
+      "fixture": "neutral_multi_turn",
+      "has_full_ABCD_logit_vector": true,
+      "ok": true,
+      "parsed": "B",
+      "raw_output": "B",
+      "reasoning_detected": false,
+      "request_meta": {
+        "endpoint": "/v1/responses",
+        "frequency_penalty": 0.0,
+        "logit_bias_used": false,
+        "logprobs_requested": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "seed_rejected": false,
+        "seed_requested": 2026089817,
+        "seed_sent": true,
+        "stateful_continuation_used": false,
+        "top_logprobs_requested": 20
+      },
+      "response_meta": {
+        "id": "resp_7434f3f2f280b4303964eaa4779b0d6f50d222b27906ff5d",
+        "model": "qwen/qwen3.5-9b",
+        "status": "completed"
+      }
+    },
+    {
+      "candidate_logprobs": {
+        "A": -5.27744722366333,
+        "B": -0.02101570926606655,
+        "C": -6.684685230255127,
+        "D": -9.362298011779785
+      },
+      "exact_format": true,
+      "fixture": "wrong_suggestion_multi_turn",
+      "has_full_ABCD_logit_vector": true,
+      "ok": true,
+      "parsed": "B",
+      "raw_output": "B",
+      "reasoning_detected": false,
+      "request_meta": {
+        "endpoint": "/v1/responses",
+        "frequency_penalty": 0.0,
+        "logit_bias_used": false,
+        "logprobs_requested": true,
+        "presence_penalty": 0.0,
+        "previous_response_id": null,
+        "seed_rejected": false,
+        "seed_requested": 2026089818,
+        "seed_sent": true,
+        "stateful_continuation_used": false,
+        "top_logprobs_requested": 20
+      },
+      "response_meta": {
+        "id": "resp_959845dda42740b1eda6c15a0e8a981b259a05b1e7f77ac9",
+        "model": "qwen/qwen3.5-9b",
+        "status": "completed"
+      }
+    }
+  ],
+  "schema_version": "ccrc.full_logit_syco120.transport_check.v1.0.0",
+  "status": "PASS"
+}

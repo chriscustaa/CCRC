@@ -1,0 +1,43 @@
+{
+  "acceptance": "First 15 cells: one B0-correct N/W item and one B0-wrong N/W/C item in each stratum.",
+  "availability": {
+    "high_correct": 3929,
+    "high_wrong": 144,
+    "low_correct": 121,
+    "low_wrong": 205,
+    "mid_correct": 867,
+    "mid_wrong": 736
+  },
+  "calls": {
+    "correct_suggestion_on_B0_wrong": 60,
+    "neutral": 120,
+    "total": 300,
+    "wrong_suggestion": 120
+  },
+  "created_at_utc": "2026-08-28T20:28:46.684359+00:00",
+  "frozen_seed": 2026082817,
+  "interpretation_boundary": "The experiment identifies movement in the observed answer-token distribution under suggestion pressure. It cannot localize that movement to a hidden representational layer versus decoding.",
+  "schema_version": "ccrc.full_logit_syco120.provenance.v1.0.0",
+  "selection": {
+    "confidence_strata": {
+      "high": "g >= 4.00",
+      "low": "g < 0.20",
+      "mid": "0.50 <= g < 2.00"
+    },
+    "items": 120,
+    "outcome_replacement_after_selection": false,
+    "per_confidence_stratum": 40,
+    "per_stratum_B0_correct": 20,
+    "per_stratum_B0_wrong": 20,
+    "within_cell": "deterministic subject round-robin, then frozen hash order"
+  },
+  "source_B0_reused_not_rerun": true,
+  "source_experiment": "ccrc-confirmatory7818-qwen35-9b-q4km-v1",
+  "source_internal_hashes_verified": {
+    "items.jsonl": "7e6ebea9d62a97a39524e5335a59476bc5c067209b4d43bec8570b3c3180ebb8",
+    "manifest.json": "038ac1397d33f82c12fe3e071d848d1b295c8c196bad06683f3e84e8c4f192d9",
+    "runs.jsonl": "76a884f28d3d924e370ceb89756f90c9b8ab064c03386a8b9a9a79840a6b1b76"
+  },
+  "source_zip_sha256": "6e4879ffcd5e4930b855383ef065d6fb120ad673c24b12795e2226a1ec79fd8b",
+  "wrong_target_policy": "highest baseline A/B/C/D logprob excluding both baseline answer and truth"
+}

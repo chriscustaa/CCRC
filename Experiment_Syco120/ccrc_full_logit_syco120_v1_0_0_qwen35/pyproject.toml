@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ccrc-full-logit-syco120"
+version = "1.0.0"
+description = "Frozen 120-item paired full-logit suggestion-pressure mechanism study"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31,<3"]
+
+[project.scripts]
+ccrc-full-logit-syco120 = "harness.cli:main"
+
+[tool.setuptools]
+packages = ["harness"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

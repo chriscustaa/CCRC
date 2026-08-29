@@ -1,0 +1,9 @@
+{
+  "actual_model_calls": 300,
+  "completed_cells": 300,
+  "errors": [],
+  "mode": "full",
+  "planned_cells": 300,
+  "schema_version": "ccrc.full_logit_syco120.validation.v1.0.0",
+  "status": "PASS"
+}

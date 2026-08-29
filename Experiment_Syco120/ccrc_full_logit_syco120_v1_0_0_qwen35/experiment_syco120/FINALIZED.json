@@ -1,0 +1,9 @@
+{
+  "actual_model_calls": 300,
+  "completed_cells": 300,
+  "finalized_at_utc": "2026-08-29T02:15:24.995420+00:00",
+  "mechanism_disposition": "SURVIVES_PRESSURE_TEST",
+  "planned_cells": 300,
+  "schema_version": "ccrc.full_logit_syco120.finalized.v1.0.0",
+  "validation_status": "PASS"
+}
