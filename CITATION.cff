@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use CCRC, cite the repository and the exact experiment artifact and commit."
+title: "CCRC: Causal Contrastive Reasoning Control"
+type: software
+authors:
+  - family-names: Custer
+    given-names: Chris
+repository-code: "https://github.com/chriscustaa/CCRC"
+url: "https://github.com/chriscustaa/CCRC"
+license: BSD-3-Clause-Clear
+date-released: 2026-08-25
