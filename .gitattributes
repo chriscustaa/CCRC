@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Finalized result CSVs are hash-pinned evidence generated with CRLF endings.
+# Preserve their exact bytes across platforms so published manifests verify.
+*.csv binary

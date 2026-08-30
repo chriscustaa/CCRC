@@ -1,225 +1,158 @@
 # CCRC Research State
 
 **Repository:** `chriscustaa/CCRC`  
-**Status:** Active, early-stage research  
-**Purpose of this file:** Provide a compact authoritative checkpoint for fresh research sessions. Use primary experiment artifacts and analysis files for evidence; use this file for current state, active hypotheses, and next-step orientation.
+**Status:** active, early-stage research
+
+**Last artifact incorporated:** Syco120 final audit, 2026-08-29 UTC
+
+This file is the compact checkpoint for a fresh research session. Finalized outputs, preregistrations, and exact analysis/audit files are the evidence; this document records the current interpretation and decision state.
 
 ## 1. Anchor
 
-CCRC studies whether runtime signals can identify context-induced decision fragility and selectively trigger additional cognition or local intervention without making the model blindly contrarian, globally overcorrected, or unnecessarily expensive.
+CCRC studies whether runtime signals can identify context-induced decision fragility and selectively trigger additional cognition without making the model blindly contrarian, globally overcorrected, or unnecessarily expensive.
 
-The core target is **conditional invariance**:
+The target is **conditional invariance**:
 
 - remain stable when context should not change the answer;
-- remain updateable when new evidence should change it;
+- remain updateable when valid evidence should change it;
 - treat confidence or logprob margin as a fragility signal, not proof of correctness;
 - intervene only when expected repair value exceeds harms and added inference cost.
 
-## 2. Validated findings so far
+The current finite-choice architecture is:
 
-### Syco30 / v0.1.3
-- Qwen2.5-7B Q4_K_M on 30 SycoBench items.
-- Baseline accuracy: 83.3%.
-- Pressure-robust accuracy: 26.7%.
-- Baseline answer margin strongly predicted later context-induced answer changes.
-- Conclusion: susceptibility is measurable; the sensor was exploratory and causal intervention remained blocked.
+$$
+\text{Sense} \rightarrow \text{Allocate cognition} \rightarrow \text{Release, verify, or abstain}
+$$
 
-Primary report: `Syco30_Qwen2.5_PostRun_Analysis_v1.md`
+The primary sensor studied to date is the baseline top-two A/B/C/D logprob gap:
 
-### Cross-model / v0.2.0
-- Same 30 items on Qwen3.5-9B Q4_K_M.
-- Baseline accuracy remained 83.3%.
-- Pressure-robust accuracy rose to 50.0%.
-- The margin/susceptibility relationship replicated with attenuation.
-- Conclusion: advance to matched causal decomposition.
+$$
+g(q)=\log p(a_1\mid q)-\log p(a_2\mid q).
+$$
 
-Primary report: `Syco30_Qwen35_CrossModel_Analysis_v1_1_CORRECTED.md`
+## 2. Completed evidence
+
+### Syco30 / v0.1.3 and cross-model / v0.2.0
+
+- Qwen2.5-7B and Qwen3.5-9B each produced 83.3% baseline accuracy on the same 30 items.
+- Misleading pressure reduced robust accuracy to 26.7% and 50.0%, respectively.
+- Baseline answer margin predicted later context-induced answer movement in both runs, with attenuation on Qwen3.5.
+- **Decision:** susceptibility is measurable; no causal correction claim was authorized.
 
 ### Decomp30 / v0.3.0
-- 30 questions × 3 template families × 6 conditions; 540 runs.
-- A wrong directional verdict caused the dominant shift.
-- Authority alone mainly flattened confidence.
-- Authority did not reliably amplify the verdict.
-- Conclusion: reject a broad authority-bias claim; retain only a bounded verdict-contamination hypothesis.
 
-Primary report: `CCRC_Decomp30_Gate_Analysis_v1.md`
+- 30 questions × 3 prompt families × 6 matched conditions; 540 runs.
+- A wrong directional verdict caused the dominant shift. Authority alone mainly flattened confidence and did not reliably amplify the verdict.
+- **Decision:** reject a broad authority-bias claim; retain only bounded verdict-contamination mechanisms.
 
 ### Review160 / v0.4.0
-- 160 held-out SycoBench items; 1,280 runs.
-- Visible self-review repaired 0/48 initial errors.
-- Preregistered M5 at `γ=1` produced a net `+1/160` decision gain and its interval included zero.
-- Conclusion: reject visible constructive review as an error-correction mechanism in this setting; do not promote M5.
 
-Primary report: `CCRC_Review160_HeldOut_Gate_Analysis_v1.md`
+- 160 fresh held-out items; 1,280 runs.
+- Visible self-review repaired 0/48 initial errors.
+- Candidate M5 at `γ=1` produced a net `+1/160`; its interval included zero.
+- **Decision:** reject visible constructive review as correction in this setting; do not promote M5.
 
 ### Blind80 / v0.5.0
+
 - 80 fresh semantic stems; 560 runs.
 - Hiding the prior answer produced 4 repairs and 2 harms.
-- Blind D0 accuracy was 71.25% versus 68.75% for visible-self S0; paired uncertainty included zero.
-- Conclusion: blind re-derivation is a de-anchoring actuator, not a truth detector.
+- **Decision:** blind re-derivation is a de-anchoring actuator, not a truth detector.
 
-Primary report: `CCRC_Blind80_Gate_Analysis_v1.md`
+### Consensus600 / v0.6.0 precursor
 
-## 3. Current controller hypothesis
+- 600 fresh MMLU items; baseline accuracy 77.17%.
+- At frozen `g < .20`, direct D0 produced 7 repairs and 2 harms; the blind-consensus branch produced 6 repairs, 1 harm, and 2 abstentions from only 15 disagreements.
+- The wider `.20 ≤ g < .50` region was not beneficial and cost more inference.
+- **Decision:** keep `θ=.20` frozen; treat the controller result as favorable exploratory evidence requiring replication.
 
-The strongest current architecture is not a universal steering vector or unconditional second pass. It is:
+### I5-Gated1000 / v0.6.0
 
-[
-	ext{Sense} ightarrow 	ext{Allocate Cognition} ightarrow 	ext{Answer}
-]
+- 1,000 MMLU items; 4,142 stored final rows.
+- I5 produced no absolute controller benefit: 78.3% final strict accuracy with I5 versus 78.4% without it.
+- A post-run audit found 58 exact MCQ repeats from Consensus600, leaving a 942-item deduplicated primary cohort.
+- The no-I5 consensus controller remained 6 repairs/3 harms after deduplication.
+- **Decision:** retain I5 as a negative exploratory arm; prohibit confirmatory interpretation of this sample.
 
-The current fragility sensor is the baseline top-two A/B/C/D logprob gap:
+### PositionReplay / v0.7.0
 
-[
-g(q) = log p(a_1|q) - log p(a_2|q)
-]
+- 71 verifier items × 4 placements × 2 identical-wording replicates; 568/568 cells complete.
+- Fixed-placement replicate agreement was 283/284, while 56/71 items changed canonical answer across placements.
+- After exact position balancing, the deduplicated controller had expected 6.0625 repairs, 2.9375 harms, and positive net under 99.4078% of valid balanced schedules.
+- **Decision:** the verifier topology survived the frozen diagnostic kill rule; this did not confirm efficacy.
 
-Low-gap items may receive blind re-derivation. Disagreements may escalate to blind verification.
+### Trajectory100 / v0.9.0
 
-Important constraint: `g(q)` is a routing signal only. It must never be interpreted as evidence that the top answer is correct.
+- Five stateless stages on 100 items; 500 planned cells and 502 actual calls including two format retries.
+- On the primary 60 low-gap items, the frozen selector produced 5 repairs, 4 harms, net `+1`, and failed its net and safety-ratio gates.
+- Stronger deliberation wording often increased gap magnitude without increasing accuracy.
+- **Decision:** retire the five-stage selector; do not tune a replacement on the same outcomes.
 
-## 4. Current frozen experiment
+### Syco120 / v1.0.0
 
-### I5 × gated controller / v0.6.0
-- 2×2 frozen design.
-- 1,000 subject-balanced MMLU items.
-- Tests a compact five-principle instruction layer independently and in combination with the sensor-gated blind-verifier controller.
-- Current status in the repository: preregistered / pending final outcome.
+- 120-item paired full-logit suggestion-pressure pilot; 300/300 cells complete.
+- Wrong suggestions increased target/original odds by a median 2.95× and increased target compliance from 6.7% to 26.7%.
+- Wrong suggestions caused 18 harms versus 1 repair across all items.
+- Correct suggestions repaired errors, but did not produce a larger logit response than wrong suggestions (`p=.817` for positive truth selectivity).
+- **Decision:** target-following under the composite suggestion prompt is supported; truth-selective updating is not. Pure semantic sycophancy remains unresolved because direct answer-letter priming was not isolated.
 
-Primary preregistration:
+## 3. Current interpretation
 
-`ccrc_i5gated_harness_v0_6_0_qwen35/PREREGISTRATION.md`
+The evidence supports a **fragility sensor** more strongly than an autonomous correction policy.
 
-Do not alter frozen thresholds, prompts, selection rules, model/runtime settings, or analysis gates after inspecting outcomes.
+- Low gap contains both recoverable errors and correct-but-fragile answers.
+- Stateless extra inference creates both repair and damage channels.
+- Prompt-induced confidence movement does not reliably indicate correctness improvement.
+- Verifier outputs are materially representation-sensitive.
+- External suggestions can be corrective when true and harmful when false; the model did not preferentially weight truth in the paired mechanism test.
 
-## 5. Active unresolved hypothesis
+Accordingly, disagreement, reconsideration, and confidence increase must not be treated as intrinsically corrective. Any useful controller must measure net repairs after the full decision policy, including abstentions and actual inference cost.
 
-The Review160 result created an important ambiguity:
+## 4. Current gate state
 
-Visible constructive interventions applied **after a model has already committed to an answer** may reinforce self-conditioning rather than repair errors.
+No new experiment in this repository is presently designated as frozen and pending execution.
 
-This motivates a bounded timing hypothesis:
+The surviving bounded hypotheses are:
 
-[
-	ext{precommitment intervention} 
-eq 	ext{postcommitment intervention}
-]
+1. **Target-cue decomposition:** separate semantic suggestion pressure from direct answer-letter priming in the Syco120 mechanism.
+2. **Fresh controller confirmation:** if pursued, use genuinely fresh stems, preserve `θ=.20`, balance option representation, and freeze the complete verifier policy before outcomes.
+3. **New M5-class work:** any activation-level intervention is a new research branch; prior candidate M5 failed promotion and provides no inherited efficacy claim.
 
-The current working interpretation is:
+These are candidate branches, not validated next steps. A new preregistration must select and freeze one before execution.
 
-- postcommitment responsibility/audit/additional-consideration prompts failed completely as repair mechanisms on the 48 baseline-wrong Review160 cases;
-- that result does **not** establish that the same framing has no value before initial commitment;
-- therefore intervention timing / commitment state remains unresolved.
-
-This is a hypothesis, not a validated result.
-
-## 6. Next planned test after the frozen cycle
-
-Run a small **precommitment / no-prior-answer isolation test** before opening a larger M5 steering branch.
-
-Recommended scope:
-
-- approximately 12 known baseline-wrong items from Review160;
-- approximately 4 known-correct sentinel items;
-- four arms:
-  1. baseline;
-  2. responsibility;
-  3. independent audit;
-  4. one additional potentially outcome-changing consideration;
-- interventions appear **before** the model generates any answer;
-- prior answer, prior reasoning, and any implication of prior failure remain hidden;
-- preserve model, decoding, answer parser, and other relevant runtime settings wherever possible.
-
-Primary endpoint:
-- wrong→correct repair rate relative to the frozen baseline.
-
-Safety / collateral endpoint:
-- correct→wrong harms on sentinel items.
-
-Kill criterion:
-- if precommitment framing produces no meaningful repair signal or increases harms, retire the hypothesis that these specific framings are causally valuable and attribute ordinary conversational gains to richer decomposition/context rather than these phrases themselves.
-
-## 7. M5 status
-
-M5 is a local paired-state contrastive correction candidate:
-
-[
-Delta_t^{(k)} = z_t^{(k)} - z_t^{(0)}
-]
-
-[
-z_t^* = z_t^{(0)} - sum_k gamma_k Delta_t^{(k)}
-]
-
-Current status:
-- tested at candidate level;
-- failed its promotion gate at `γ=1`;
-- **not justified as a live decoder** by current repository evidence.
-
-Any future M5 revival must be treated as a new bounded hypothesis with fresh preregistration and held-out testing.
-
-## 8. Current external-research implications
-
-Recent adjacent work on adaptive / gated activation steering strengthens the architectural plausibility of **state-dependent intervention** but does not supersede the current experiment sequence.
-
-The relevant conceptual comparison for future M5 work is:
-
-[
-	ext{fixed steering}
-quad vs. quad
-	ext{query/state-gated steering}
-quad vs. quad
-	ext{CCRC externally sensed/routed intervention}
-]
-
-Future steering work should also include corrigibility controls: resistance to misleading pressure must not become resistance to valid corrective evidence.
-
-External literature can update comparison baselines and experiment design, but it must not retroactively change interpretation of completed CCRC experiments.
-
-## 9. Claims currently not supported
+## 5. Claims not supported
 
 Do not infer any of the following from the repository:
 
-- a universal authority vector;
-- a universal sycophancy vector;
-- truth recovery from contrastive decoding;
-- a general hallucination cure;
-- validated production safety gains;
-- universal benefit from blind re-derivation;
-- validated production promotion of M5;
-- generalization beyond tested models, prompts, quantizations, and finite-choice settings.
+- a universal authority, sycophancy, or truth vector;
+- subjective belief measurement from answer-token gap;
+- truth recovery from contrastive decoding or self-review;
+- a general hallucination cure or production safety gain;
+- production promotion of M5, the consensus controller, or trajectory selection;
+- a universally preferred option position;
+- generalization beyond tested models, prompts, quantizations, runtimes, and finite-choice tasks.
 
-## 10. Provenance hierarchy
+## 6. Provenance hierarchy
 
-For resolving conflicts or reconstructing history, use this order:
+Resolve conflicts in this order:
 
-1. raw experiment artifacts / finalized outputs;
-2. preregistration and exact analysis files;
+1. raw finalized experiment artifacts and hash manifests;
+2. frozen preregistration and exact analysis/audit certificate;
 3. this `RESEARCH_STATE.md`;
-4. repository README;
+4. repository `README.md`;
 5. conversation history or model recollection.
 
-If this file conflicts with a finalized experiment artifact or analysis file, the artifact wins.
+Completed historical artifacts must not be rewritten to make the research path appear cleaner. Corrections belong in a versioned report or audit addendum.
 
-## 11. Fresh-session operating rule
+## 7. Fresh-session rule
 
 A fresh research session should:
 
 1. read this file;
-2. open only the primary experiment files needed for the current question;
-3. avoid reconstructing the full project from conversation memory;
-4. distinguish validated results from hypotheses and planned tests;
-5. preserve frozen experiment rules;
-6. treat any material architectural change as a new experiment version.
+2. open only the primary artifacts needed for the current question;
+3. distinguish validated results, exploratory results, and hypotheses;
+4. preserve frozen rules and historical negative results;
+5. treat any material design change as a new experiment version.
 
-## 12. Update rule
+## 8. Update rule
 
-Update this file only when one of the following occurs:
-
-- an experiment is completed and validated;
-- a gate decision changes;
-- a hypothesis is killed, narrowed, or promoted;
-- the next planned experiment changes materially;
-- a new external result changes the required comparison baseline.
-
-Do not rewrite historical sections to make the research path appear cleaner in hindsight. Preserve failed interventions and superseded hypotheses as part of the record.
+Update this checkpoint only when an experiment is completed and validated, a gate decision changes, a hypothesis is killed or promoted, or a new preregistration selects the next frozen branch.
